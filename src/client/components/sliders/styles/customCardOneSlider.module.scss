@@ -1,0 +1,64 @@
+.customCardOneSliderWrapper {
+  width: 100%;
+  // max-width: ;
+  padding-inline: 1rem;
+  h4 {
+    font-family: Oswald;
+    font-size: 44px;
+    font-weight: 600;
+    color: var(--dark);
+  }
+  .cardsWrapper {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 0 50px;
+    padding-block: 35px 50px;
+    .prev,
+    .next {
+      z-index: 1;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+
+      background-color: var(--light-blue);
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--light);
+      }
+      &.deactivated {
+        pointer-events: none;
+        opacity: 0.3;
+      }
+    }
+    .prev {
+      left: 0;
+    }
+    .next {
+      right: 0;
+    }
+    .cardsList {
+      position: relative;
+
+      width: 100%;
+      gap: 41px;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      // overflow: hidden;
+    }
+  }
+}

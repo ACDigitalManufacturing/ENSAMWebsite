@@ -1,0 +1,124 @@
+.customCardOneWrapper {
+  flex-shrink: 0;
+  width: 328px;
+  height: 471px;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  background: white;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+
+  .coverWrapper {
+    width: 100%;
+    height: 220px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .infoWrapper {
+    width: 100%;
+    height: 100%;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    .tagsWrapper {
+      li {
+        width: min-content;
+        border-radius: 20px;
+        padding: 4px 11px;
+        font-family: Roboto;
+        font-size: 10px;
+
+        text-transform: uppercase;
+        color: var(--default-light);
+
+        &:first-of-type:not(:last-of-type) {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    h6 {
+      margin-block: 10px 14px;
+      width: 100%;
+      font-family: Roboto;
+      font-size: 12px;
+      text-align: left;
+      color: var(--blue-one);
+      white-space: nowrap;
+      font-weight: normal;
+    }
+    h5 {
+      flex: 1;
+      font-family: Roboto;
+      font-size: 17px;
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--dark);
+    }
+    p {
+      flex: 50;
+      margin: 11px 0 0;
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--dark-one);
+    }
+    a {
+      display: flex;
+      align-items: center;
+
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-transform: uppercase;
+      text-align: left;
+      color: var(--light-blue);
+      span {
+        position: relative;
+        width: 16px;
+        height: 16px;
+        margin-left: 8.2px;
+
+        border: solid 2px var(--light-blue);
+        border-radius: 5.5px;
+
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 16px;
+          height: 16px;
+          fill: var(--light-blue);
+        }
+      }
+    }
+  }
+}

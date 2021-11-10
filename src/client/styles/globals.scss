@@ -1,26 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 :root {
   --tag-orange: #ff8b4e;
   --tag-blue: #279bff;
+  --dark: #11182e;
+
+  --light-blue: #006bc8;
+  --light: white;
+  --default-light: #fffefe;
+  --blue-one: #8ca1bc;
+  --dark-one: #707e8f;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--default-light);
+  width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-family: Oswald, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  outline: none;
 }
 
 ul {
   list-style-type: none;
 }
 
-* {
-  box-sizing: border-box;
+.communiqueTag {
+  background: var(--tag-orange);
+}
+.avisetudiantTag {
+  background: var(--tag-blue);
 }

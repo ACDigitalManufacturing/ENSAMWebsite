@@ -1,3 +1,4 @@
+import Footer from "components/common/Footer";
 import Navbar from "components/common/Navbar";
 import styles from "./styles/mainLayout.module.scss";
 
@@ -9,7 +10,7 @@ function Main({ children }: Props) {
     <div className={styles.mainLayoutWrapper}>
       <Navbar />
       {children}
-      <Navbar />
+      <Footer />
     </div>
   );
 }
