@@ -14,7 +14,7 @@ import CustomCardOneSlider from "components/sliders/CustomCardOneSlider";
 import styles from "styles/pages/index.module.scss";
 import OurCourses from "components/pages/home/OurCourses";
 import WordFromTheDirector from "components/pages/home/WordFromTheDirector";
-import SchoolPresentation from "components/pages/home/schoolPresentation";
+import SchoolPresentation from "components/pages/home/SchoolPresentation";
 const CustomHead = () => (
   <Head>
     <title>HOME - ENSAM CASA</title>
