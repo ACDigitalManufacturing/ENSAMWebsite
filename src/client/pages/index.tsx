@@ -14,6 +14,7 @@ import CustomCardOneSlider from "components/sliders/CustomCardOneSlider";
 import styles from "styles/pages/index.module.scss";
 import OurCourses from "components/pages/home/OurCourses";
 import WordFromTheDirector from "components/pages/home/WordFromTheDirector";
+import SchoolPresentation from "components/pages/home/schoolPresentation";
 const CustomHead = () => (
   <Head>
     <title>HOME - ENSAM CASA</title>
@@ -75,6 +76,7 @@ const Home: NextPage = () => {
       <>
         <CustomHead />
         <div className={styles.landingPageWrapper}>
+          <SchoolPresentation />
           {officialPressReleases.length ? (
             <CustomCardOneSlider
               title="Communiqués Officiels"

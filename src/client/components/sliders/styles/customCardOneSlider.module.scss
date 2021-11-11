@@ -2,7 +2,16 @@
   width: 100%;
   // max-width: ;
   padding-inline: 1rem;
+
+  // display: flex;
+  // align-items: center;
+  // flex-direction: column;
   h4 {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1080px;
+
+    white-space: nowrap;
     font-family: Oswald;
     font-size: 44px;
     font-weight: 600;

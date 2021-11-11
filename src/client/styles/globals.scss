@@ -45,3 +45,43 @@ ul {
 .avisetudiantTag {
   background: var(--tag-blue);
 }
+
+.customSeeMore {
+  max-width: min-content;
+  white-space: nowrap;
+
+  display: flex;
+  align-items: center;
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--light-blue);
+
+  &.outlined {
+    padding: 9px 18px;
+    border-radius: 7px;
+    border: solid 2px var(--light-blue);
+  }
+  span {
+    --iconSize: 16px;
+    position: relative;
+    width: var(--iconSize);
+    height: var(--iconSize);
+    margin-left: 8.2px;
+
+    border: solid 2px var(--light-blue);
+    border-radius: 5.5px;
+
+    svg {
+      width: var(--iconSize);
+      height: var(--iconSize);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      fill: var(--light-blue);
+    }
+  }
+}

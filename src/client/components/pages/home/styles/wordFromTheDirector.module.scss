@@ -1,8 +1,9 @@
 .wordFromTheDirectorWrapper {
   width: 100%;
+  max-width: 1080px;
   h4 {
     margin-bottom: 50px;
-    margin: 127px 619px 50px 2px;
+    margin-bottom: 50px;
     font-family: Oswald;
     font-size: 44px;
     font-weight: 600;
@@ -65,36 +66,6 @@
         font-size: 16px;
         text-align: left;
         color: var(--dark-one);
-      }
-      a {
-        display: flex;
-        align-items: center;
-
-        font-family: Roboto;
-        font-size: 14px;
-        font-weight: 500;
-        text-transform: uppercase;
-        color: var(--light-blue);
-        span {
-          --iconSize: 16px;
-          position: relative;
-          width: var(--iconSize);
-          height: var(--iconSize);
-          margin-left: 8.2px;
-
-          border: solid 2px var(--light-blue);
-          border-radius: 5.5px;
-
-          svg {
-            width: var(--iconSize);
-            height: var(--iconSize);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            fill: var(--light-blue);
-          }
-        }
       }
     }
 

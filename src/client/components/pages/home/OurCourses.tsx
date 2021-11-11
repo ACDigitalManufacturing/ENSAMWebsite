@@ -15,7 +15,7 @@ function OurCourses() {
             </div>
             <div className={styles.info}>
               <p className={styles.courseDescription}>{description}</p>
-              <a href={link}>
+              <a href={link} className="customSeeMore">
                 voir plus <span>{right}</span>
               </a>
             </div>

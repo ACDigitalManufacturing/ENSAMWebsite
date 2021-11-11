@@ -83,42 +83,5 @@
       text-align: left;
       color: var(--dark-one);
     }
-    a {
-      display: flex;
-      align-items: center;
-
-      font-family: Roboto;
-      font-size: 14px;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      text-transform: uppercase;
-      text-align: left;
-      color: var(--light-blue);
-      span {
-        position: relative;
-        width: 16px;
-        height: 16px;
-        margin-left: 8.2px;
-
-        border: solid 2px var(--light-blue);
-        border-radius: 5.5px;
-
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-        svg {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 16px;
-          height: 16px;
-          fill: var(--light-blue);
-        }
-      }
-    }
   }
 }

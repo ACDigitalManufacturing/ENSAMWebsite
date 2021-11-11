@@ -64,7 +64,7 @@ function CustomCardOne({ card }: Props): JSX.Element {
           </p>
         )}
 
-        <a href={card.link}>
+        <a href={card.link} className="customSeeMore">
           voir plus <span>{right}</span>
         </a>
       </div>
