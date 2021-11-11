@@ -12,6 +12,7 @@ import { CustomCardOneType } from "components/cards/CustomCardOne";
 import CustomCardOneSlider from "components/sliders/CustomCardOneSlider";
 
 import styles from "styles/pages/index.module.scss";
+import OurCourses from "components/pages/home/OurCourses";
 const CustomHead = () => (
   <Head>
     <title>HOME - ENSAM CASA</title>
@@ -81,6 +82,7 @@ const Home: NextPage = () => {
             title="Avis Aux Etudiants"
             cards={noticeToStudents}
           />
+          <OurCourses />
         </div>
       </>
     </Main>
