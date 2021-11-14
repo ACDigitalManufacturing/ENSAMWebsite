@@ -50,6 +50,10 @@
           border-radius: 25px;
           box-shadow: 0 10px 30px 0 rgba(40, 111, 172, 0.14);
           background-color: var(--blue-two);
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         h5 {

@@ -6,7 +6,7 @@ import { CustomCardOneType } from "components/cards/CustomCardOne";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<CustomCardOneType[]>
+  res: NextApiResponse<CustomCardOneType[]>,
 ) {
   res.status(200).json(dummyData);
 }
@@ -18,7 +18,7 @@ const dummyData: CustomCardOneType[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 5425525,
-    coverUrl: "https://via.placeholder.com/350x250",
+    coverUrl: "/school/schoolOne.jpg",
     link: "#",
   },
   {
@@ -27,7 +27,7 @@ const dummyData: CustomCardOneType[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 5425525,
-    coverUrl: "https://via.placeholder.com/350x250",
+    coverUrl: "/school/schoolTwo.jpg",
     link: "#",
   },
   {
@@ -36,7 +36,7 @@ const dummyData: CustomCardOneType[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 5425525,
-    coverUrl: "https://via.placeholder.com/350x250",
+    coverUrl: "/school/schoolThree.png",
     link: "#",
   },
   {
@@ -45,7 +45,7 @@ const dummyData: CustomCardOneType[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 5425525,
-    coverUrl: "https://via.placeholder.com/350x250",
+    coverUrl: "/school/schoolOne.jpg",
     link: "#",
   },
   {
@@ -54,7 +54,7 @@ const dummyData: CustomCardOneType[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 5425525,
-    coverUrl: "https://via.placeholder.com/350x250",
+    coverUrl: "/school/schoolTwo.jpg",
     link: "#",
   },
   {
@@ -63,7 +63,7 @@ const dummyData: CustomCardOneType[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 5425525,
-    coverUrl: "https://via.placeholder.com/350x250",
+    coverUrl: "/school/schoolThree.png",
     link: "#",
   },
 ];

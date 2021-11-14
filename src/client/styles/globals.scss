@@ -18,11 +18,17 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  background-color: var(--default-light);
+html {
   width: 100vw;
+  // height: 100vh;
+  // overflow: hidden;
   overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  width: 100vw;
+  background-color: var(--default-light);
   min-height: 100vh;
   font-family: Oswald, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,

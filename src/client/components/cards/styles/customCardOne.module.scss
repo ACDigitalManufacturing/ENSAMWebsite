@@ -17,6 +17,9 @@
   .coverWrapper {
     width: 100%;
     height: 220px;
+    min-height: 220px;
+    max-height: 220px;
+
     img {
       width: 100%;
       height: 100%;

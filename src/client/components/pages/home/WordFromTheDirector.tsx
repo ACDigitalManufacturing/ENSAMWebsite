@@ -8,7 +8,7 @@ function WordFromTheDirector() {
 
       <div className={styles.directorCardWrapper}>
         <div className={styles.directorImageWrapper}>
-          <img src="https://via.placeholder.com/300" alt="" />
+          <img src="/directeur.jpg" alt="" />
         </div>
         <div className={styles.infoWrapper}>
           <div className={styles.titles}>
