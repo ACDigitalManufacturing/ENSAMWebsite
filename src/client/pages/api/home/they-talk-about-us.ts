@@ -1,7 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { Tags } from "Types/Application";
-
 import { CustomCardTwoType } from "components/cards/CustomCardTwo";
 
 export default function handler(

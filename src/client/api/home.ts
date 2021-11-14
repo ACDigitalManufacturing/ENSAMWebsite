@@ -4,18 +4,20 @@ import { CustomCardTwoType } from "components/cards/CustomCardTwo";
 
 export const getOfficialPressReleases = () =>
   getUnauthenticatedApi<CustomCardOneType[]>()(
-    "api/web/official-press-releases",
+    "api/home/official-press-releases",
     {},
   );
 
 export const getNoticeToStudents = () =>
   getUnauthenticatedApi<CustomCardOneType[]>()(
-    "api/web/notice-to-students",
+    "api/home/notice-to-students",
     {},
   );
 
 export const getTheyTalkAboutUs = () =>
   getUnauthenticatedApi<CustomCardTwoType[]>()(
-    "api/web/they-talk-about-us",
+    "api/home/they-talk-about-us",
     {},
   );
+export const getPartners = () =>
+  getUnauthenticatedApi<CustomCardTwoType[]>()("api/home/partners", {});

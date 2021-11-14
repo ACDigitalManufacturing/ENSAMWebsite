@@ -16,6 +16,7 @@ import SchoolPresentation from "components/pages/home/SchoolPresentation";
 import TheyTalkAboutUs from "components/pages/home/TheyTalkAboutUs";
 
 import styles from "styles/pages/index.module.scss";
+import Partners from "components/pages/home/Partners";
 const CustomHead = () => (
   <Head>
     <title>HOME - ENSAM CASA</title>
@@ -81,6 +82,7 @@ const Home: NextPage = () => {
           <OurCourses />
           <WordFromTheDirector />
           <TheyTalkAboutUs />
+          <Partners />
           {officialPressReleases.length ? (
             <div className={styles.sliderWrapper}>
               <CustomCardOneSlider
