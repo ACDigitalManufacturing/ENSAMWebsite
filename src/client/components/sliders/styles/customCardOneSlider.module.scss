@@ -20,20 +20,74 @@
   .cardsWrapper {
     position: relative;
 
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
 
     padding: 0 50px;
     padding-block: 35px 50px;
+    overflow: hidden;
+    background-color: var(--default-light);
+
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(1, 1fr);
+    justify-content: space-between;
+
+    .left {
+      transform: translateX(-100vw);
+    }
+    .right {
+      transform: translateX(100vw);
+    }
+    // > div {
+    //   grid-column: ;
+    //   grid-row: 1;
+    // }
+
+    // .cardsList {
+    //   position: relative;
+
+    //   width: 100%;
+    //   gap: 41px;
+
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: flex-start;
+
+    //   // overflow: hidden;
+    // }
+  }
+
+  .navigationWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-inline: 34px;
+      .dot {
+        cursor: pointer;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+
+        background-color: var(--blue-four);
+        &:not(:last-of-type) {
+          margin-right: 31px;
+        }
+        &.active {
+          background-color: var(--blue-three);
+        }
+      }
+    }
     .prev,
     .next {
       z-index: 1;
       cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translate(0, -50%);
 
-      background-color: var(--light-blue);
       width: 39px;
       height: 39px;
       border-radius: 50%;
@@ -44,11 +98,13 @@
       svg {
         width: 100%;
         height: 100%;
-        fill: var(--light);
+        fill: var(--blue);
       }
       &.deactivated {
         pointer-events: none;
-        opacity: 0.3;
+        svg {
+          fill: var(--blue-four);
+        }
       }
     }
     .prev {
@@ -56,18 +112,6 @@
     }
     .next {
       right: 0;
-    }
-    .cardsList {
-      position: relative;
-
-      width: 100%;
-      gap: 41px;
-
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-
-      // overflow: hidden;
     }
   }
 }

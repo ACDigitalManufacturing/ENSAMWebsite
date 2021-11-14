@@ -66,4 +66,13 @@ const dummyData: CustomCardOneType[] = [
     coverUrl: "/school/schoolThree.png",
     link: "#",
   },
+  {
+    tags: [Tags.avisetudiant],
+    title: "Liste des étudiants CI1 GM",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
+    date: 5425525,
+    coverUrl: "/school/schoolThree.png",
+    link: "#",
+  },
 ];

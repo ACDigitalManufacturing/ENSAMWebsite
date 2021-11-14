@@ -60,4 +60,12 @@ const dummyData: CustomCardOneType[] = [
     coverUrl: "/school/schoolTwo.jpg",
     link: "#",
   },
+  {
+    tags: [Tags.communique],
+    title:
+      'Liste des candidats convoqués au concours écrits du recrutement d\'un administrateur 2ème grade spécialité "Assurance qualité"',
+    date: 5425525,
+    coverUrl: "/school/schoolTwo.jpg",
+    link: "#",
+  },
 ];

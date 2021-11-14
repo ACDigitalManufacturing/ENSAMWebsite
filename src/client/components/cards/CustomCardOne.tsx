@@ -13,13 +13,24 @@ export interface CustomCardOneType {
 
 interface Props {
   card: CustomCardOneType;
+  row?: number;
+  column?: number;
+  customClass?: string;
 }
 
-function CustomCardOne({ card }: Props): JSX.Element {
-  console.log(card.description?.length);
-
+function CustomCardOne({ card, row, column, customClass }: Props): JSX.Element {
   return (
-    <div className={styles.customCardOneWrapper}>
+    <div
+      className={styles.customCardOneWrapper + " " + customClass}
+      style={
+        column !== undefined
+          ? {
+              gridRow: row,
+              gridColumn: column,
+            }
+          : {}
+      }
+    >
       {/* Card Cover - START */}
       <div className={styles.coverWrapper}>
         <img src={card.coverUrl} alt="" />
