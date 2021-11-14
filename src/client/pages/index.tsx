@@ -10,11 +10,12 @@ import Main from "layouts/Main";
 
 import { CustomCardOneType } from "components/cards/CustomCardOne";
 import CustomCardOneSlider from "components/sliders/CustomCardOneSlider";
-
-import styles from "styles/pages/index.module.scss";
 import OurCourses from "components/pages/home/OurCourses";
 import WordFromTheDirector from "components/pages/home/WordFromTheDirector";
 import SchoolPresentation from "components/pages/home/SchoolPresentation";
+import TheyTalkAboutUs from "components/pages/home/TheyTalkAboutUs";
+
+import styles from "styles/pages/index.module.scss";
 const CustomHead = () => (
   <Head>
     <title>HOME - ENSAM CASA</title>
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
     CustomCardOneType[]
   >([]);
   const [noticeToStudents, setNoticeToStudents] = useState<CustomCardOneType[]>(
-    []
+    [],
   );
   const [errors, setErrors] = useState<CustomError[]>([]);
 
@@ -77,20 +78,25 @@ const Home: NextPage = () => {
         <CustomHead />
         <div className={styles.landingPageWrapper}>
           <SchoolPresentation />
-          {officialPressReleases.length ? (
-            <CustomCardOneSlider
-              title="Communiqués Officiels"
-              cards={officialPressReleases}
-            />
-          ) : null}
-          {noticeToStudents.length ? (
-            <CustomCardOneSlider
-              title="Avis Aux Etudiants"
-              cards={noticeToStudents}
-            />
-          ) : null}
           <OurCourses />
           <WordFromTheDirector />
+          <TheyTalkAboutUs />
+          {officialPressReleases.length ? (
+            <div className={styles.sliderWrapper}>
+              <CustomCardOneSlider
+                title="Communiqués Officiels"
+                cards={officialPressReleases}
+              />
+            </div>
+          ) : null}
+          {noticeToStudents.length ? (
+            <div className={styles.sliderWrapper}>
+              <CustomCardOneSlider
+                title="Avis Aux Etudiants"
+                cards={noticeToStudents}
+              />
+            </div>
+          ) : null}
         </div>
       </>
     </Main>

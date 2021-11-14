@@ -17,7 +17,7 @@ const dummyData: CustomCardOneType[] = [
     title: "Liste des étudiants CI1 GM",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
-    date: 5425525,
+    date: 1631110890578,
     coverUrl: "/school/schoolOne.jpg",
     link: "#",
   },
@@ -26,7 +26,7 @@ const dummyData: CustomCardOneType[] = [
     title: "Liste des étudiants CI1 GM",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
-    date: 5425525,
+    date: 1631110890578,
     coverUrl: "/school/schoolTwo.jpg",
     link: "#",
   },
@@ -35,7 +35,7 @@ const dummyData: CustomCardOneType[] = [
     title: "Liste des étudiants CI1 GM",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
-    date: 5425525,
+    date: 1631110890578,
     coverUrl: "/school/schoolThree.png",
     link: "#",
   },
@@ -44,7 +44,7 @@ const dummyData: CustomCardOneType[] = [
     title: "Liste des étudiants CI1 GM",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
-    date: 5425525,
+    date: 1631110890578,
     coverUrl: "/school/schoolOne.jpg",
     link: "#",
   },
@@ -53,7 +53,7 @@ const dummyData: CustomCardOneType[] = [
     title: "Liste des étudiants CI1 GM",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
-    date: 5425525,
+    date: 1631110890578,
     coverUrl: "/school/schoolTwo.jpg",
     link: "#",
   },
@@ -62,7 +62,7 @@ const dummyData: CustomCardOneType[] = [
     title: "Liste des étudiants CI1 GM",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
-    date: 5425525,
+    date: 1631110890578,
     coverUrl: "/school/schoolThree.png",
     link: "#",
   },
@@ -71,7 +71,7 @@ const dummyData: CustomCardOneType[] = [
     title: "Liste des étudiants CI1 GM",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
-    date: 5425525,
+    date: 1631110890578,
     coverUrl: "/school/schoolThree.png",
     link: "#",
   },

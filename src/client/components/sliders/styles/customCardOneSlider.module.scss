@@ -1,15 +1,11 @@
 .customCardOneSliderWrapper {
   width: 100%;
-  // max-width: ;
-  padding-inline: 1rem;
 
-  // display: flex;
-  // align-items: center;
-  // flex-direction: column;
+  margin-block: 30px;
+
   h4 {
     margin-inline: auto;
     width: 100%;
-    max-width: 1080px;
 
     white-space: nowrap;
     font-family: Oswald;
@@ -18,12 +14,10 @@
     color: var(--dark);
   }
   .cardsWrapper {
+    width: 100%;
     position: relative;
 
-    // display: flex;
-    // justify-content: center;
-
-    padding: 0 50px;
+    padding-inline: 1rem;
     padding-block: 35px 50px;
     overflow: hidden;
     background-color: var(--default-light);
@@ -39,23 +33,6 @@
     .right {
       transform: translateX(100vw);
     }
-    // > div {
-    //   grid-column: ;
-    //   grid-row: 1;
-    // }
-
-    // .cardsList {
-    //   position: relative;
-
-    //   width: 100%;
-    //   gap: 41px;
-
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: flex-start;
-
-    //   // overflow: hidden;
-    // }
   }
 
   .navigationWrapper {

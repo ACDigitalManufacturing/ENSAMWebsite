@@ -21,7 +21,7 @@ function SchoolPresentation() {
         </a>
       </div>
       <div className={styles.schoolImageWrapper}>
-        <img src="https://via.placeholder.com/450x300" alt="" />
+        <img src="/school/schoolThree.png" alt="" />
       </div>
     </section>
   );

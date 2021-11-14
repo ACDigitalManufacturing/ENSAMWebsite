@@ -1,8 +1,12 @@
 .landingPageWrapper {
   width: 100%;
-  max-width: 1232px;
+  // max-width: 1112px;
 
   display: flex;
   align-items: center;
   flex-direction: column;
+  .sliderWrapper {
+    width: 100%;
+    max-width: 1080px;
+  }
 }
