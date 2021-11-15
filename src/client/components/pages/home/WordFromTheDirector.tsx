@@ -22,7 +22,7 @@ function WordFromTheDirector() {
             pleine extension pour répondre aux besoins croissants en formations
             d’ingénieurs dans notre pays...
           </p>
-          <a href="#" className="customSeeMore">
+          <a href="/under-reconstruction" className="customSeeMore">
             voir plus <span>{right}</span>
           </a>
 

@@ -29,7 +29,7 @@ function TheyTalkAboutUs() {
     <section className={styles.theyTalkAboutUsWrapper}>
       <header>
         <h4>Ils Parlent de Nous</h4>
-        <a href="#" className="customSeeMore">
+        <a href="/under-reconstruction" className="customSeeMore">
           voir plus <span>{right}</span>
         </a>
       </header>

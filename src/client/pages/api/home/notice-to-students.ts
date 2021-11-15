@@ -19,7 +19,7 @@ const dummyData: CustomCardOneType[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 1631110890578,
     coverUrl: "/school/schoolOne.jpg",
-    link: "#",
+    link: "/under-reconstruction",
   },
   {
     tags: [Tags.avisetudiant],
@@ -28,7 +28,7 @@ const dummyData: CustomCardOneType[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 1631110890578,
     coverUrl: "/school/schoolTwo.jpg",
-    link: "#",
+    link: "/under-reconstruction",
   },
   {
     tags: [Tags.avisetudiant],
@@ -37,7 +37,7 @@ const dummyData: CustomCardOneType[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 1631110890578,
     coverUrl: "/school/schoolThree.png",
-    link: "#",
+    link: "/under-reconstruction",
   },
   {
     tags: [Tags.avisetudiant],
@@ -46,7 +46,7 @@ const dummyData: CustomCardOneType[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 1631110890578,
     coverUrl: "/school/schoolOne.jpg",
-    link: "#",
+    link: "/under-reconstruction",
   },
   {
     tags: [Tags.avisetudiant],
@@ -55,7 +55,7 @@ const dummyData: CustomCardOneType[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 1631110890578,
     coverUrl: "/school/schoolTwo.jpg",
-    link: "#",
+    link: "/under-reconstruction",
   },
   {
     tags: [Tags.avisetudiant],
@@ -64,7 +64,7 @@ const dummyData: CustomCardOneType[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 1631110890578,
     coverUrl: "/school/schoolThree.png",
-    link: "#",
+    link: "/under-reconstruction",
   },
   {
     tags: [Tags.avisetudiant],
@@ -73,6 +73,6 @@ const dummyData: CustomCardOneType[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 1631110890578,
     coverUrl: "/school/schoolThree.png",
-    link: "#",
+    link: "/under-reconstruction",
   },
 ];

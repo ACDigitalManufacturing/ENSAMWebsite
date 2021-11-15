@@ -18,7 +18,7 @@ const dummyData: CustomCardOneType[] = [
       "Liste des candidats présélectionnés au concours d'accès au master Big Data et Internet des Objets phase I 2021-2022",
     date: 1631110890578,
     coverUrl: "/school/schoolThree.png",
-    link: "#",
+    link: "/under-reconstruction",
   },
   {
     tags: [Tags.communique],
@@ -26,7 +26,7 @@ const dummyData: CustomCardOneType[] = [
       "Accès parallèle à la première année du cycle d'ingénieur à l'ENSAM de Casablanca : Résultats de la présélection",
     date: 1631110890578,
     coverUrl: "/school/schoolOne.jpg",
-    link: "#",
+    link: "/under-reconstruction",
   },
   {
     tags: [Tags.communique],
@@ -34,7 +34,7 @@ const dummyData: CustomCardOneType[] = [
       'Liste des candidats convoqués au concours écrits du recrutement d\'un administrateur 2ème grade spécialité "Assurance qualité"',
     date: 1631110890578,
     coverUrl: "/school/schoolTwo.jpg",
-    link: "#",
+    link: "/under-reconstruction",
   },
   {
     tags: [Tags.communique],
@@ -42,7 +42,7 @@ const dummyData: CustomCardOneType[] = [
       "Liste des candidats présélectionnés au concours d'accès au master Big Data et Internet des Objets phase I 2021-2022",
     date: 1631110890578,
     coverUrl: "/school/schoolThree.png",
-    link: "#",
+    link: "/under-reconstruction",
   },
   {
     tags: [Tags.communique],
@@ -50,7 +50,7 @@ const dummyData: CustomCardOneType[] = [
       "Accès parallèle à la première année du cycle d'ingénieur à l'ENSAM de Casablanca : Résultats de la présélection",
     date: 1631110890578,
     coverUrl: "/school/schoolOne.jpg",
-    link: "#",
+    link: "/under-reconstruction",
   },
   {
     tags: [Tags.communique],
@@ -58,7 +58,7 @@ const dummyData: CustomCardOneType[] = [
       'Liste des candidats convoqués au concours écrits du recrutement d\'un administrateur 2ème grade spécialité "Assurance qualité"',
     date: 1631110890578,
     coverUrl: "/school/schoolTwo.jpg",
-    link: "#",
+    link: "/under-reconstruction",
   },
   {
     tags: [Tags.communique],
@@ -66,6 +66,6 @@ const dummyData: CustomCardOneType[] = [
       'Liste des candidats convoqués au concours écrits du recrutement d\'un administrateur 2ème grade spécialité "Assurance qualité"',
     date: 1631110890578,
     coverUrl: "/school/schoolTwo.jpg",
-    link: "#",
+    link: "/under-reconstruction",
   },
 ];

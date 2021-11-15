@@ -16,7 +16,7 @@ function SchoolPresentation() {
           différents secteurs industriels privés et publics à l’échelle national
           et international.
         </p>
-        <a href="#" className="customSeeMore outlined">
+        <a href="/under-reconstruction" className="customSeeMore outlined">
           voir plus <span>{right}</span>
         </a>
       </div>

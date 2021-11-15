@@ -10,13 +10,13 @@ import Main from "layouts/Main";
 
 import { CustomCardOneType } from "components/cards/CustomCardOne";
 import CustomCardOneSlider from "components/sliders/CustomCardOneSlider";
-import OurCourses from "components/pages/home/OurCourses";
 import WordFromTheDirector from "components/pages/home/WordFromTheDirector";
 import SchoolPresentation from "components/pages/home/SchoolPresentation";
 import TheyTalkAboutUs from "components/pages/home/TheyTalkAboutUs";
+import OurCourses from "components/pages/home/OurCourses";
+import Partners from "components/pages/home/Partners";
 
 import styles from "styles/pages/index.module.scss";
-import Partners from "components/pages/home/Partners";
 const CustomHead = () => (
   <Head>
     <title>HOME - ENSAM CASA</title>
@@ -79,10 +79,8 @@ const Home: NextPage = () => {
         <CustomHead />
         <div className={styles.landingPageWrapper}>
           <SchoolPresentation />
-          <OurCourses />
-          <WordFromTheDirector />
-          <TheyTalkAboutUs />
           <Partners />
+          <TheyTalkAboutUs />
           {officialPressReleases.length ? (
             <div className={styles.sliderWrapper}>
               <CustomCardOneSlider
@@ -91,6 +89,7 @@ const Home: NextPage = () => {
               />
             </div>
           ) : null}
+          <OurCourses />
           {noticeToStudents.length ? (
             <div className={styles.sliderWrapper}>
               <CustomCardOneSlider
@@ -99,6 +98,7 @@ const Home: NextPage = () => {
               />
             </div>
           ) : null}
+          <WordFromTheDirector />
         </div>
       </>
     </Main>
