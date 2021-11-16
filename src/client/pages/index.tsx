@@ -15,6 +15,7 @@ import SchoolPresentation from "components/pages/home/SchoolPresentation";
 import TheyTalkAboutUs from "components/pages/home/TheyTalkAboutUs";
 import OurCourses from "components/pages/home/OurCourses";
 import Partners from "components/pages/home/Partners";
+import Hero from "components/pages/home/Hero";
 
 import styles from "styles/pages/index.module.scss";
 const CustomHead = () => (
@@ -28,7 +29,7 @@ const Home: NextPage = () => {
     CustomCardOneType[]
   >([]);
   const [noticeToStudents, setNoticeToStudents] = useState<CustomCardOneType[]>(
-    [],
+    []
   );
   const [errors, setErrors] = useState<CustomError[]>([]);
 
@@ -78,6 +79,7 @@ const Home: NextPage = () => {
       <>
         <CustomHead />
         <div className={styles.landingPageWrapper}>
+          <Hero />
           <SchoolPresentation />
           <Partners />
           <TheyTalkAboutUs />

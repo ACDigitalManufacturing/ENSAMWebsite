@@ -1,0 +1,133 @@
+.heroWrapper {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  .leftContainer {
+    width: 40%;
+    margin-left: 100px;
+    h1 {
+      text-transform: uppercase;
+      font-family: Oswald;
+      font-size: 77px;
+      font-weight: bold;
+      line-height: 1.12;
+      color: var(--dark);
+    }
+    p {
+      margin-block: 20px 50px;
+      font-family: Roboto;
+      font-size: 20px;
+      color: var(--dark);
+    }
+
+    .callToAction {
+      display: flex;
+      align-items: center;
+
+      .primary {
+        font-family: Oswald;
+        font-size: 23px;
+        color: var(--default-light);
+        padding: 10px 2rem;
+        margin-right: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px 0 rgba(40, 111, 172, 0.25);
+        background-color: var(--blue-three);
+        border: none;
+        cursor: pointer;
+      }
+
+      .secondary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Roboto;
+        font-size: 21px;
+        padding: 10px 2rem;
+        background: none;
+        border-radius: 10px;
+        color: var(--blue-three);
+        border: solid 2px var(--blue-three);
+        cursor: pointer;
+
+        svg {
+          margin: 3px 0 0 7px;
+          fill: var(--blue-three);
+          border: solid 2px var(--blue-three);
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  .rightContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background-color: var(--dark);
+    border-radius: 0 0 0 150px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.backgroundJlij {
+  opacity: 0.5;
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+  .jlijOne {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-60%, -20%);
+    svg {
+      height: 400px;
+      width: 400px;
+    }
+  }
+  .jlijTwo {
+    position: absolute;
+    top: 30%;
+    left: -35%;
+    transform: translate(50%, -20%);
+    svg {
+      height: 500px;
+      width: 500px;
+    }
+  }
+  svg {
+    path {
+      fill: none;
+      stroke: var(--blue-six);
+      stroke-miterlimit: 10;
+      stroke-width: 12px;
+    }
+  }
+  .jlijThree {
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    transition: all 1s ease-in-out;
+    transform: translate(-200%, 100%);
+    svg {
+      height: 150px;
+      width: 150px;
+    }
+    path {
+      fill: none;
+      stroke: var(--blue-six);
+      stroke-miterlimit: 10;
+      stroke-width: 10px;
+    }
+  }
+}

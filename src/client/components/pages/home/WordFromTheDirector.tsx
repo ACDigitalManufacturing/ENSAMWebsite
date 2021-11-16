@@ -26,7 +26,7 @@ function WordFromTheDirector() {
             voir plus <span>{right}</span>
           </a>
 
-          <span className={styles.quoteIcon}>"</span>
+          <span className={styles.quoteIcon}>,,</span>
         </div>
       </div>
     </div>
