@@ -30,8 +30,7 @@ function Navbar(): JSX.Element {
           <a href="/">Accueil</a>
           <a href="/under-reconstruction">Formation</a>
           <a href="/under-reconstruction">Entreprise</a>
-          <a href="/under-reconstruction">Recherche et Innovation</a>
-          <a href="/under-reconstruction">Contact</a>
+          <a href="/under-reconstruction">Recherche</a>
         </ul>
       </div>
 
@@ -63,9 +62,9 @@ function Navbar(): JSX.Element {
               <div className={styles.column}>
                 <h2>FORMATION</h2>
                 <ul>
-                  <a href="/under-reconstruction">Cycle Préparatoire</a>
+                  <a href="/under-reconstruction">Années Préparatoire</a>
                   <a href="/under-reconstruction">Cycle d'Inginieur</a>
-                  <a href="/under-reconstruction">License d'Université</a>
+                  <a href="/under-reconstruction">Licence d'Université</a>
                   <a href="/under-reconstruction">Master d'Université</a>
                 </ul>
                 <h2>VIE DE L'ÉTUDIANT</h2>
@@ -77,7 +76,7 @@ function Navbar(): JSX.Element {
               </div>
 
               <div className={styles.column}>
-                <h2>RECHERCHE & INNOVATION</h2>
+                <h2>RECHERCHE</h2>
                 <ul>
                   <a href="/under-reconstruction">Équipes et Laboratoires</a>
                   <a href="/under-reconstruction">Formation Doctorale</a>
@@ -85,6 +84,10 @@ function Navbar(): JSX.Element {
                   <a href="/under-reconstruction">Incubateur</a>
                   <a href="/under-reconstruction">Manifestation Scientifique</a>
                   <a href="/under-reconstruction">Partenariats Scientifique</a>
+                </ul>
+                <h2>Histoire de la science</h2>
+                <ul>
+                  <a href="/under-reconstruction">Histoire de la science</a>
                 </ul>
               </div>
 

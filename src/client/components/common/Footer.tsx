@@ -48,7 +48,7 @@ function Footer(): JSX.Element {
         </div>
 
         <div className={styles.column}>
-          <h2>RECHERCHE & INNOVATION</h2>
+          <h2>RECHERCHE</h2>
           <ul>
             <a href="/under-reconstruction">Équipes et Laboratoires</a>
             <a href="/under-reconstruction">Formation Doctorale</a>
@@ -56,6 +56,10 @@ function Footer(): JSX.Element {
             <a href="/under-reconstruction">Incubateur</a>
             <a href="/under-reconstruction">Manifestation Scientifique</a>
             <a href="/under-reconstruction">Partenariats Scientifique</a>
+          </ul>
+          <h2>Histoire de la science</h2>
+          <ul>
+            <a href="/under-reconstruction">Histoire de la science</a>
           </ul>
         </div>
 

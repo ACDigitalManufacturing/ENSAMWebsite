@@ -31,6 +31,8 @@ function Hero() {
       <div className={styles.rightContainer}>
         <img src="/school/Restored_web_version.jpg" alt="" />
       </div>
+      {/* Scroll Down arrow */}
+      <div className={styles.scrollDown}></div>
     </section>
   );
 }
