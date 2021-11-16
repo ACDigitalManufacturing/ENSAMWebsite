@@ -32,7 +32,7 @@ function Footer(): JSX.Element {
         </div>
 
         <div className={styles.column}>
-          <h2>Formation</h2>
+          <h2>FORMATION</h2>
           <ul>
             <a href="/under-reconstruction">Cycle Préparatoire</a>
             <a href="/under-reconstruction">Cycle d'Inginieur</a>
