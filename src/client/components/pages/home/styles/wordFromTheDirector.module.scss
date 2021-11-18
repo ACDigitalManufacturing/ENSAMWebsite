@@ -17,7 +17,7 @@
     // height: 340px;
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 10px 40px 0 rgba(2, 79, 180, 0.2);
     background-color: var(--light);
 
     display: grid;
@@ -73,11 +73,11 @@
     .quoteIcon {
       // border: 2px solid red;
       position: absolute;
-      top: 0;
+      top: -80%;
 
       right: 30px;
       height: 100%;
-      transform: translateY(130px);
+      transform: translateY(130px) scaleY(-1);
 
       font-family: Oswald;
       font-size: 267px;
@@ -87,7 +87,7 @@
       line-height: 0.06;
       letter-spacing: normal;
       text-align: left;
-      color: #f2f2f2;
+      color: #e3edff;
     }
   }
 }
