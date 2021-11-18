@@ -1,0 +1,16 @@
+{
+  "name": "@ensamwebsite/common",
+  "version": "1.0.0",
+  "description": "common types for ensam casa website",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "www.ensam-casa.ma/webmasters",
+  "license": "ISC",
+  "dependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}
