@@ -1,0 +1,93 @@
+.loginFormWrapper {
+  width: 100%;
+  height: 100%;
+
+  header {
+    .logoWrapper {
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    h1 {
+      width: 100%;
+      margin-top: 7px;
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      color: var(--dark-one);
+    }
+  }
+
+  form {
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    .inputWrapper {
+      margin-bottom: 30px;
+
+      width: 100%;
+      label {
+        width: 121px;
+        height: 19px;
+        margin: 0 129px 8px 0;
+        font-family: Roboto;
+        font-size: 16px;
+        text-align: left;
+        color: var(--blue-three);
+        margin-bottom: 8px;
+        display: inline-block;
+      }
+      .inputContainer {
+        width: 100%;
+        position: relative;
+        input {
+          height: 40px;
+          width: 100%;
+          border: 1px solid var(--blue-three);
+          border-radius: 10px;
+          padding-inline: 2rem;
+        }
+        span {
+          $iconSize: 20px;
+          position: absolute;
+          top: 50%;
+          left: 10px;
+          transform: translate(0, -50%);
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          svg {
+            fill: var(--blue-three);
+            width: $iconSize;
+            height: $iconSize;
+          }
+          &.passwordInputEye {
+            left: calc(100% - #{$iconSize} - 10px);
+          }
+        }
+      }
+    }
+
+    button {
+      cursor: pointer;
+      width: 100%;
+      height: 40px;
+      border-radius: 10px;
+      background-color: var(--blue-three);
+      border: 0;
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      transition: all 300ms ease-in-out;
+      text-transform: capitalize;
+      &:hover {
+        background: var(--blue-eight);
+      }
+    }
+  }
+}
