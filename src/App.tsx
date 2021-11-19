@@ -1,7 +1,7 @@
-import styles from "styles/App.module.scss";
+import RootRoutes from "routes";
 
-function App() {
-  return <div className="App">app page</div>;
+function App(): JSX.Element {
+  return <RootRoutes />;
 }
 
 export default App;
