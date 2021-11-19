@@ -1,0 +1,10 @@
+.errorsWrapper {
+  width: 100%;
+
+  border: 1px solid var(--error);
+  border-radius: 5px;
+  padding: 10px 1rem;
+  font: 1rem Roboto;
+  color: var(--error);
+  margin-bottom: 30px;
+}

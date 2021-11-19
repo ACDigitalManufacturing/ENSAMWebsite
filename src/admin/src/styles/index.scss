@@ -1,13 +1,63 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+:root {
+  --tag-orange: #ff8b4e;
+  --tag-blue: #279bff;
+
+  --light: white;
+  --default-light: #fffefe;
+
+  --blue: #286fac;
+  --blue-one: #8ca1bc;
+  --blue-two: #d2eaff;
+  --blue-three: #286fac;
+  --blue-four: #c3ccd8;
+  --blue-five: #a2cceb;
+  --blue-six: #d5e7ff;
+  --blue-seven: #99beee;
+  --blue-eight: #1b4a74;
+
+  --dark: #11182e;
+  --dark-one: #707e8f;
+
+  --error: #f44336;
+  --success: #4caf50;
+  --warning: #ffc043;
+}
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  width: 100vw;
+  background-color: var(--default-light);
+  min-height: 100vh;
+  font-family: Oswald, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+  position: relative;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
 }
