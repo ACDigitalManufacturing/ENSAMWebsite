@@ -48,6 +48,7 @@
           border: 1px solid var(--blue-three);
           border-radius: 10px;
           padding-inline: 2rem;
+          outline: 0;
         }
         span {
           $iconSize: 20px;
@@ -67,6 +68,16 @@
           }
           &.passwordInputEye {
             left: calc(100% - #{$iconSize} - 10px);
+          }
+        }
+        &:focus-within {
+          input {
+            border-color: var(--dark);
+          }
+          span {
+            svg {
+              fill: var(--dark);
+            }
           }
         }
       }
