@@ -21,6 +21,6 @@ jobs:
 
       - name: Commit report
         run: |
-          git subtree push --force --prefix src/admin origin admin-dashboard
+          git push origin `git subtree split --prefix src/admin master`:admin-dashboard --force
 
 
