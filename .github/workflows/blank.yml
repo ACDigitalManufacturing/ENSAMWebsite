@@ -21,9 +21,6 @@ jobs:
 
       - name: Commit report
         run: |
-          git config --global user.name 'karim gehad'
-          git config --global user.email 'karimGeh@users.noreply.github.com'
-          git commit -am "automated admin CI/CD"
           git subtree push --prefix src/admin origin admin-dashboard
 
 
