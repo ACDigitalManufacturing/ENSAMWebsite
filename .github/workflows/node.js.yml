@@ -30,7 +30,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: src/apps/refacture/refacture_client/package-lock.json
+        cache-dependency-path: src/admin/package-lock.json
     - run: npm install
     - run: npm run build
     - run: npm run lint-check --if-present
