@@ -21,6 +21,6 @@ jobs:
 
       - name: Commit report
         run: |
-          git subtree push --prefix src/admin origin admin-dashboard
+          git subtree push --force --prefix src/admin origin admin-dashboard
 
 
