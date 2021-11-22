@@ -1,3 +1,3 @@
-export function getHost() {
-  return "";
+export function getHost(): string {
+  return ""
 }

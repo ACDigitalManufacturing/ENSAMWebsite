@@ -1,17 +1,17 @@
-import { CustomError } from "types/api";
-import styles from "./styles/showErrors.module.scss";
+import { CustomError } from "types/api"
+import styles from "./styles/showErrors.module.scss"
 
 interface Props {
-  errors: CustomError[];
+  errors: CustomError[]
 }
-function ShowErrors({ errors }: Props): JSX.Element | null {
+const ShowErrors = function ({ errors }: Props): JSX.Element | null {
   return errors.length ? (
     <ul className={styles.errorsWrapper}>
       {errors.map((error, idx) => (
         <li key={idx}>{error.message}</li>
       ))}
     </ul>
-  ) : null;
+  ) : null
 }
 
-export default ShowErrors;
+export default ShowErrors

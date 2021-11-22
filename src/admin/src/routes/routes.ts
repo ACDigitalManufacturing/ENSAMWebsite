@@ -1,6 +1,8 @@
-enum localRoutes {
+export enum localRoutes {
   loginPage = "/auth/login",
   dashboard = "/",
+  officialReleases = "/official-releases",
+  noticeToStudents = "/notice-to-students",
 }
 
 export enum authenticationRoutes {
@@ -12,4 +14,4 @@ export enum layoutRoutes {
   authentication = "/auth/*",
 }
 
-export default localRoutes;
+export default localRoutes

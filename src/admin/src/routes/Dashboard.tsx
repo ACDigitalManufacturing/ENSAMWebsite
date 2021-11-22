@@ -1,13 +1,13 @@
-import { Route, Navigate, Routes } from "react-router-dom";
+import { Route, Navigate, Routes } from "react-router-dom"
 
-//!!
-//!! pages - start
-import Index from "pages/Index";
-import localRoutes from "./routes";
-//!! pages - end
-//!!
+//! !
+//! ! pages - start
+import Index from "pages/Index"
+import localRoutes from "./routes"
+//! ! pages - end
+//! !
 
-function Dashboard(): JSX.Element {
+const Dashboard = function (): JSX.Element {
   return (
     <Routes>
       {/* Routes */}
@@ -16,7 +16,7 @@ function Dashboard(): JSX.Element {
       {/* Redirection */}
       <Route path="*" element={<Navigate to={localRoutes.dashboard} />} />
     </Routes>
-  );
+  )
 }
 
-export default Dashboard;
+export default Dashboard

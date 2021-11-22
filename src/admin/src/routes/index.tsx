@@ -1,15 +1,15 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom"
 
-import NotAuth from "services/NotAuth";
-import RequireAuth from "services/RequireAuth";
+import NotAuth from "services/NotAuth"
+import RequireAuth from "services/RequireAuth"
 
 // Routes - start
-import Authentication from "./Authentication";
-import Dashboard from "./Dashboard";
-import { layoutRoutes } from "./routes";
+import Authentication from "./Authentication"
+import Dashboard from "./Dashboard"
+import { layoutRoutes } from "./routes"
 // Routes - end
 
-function RootRoutes(): JSX.Element {
+const RootRoutes = function (): JSX.Element {
   return (
     <Routes>
       {/* Routes */}
@@ -23,7 +23,7 @@ function RootRoutes(): JSX.Element {
         element={<RequireAuth component={Dashboard} />}
       />
     </Routes>
-  );
+  )
 }
 
-export default RootRoutes;
+export default RootRoutes

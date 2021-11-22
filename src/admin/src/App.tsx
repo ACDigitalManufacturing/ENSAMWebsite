@@ -1,7 +1,7 @@
-import RootRoutes from "routes";
+import RootRoutes from "routes"
 
-function App(): JSX.Element {
-  return <RootRoutes />;
+const App = function (): JSX.Element {
+  return <RootRoutes />
 }
 
-export default App;
+export default App

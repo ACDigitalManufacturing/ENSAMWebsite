@@ -4,23 +4,23 @@ import {
   createStore,
   EmptyObject,
   Store,
-} from "redux";
-import { persistStore } from "redux-persist";
-import { PersistPartial } from "redux-persist/lib/persistReducer";
+} from "redux"
+import { persistStore, persistReducer } from "redux-persist"
+import storage from "redux-persist/lib/storage"
+
+import reducer, { rootStateType } from "./reducers"
 
 // middlewares
-import logger from "redux-logger";
-
-import reducer, { rootStateType } from "./reducers";
+import logger from "redux-logger"
 
 declare global {
   interface Window {
     // eslint-disable-next-line
-    __REDUX_DEVTOOLS_EXTENSION__: (...a: any) => any | undefined;
+    __REDUX_DEVTOOLS_EXTENSION__: (...a: any) => any | undefined
   }
 }
 
-const middlewares = [logger];
+const middlewares = [logger]
 
 const enhancer = window.__REDUX_DEVTOOLS_EXTENSION__
   ? compose(
@@ -28,14 +28,23 @@ const enhancer = window.__REDUX_DEVTOOLS_EXTENSION__
       window.__REDUX_DEVTOOLS_EXTENSION__ &&
         window.__REDUX_DEVTOOLS_EXTENSION__()
     )
-  : applyMiddleware(...middlewares);
+  : applyMiddleware(...middlewares)
 
-// eslint-disable-next-line
-export const store: Store<EmptyObject & rootStateType & PersistPartial, any> =
-  createStore(reducer, enhancer);
+const persistConfig = {
+  key: "root",
+  storage,
+}
 
-export const persistor = persistStore(store);
+const persistedReducer = persistReducer(persistConfig, reducer)
 
-const ReduxStore = { store, persistor };
+export const store: Store<
+  EmptyObject & rootStateType,
+  // eslint-disable-next-line
+  any
+> = createStore(persistedReducer, enhancer)
 
-export default ReduxStore;
+export const persistor = persistStore(store)
+
+const ReduxStore = { store, persistor }
+
+export default ReduxStore

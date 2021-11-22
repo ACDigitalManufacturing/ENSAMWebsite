@@ -1,5 +1,1 @@
-export const placeholder = "placeholder";
-
-export const mybeautifulfn = () => {
-  return "hamid";
-};
+export const placeholder = "placeholder"
