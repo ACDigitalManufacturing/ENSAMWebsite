@@ -1,13 +1,13 @@
-import { Route, Navigate, Routes } from "react-router-dom";
+import { Route, Navigate, Routes } from "react-router-dom"
 
-//!!
-//!! pages - start
-import Login from "pages/auth/Login";
-import localRoutes, { authenticationRoutes } from "./routes";
-//!! pages - end
-//!!
+//! !
+//! ! pages - start
+import Login from "pages/auth/Login"
+import localRoutes, { authenticationRoutes } from "./routes"
+//! ! pages - end
+//! !
 
-function Authentication(): JSX.Element {
+const Authentication = function (): JSX.Element {
   return (
     <Routes>
       {/* Routes */}
@@ -16,7 +16,7 @@ function Authentication(): JSX.Element {
       {/* Redirection */}
       <Route path="*" element={<Navigate to={localRoutes.loginPage} />} />
     </Routes>
-  );
+  )
 }
 
-export default Authentication;
+export default Authentication

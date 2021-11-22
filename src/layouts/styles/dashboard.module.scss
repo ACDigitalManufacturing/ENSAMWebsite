@@ -1,0 +1,10 @@
+.dashboardLayoutWrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  .mainSection {
+    border: 2px solid red;
+  }
+}

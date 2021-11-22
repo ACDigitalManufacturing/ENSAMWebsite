@@ -15,6 +15,7 @@
     "@types/redux-logger": "^3.0.9",
     "axios": "^0.24.0",
     "node-sass": "^6.0.1",
+    "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
@@ -30,7 +31,11 @@
     "start": "set PORT=80 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "cd ./node_modules/.bin | eslint . --fix --ignore-path .eslintignore",
+    "format": "prettier --write src/**/*.{ts,tsx}",
+    "lint-check": "node ./node_modules/.bin/eslint . --ignore-path .eslintignore",
+    "format-check": "node ./node_modules/prettier/bin-prettier.js -c src/**/*.{ts,tsx}"
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +49,15 @@
     "not ie <= 11",
     "not op_mini all",
     "ie 10"
-  ]
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0"
+  }
 }
