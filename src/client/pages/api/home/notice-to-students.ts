@@ -72,7 +72,7 @@ const dummyData: CustomCardOneType[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.",
     date: 1631110890578,
-    coverUrl: "/school/schoolThree.png",
+    coverUrl: "/school/schoolOne.jpg",
     link: "/under-reconstruction",
   },
 ];

@@ -4,14 +4,32 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--default-light);
+  // background-color: var(--default-light);
+  // background-color: var(--default-light-transparent);
+
   z-index: 1000;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 100px;
-  box-shadow: 0 10px 40px 0 rgba(0, 137, 250, 0.103);
 
+  padding: 0 100px;
+
+  &:not(.showProperly) {
+    color: var(--default-light) !important;
+    .leftContainer {
+      .hamburger {
+        span {
+          background-color: var(--default-light);
+        }
+      }
+    }
+  }
+
+  &.showProperly {
+    background-color: var(--default-light);
+    box-shadow: 0 10px 40px 0 rgba(0, 137, 250, 0.103);
+  }
   .leftContainer {
     width: 250px;
     display: flex;

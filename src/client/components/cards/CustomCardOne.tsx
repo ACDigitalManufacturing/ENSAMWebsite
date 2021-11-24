@@ -13,23 +13,23 @@ export interface CustomCardOneType {
 
 interface Props {
   card: CustomCardOneType;
-  row?: number;
-  column?: number;
+  // row?: number;
+  // column?: number;
   customClass?: string;
 }
 
-function CustomCardOne({ card, row, column, customClass }: Props): JSX.Element {
+function CustomCardOne({ card, customClass }: Props): JSX.Element {
   return (
     <div
       className={styles.customCardOneWrapper + " " + customClass}
-      style={
-        column !== undefined
-          ? {
-              gridRow: row,
-              gridColumn: column,
-            }
-          : {}
-      }
+      // style={
+      //   column !== undefined
+      //     ? {
+      //         gridRow: row,
+      //         gridColumn: column,
+      //       }
+      //     : {}
+      // }
     >
       {/* Card Cover - START */}
       <div className={styles.coverWrapper}>

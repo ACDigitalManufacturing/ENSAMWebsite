@@ -1,9 +1,10 @@
 import styles from "./styles/navbar.module.scss";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Navbar(): JSX.Element {
   const [isOpened, setOpened] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const openMenu = () => {
     setOpened(true);
@@ -13,8 +14,25 @@ function Navbar(): JSX.Element {
     setOpened(false);
   };
 
+  const handleScroll = () => {
+    if (!ref) return;
+    if (window.innerHeight < window.scrollY) {
+      console.log("test");
+
+      ref.current?.classList.add(styles.showProperly);
+    } else {
+      ref.current?.classList.remove(styles.showProperly);
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className={styles.navbarWrapper}>
+    <div className={styles.navbarWrapper} ref={ref}>
       <div className={styles.leftContainer}>
         <div className={styles.hamburger} onClick={() => openMenu()}>
           <span></span>

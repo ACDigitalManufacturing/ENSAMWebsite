@@ -5,6 +5,7 @@
 
   --light: white;
   --default-light: #fffefe;
+  --default-light-transparent: #{rgba($color: #fffefe, $alpha: 0.2)};
 
   --blue: #286fac;
   --blue-one: #8ca1bc;

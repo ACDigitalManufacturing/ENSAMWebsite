@@ -19,19 +19,31 @@
 
     padding-inline: 1rem;
     padding-block: 35px 50px;
-    overflow: hidden;
     background-color: var(--default-light);
 
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(1, 1fr);
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    width: 100%;
 
-    .left {
-      transform: translateX(-100vw);
+    .customCardPlaceholder {
+      opacity: 0;
+      pointer-events: none;
     }
-    .right {
-      transform: translateX(100vw);
+
+    .customCardWrapper {
+      transition: all 300ms ease-in-out, opacity 100ms ease;
+      position: absolute;
+      opacity: 1;
+      &.left {
+        left: -33%;
+        opacity: 0;
+      }
+      &.right {
+        position: absolute;
+        left: 101%;
+        opacity: 0;
+      }
     }
   }
 
