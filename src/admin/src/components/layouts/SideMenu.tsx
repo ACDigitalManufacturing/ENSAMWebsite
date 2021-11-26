@@ -1,12 +1,19 @@
 import home from "assets/icons/home"
 import leave from "assets/icons/leave"
+import { useDispatch } from "react-redux"
 import { Link, useLocation } from "react-router-dom"
 import localRoutes from "routes/routes"
+import { admin_logged_out } from "store/actions"
 import styles from "./styles/sideMenu.module.scss"
 
 function SideMenu(): JSX.Element {
+  const dispatch = useDispatch()
   // this location is for selecting the active link
   const location = useLocation()
+
+  const handleDeconect = () => {
+    dispatch(admin_logged_out())
+  }
 
   return (
     <div className={styles.sideMenuWrapper}>
@@ -32,7 +39,7 @@ function SideMenu(): JSX.Element {
         ))}
       </ul>
 
-      <button className={styles.decoButton}>
+      <button className={styles.decoButton} onClick={handleDeconect}>
         <span>{leave}</span>
         Se Déconnecter
       </button>
@@ -59,3 +66,6 @@ const MenuLinks = [
 ]
 
 export default SideMenu
+
+// git config --global user.email "you@example.com"
+//   git config --global user.name "Your Name"
