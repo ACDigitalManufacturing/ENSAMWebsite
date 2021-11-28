@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { FlattenMaps, LeanDocument } from "mongoose";
-import { BadRequestError } from "../../errors/bad-request-error";
 
 import {
   PostDoc,
@@ -10,11 +9,11 @@ import {
   PostCategories,
 } from "../../models";
 
-export interface ReadAllPostResponse {
+export interface ReadAllPostsResponse {
   posts: FlattenMaps<LeanDocument<PostDoc<coverType, documentsType>>>[];
 }
 
-export const ReadAllPost = async (req: Request, res: Response) => {
+export const ReadAllPosts = async (req: Request, res: Response) => {
   const { skip, category } = req.query;
   const limit = 9;
 
@@ -42,7 +41,7 @@ export const ReadAllPost = async (req: Request, res: Response) => {
     .exec();
 
   // response
-  const response: ReadAllPostResponse = {
+  const response: ReadAllPostsResponse = {
     posts,
   };
   res.send(response);
