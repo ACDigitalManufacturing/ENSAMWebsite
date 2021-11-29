@@ -1,11 +1,13 @@
 import mongoose from "mongoose";
 
 export interface DocumentAttrs {
+  filename: string;
   data: Buffer;
   contentType: string;
 }
 
 export interface DocumentDoc extends mongoose.Document {
+  filename: string;
   data: Buffer;
   contentType: string;
 }
@@ -16,12 +18,16 @@ export interface DocumentModel extends mongoose.Model<DocumentDoc> {
 
 export const documentSchema = new mongoose.Schema(
   {
+    filename: {
+      type: String,
+      required: true,
+    },
     data: {
       type: Buffer,
       required: true,
     },
     contentType: {
-      type: Buffer,
+      type: String,
       required: true,
     },
   },
@@ -30,6 +36,7 @@ export const documentSchema = new mongoose.Schema(
     toJSON: {
       transform(_, ret) {
         ret.id = ret._id;
+        delete ret.data;
         delete ret._id;
         delete ret.__v;
       },

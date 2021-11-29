@@ -5,6 +5,7 @@ import cors from "cors";
 import path from "path";
 
 //? models
+import { DocumentDoc, PostDoc } from "./models";
 
 //? errors
 import { NotFoundError } from "./errors/not-found-error";
@@ -14,7 +15,7 @@ import { errorHandler } from "./middlewares/error-handler";
 
 //? Routes
 import { postsRouter } from "./routes/Posts";
-import { PostDoc } from "./models";
+import { documentsRouter } from "./routes/Documents";
 
 //? global declaration
 declare global {
@@ -23,6 +24,7 @@ declare global {
       //! Client
       //! Admin
       post: PostDoc;
+      document: DocumentDoc;
     }
   }
 }
@@ -44,6 +46,7 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 //!
 //! routes - start
 app.use("/posts", postsRouter);
+app.use("/documents", documentsRouter);
 //! routes - end
 //!
 

@@ -34,7 +34,7 @@ export const UpdatePost = async (req: Request, res: Response) => {
     success: true,
     post: post.toJSON(),
   };
-  res.send(response);
+  return res.send(response);
 };
 
 export const UpdatePostValidator = [

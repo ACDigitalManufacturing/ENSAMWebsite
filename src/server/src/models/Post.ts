@@ -1,21 +1,19 @@
 import { Types, Document, Model, Schema, model } from "mongoose";
 import { DocumentDoc } from "./Document";
-import { ImageDoc } from "./Image";
 
-export type documentsType = Types.ObjectId[] | DocumentDoc[];
-export type coverType = Types.ObjectId | ImageDoc;
+export type documentType = Types.ObjectId | DocumentDoc;
 
 export interface PostAttrs {
   category: PostCategories;
   status: PostStatuses;
 }
 
-export interface PostDoc<C = coverType, D = documentsType> extends Document {
+export interface PostDoc<T = documentType> extends Document {
   title: string;
   content: string;
 
-  cover: C;
-  documents: D;
+  cover: T | null;
+  documents: T[];
 
   category: PostCategories;
   status: PostStatuses;
@@ -48,7 +46,7 @@ export const postSchema = new Schema(
 
     cover: {
       type: Types.ObjectId,
-      ref: "Image",
+      ref: "Document",
       default: null,
     },
     documents: {
@@ -74,7 +72,8 @@ export const postSchema = new Schema(
       transform(_, ret) {
         ret.id = ret._id;
         delete ret._id;
-        delete ret.status;
+        //TODO: uncomment in production
+        // delete ret.status;
         delete ret.__v;
       },
     },

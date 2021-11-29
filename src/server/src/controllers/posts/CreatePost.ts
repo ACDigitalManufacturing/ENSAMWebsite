@@ -3,15 +3,14 @@ import { body } from "express-validator";
 
 import { BadRequestError } from "../../errors/bad-request-error";
 
-import { PostCategories, PostStatuses } from "../../models";
-import Post from "../../models/Post";
+import { Post, PostCategories, PostStatuses } from "../../models";
 
 export interface CreatePostResponse {
   success: boolean;
   postId: string;
 }
 
-const CreatePost = async (req: Request, res: Response) => {
+export const CreatePost = async (req: Request, res: Response) => {
   const { category } = req.body;
 
   // validation of category
@@ -38,8 +37,6 @@ const CreatePost = async (req: Request, res: Response) => {
   res.send(response);
 };
 
-const CreatePostValidator = [
+export const CreatePostValidator = [
   body("category").isNumeric().withMessage("A valid category is required"),
 ];
-
-export { CreatePost, CreatePostValidator };
