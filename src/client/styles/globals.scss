@@ -43,25 +43,7 @@ body {
     sans-serif;
 
   position: relative;
-
-  &::after,
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 100vh;
-    bottom: 0;
-    background-image: url("/jlija.png");
-    background-size: contain;
-  }
-  &::before {
-    left: -140px;
-    width: 200px;
-  }
-  &::after {
-    right: -120px;
-    width: 200px;
-  }
+  z-index: 1;
 }
 
 a {

@@ -16,6 +16,9 @@ function Footer(): JSX.Element {
             <span>Tel: +212 52 25 64 222</span>
             <span>Email: contact@ensam-casa.ma</span>
           </div>
+          {/* Mini map */}
+          Link :
+          {/* https://www.google.com/maps/place/ENSAM+CASABLANCA/@33.5594072,-7.5683356,17z/data=!3m1!4b1!4m5!3m4!1s0xda6332908d1d61b:0x569d5bec37f7f81a!8m2!3d33.5594111!4d-7.5662305 */}
         </div>
         <div className={styles.column}>
           <h2>L'ÉCOLE</h2>

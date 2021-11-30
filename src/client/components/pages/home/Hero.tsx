@@ -1,16 +1,17 @@
 import styles from "./styles/hero.module.scss";
 import right from "assets/icons/right";
+import down from "assets/icons/down";
 
-import jlij from "assets/icons/jlij";
+// import jlij from "assets/icons/jlij";
 
 function Hero() {
   return (
     <section className={styles.heroWrapper}>
-      <div className={styles.backgroundJlij}>
+      {/* <div className={styles.backgroundJlij}>
         <div className={styles.jlijOne}>{jlij}</div>
         <div className={styles.jlijTwo}>{jlij}</div>
         <div className={styles.jlijThree}>{jlij}</div>
-      </div>
+      </div> */}
 
       <div className={styles.heroContent}>
         <div className={styles.rightContainer}>
@@ -23,9 +24,7 @@ function Hero() {
           ></video>
         </div>
         <div className={styles.leftContainer}>
-          <h1>
-            Ensam <br /> Casablanca
-          </h1>
+          <h1>Ensam Casablanca</h1>
           <p>
             L’École nationale Supérieure des arts et métiers de Casablanca,
             affiliée à l'Université Hassan II de Casablanca.
@@ -43,7 +42,7 @@ function Hero() {
         </div>
 
         {/* Scroll Down arrow */}
-        <div className={styles.scrollDown}></div>
+        <div className={styles.scrollDown}>{down}</div>
       </div>
     </section>
   );

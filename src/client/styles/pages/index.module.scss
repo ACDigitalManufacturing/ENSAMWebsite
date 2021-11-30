@@ -9,4 +9,25 @@
     width: 100%;
     max-width: 1080px;
   }
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100vh;
+    bottom: 0;
+    background-repeat: repeat;
+    background-position: initial;
+    background-size: contain;
+  }
+  &::before {
+    background-image: url("/jlija1.png");
+    left: 0;
+    width: 60px;
+  }
+  &::after {
+    background-image: url("/jlija2.png");
+    right: 0;
+    width: 60px;
+  }
 }

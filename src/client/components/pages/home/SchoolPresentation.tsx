@@ -21,7 +21,7 @@ function SchoolPresentation() {
         </a>
       </div>
       <div className={styles.schoolImageWrapper}>
-        <img src="/school/schoolThree.png" alt="" />
+        <img src="/school/Restored_web_version.jpg" alt="" />
       </div>
     </section>
   );

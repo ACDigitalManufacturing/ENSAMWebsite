@@ -4,6 +4,20 @@
   width: 100%;
 
   position: relative;
+  &::after {
+    content: "";
+    width: 2px;
+    height: 100px;
+    background-image: linear-gradient(white 33%, rgba(255, 255, 255, 0) 0%);
+    background-position: right;
+    background-size: 10px 15px;
+    background-repeat: repeat-y;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+  }
 
   .heroContent {
     display: flex;
@@ -11,9 +25,14 @@
     justify-content: center;
 
     height: 100vh;
+    text-align: center;
   }
   .leftContainer {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     // max-width: 1200px;
     padding-inline: 10vw;
     z-index: 12;
@@ -27,15 +46,28 @@
       flex-direction: column;
       text-transform: uppercase;
       font-family: Oswald;
-      font-size: max(5vw, 1rem);
+      font-size: max(6vw, 1rem);
       font-weight: bold;
       line-height: 1.12;
       color: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      div {
+        margin-top: 10px;
+        // padding: 10px 20px;
+        font-size: max(4vw, 1rem);
+        // background-color: var(--light);
+        // color: var(--dark);
+        // width: fit-content;
+      }
     }
     p {
       max-width: 600px;
-      margin-block: 20px 50px;
+      margin-block: 20px 30px;
       font-family: Roboto;
+      font-weight: 300;
       font-size: 20px;
       color: var(--light);
     }
@@ -55,6 +87,13 @@
         background-color: var(--blue-three);
         border: none;
         cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background: var((--default-light));
+          color: var(--dark);
+          transition: 0.3s;
+        }
       }
 
       .secondary {
@@ -64,19 +103,32 @@
         font-family: Roboto;
         font-size: 21px;
         padding: 10px 2rem;
-        background: none;
         border-radius: 10px;
+        background: none;
         // color: var(--blue-three);
         // border: solid 2px var(--blue-three);
         color: var(--default-light);
         border: solid 2px var(--default-light);
         cursor: pointer;
+        transition: 0.3s;
 
         svg {
           margin: 3px 0 0 7px;
           fill: var(--default-light);
           border: solid 2px var(--default-light);
           border-radius: 5px;
+          transition: 0.2s;
+        }
+
+        &:hover {
+          transition: 0.3s;
+          background-color: var(--default-light);
+          color: var(--default-dark);
+          svg {
+            fill: var(--default-dark);
+            border-color: var(--default-dark);
+            transition: 0.2s;
+          }
         }
       }
     }
@@ -96,14 +148,15 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to right,
-        rgba($color: $dark, $alpha: 1) 0%,
-        rgba($color: $dark, $alpha: 0.95) 10%,
-        rgba($color: $dark, $alpha: 0.8) 50%,
-        rgba($color: $dark, $alpha: 0.7) 80%,
-        rgba($color: $dark, $alpha: 0.5) 100%
-      );
+      // background: linear-gradient(
+      //   to right,
+      //   rgba($color: $dark, $alpha: 1) 0%,
+      //   rgba($color: $dark, $alpha: 0.95) 10%,
+      //   rgba($color: $dark, $alpha: 0.8) 50%,
+      //   rgba($color: $dark, $alpha: 0.7) 80%,
+      //   rgba($color: $dark, $alpha: 0.5) 100%
+      // );
+      background: rgba(0, 27, 66, 0.651);
       z-index: 10;
     }
     video {
@@ -111,6 +164,19 @@
       height: 100%;
       object-fit: cover;
       object-position: center bottom;
+    }
+  }
+
+  .scrollDown {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: #fffefe;
     }
   }
 }

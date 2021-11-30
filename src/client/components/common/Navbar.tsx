@@ -1,9 +1,12 @@
 import styles from "./styles/navbar.module.scss";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
 
 function Navbar(): JSX.Element {
   const [isOpened, setOpened] = useState(false);
+  const [logo, setLogo] = useState("/ensam2.png");
+  const router = useRouter();
   const ref = useRef<HTMLDivElement | null>(null);
 
   const openMenu = () => {
@@ -16,19 +19,29 @@ function Navbar(): JSX.Element {
 
   const handleScroll = () => {
     if (!ref) return;
-    if (window.innerHeight < window.scrollY) {
-      console.log("test");
+    //! Replacing window.innerHeight with 200 to avoid the overlap with the hero text
+    //! handle the route changing
+    if (200 < window.scrollY) {
+      console.log(window.location.pathname);
 
       ref.current?.classList.add(styles.showProperly);
+      setLogo("/ensam-logo.png");
     } else {
       ref.current?.classList.remove(styles.showProperly);
+      //! Changing the logo color for better contrast
+      setLogo("/ensam2.png");
     }
   };
   useEffect(() => {
-    document.addEventListener("scroll", handleScroll);
-    return () => {
-      document.removeEventListener("scroll", handleScroll);
-    };
+    if (window.location.pathname !== "/") {
+      ref.current?.classList.add(styles.showProperly);
+      setLogo("/ensam-logo.png");
+    } else {
+      document.addEventListener("scroll", handleScroll);
+      return () => {
+        document.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, []);
 
   return (
@@ -40,7 +53,7 @@ function Navbar(): JSX.Element {
           <span></span>
         </div>
         <a className={styles.logo} href="/">
-          <img src="/ensam-logo.png" alt="Ensam" />
+          <img src={logo} alt="Ensam" />
         </a>
       </div>
       <div className={styles.navLinks}>

@@ -14,11 +14,9 @@ function UnderReconstruction() {
             <div className={styles.jlijThree}>{jlij}</div>
           </div>
           <div className={styles.content}>
-            <h1>
-              page en <br /> reconstruction
-            </h1>
+            <h1>page en reconstruction</h1>
             <p>
-              cette page est actuellement en cours de reconstruction. <br />
+              Cette page est actuellement en cours de reconstruction. <br />
               Merci pour votre comprehension.
             </p>
             <a href="/">Accueil</a>

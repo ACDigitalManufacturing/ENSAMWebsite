@@ -9,7 +9,7 @@ import msei from "assets/icons/courses/msei";
 //! courses icon - end
 //!
 
-import right from "assets/icons/right";
+// import right from "assets/icons/right";
 
 import styles from "./styles/ourCourses.module.scss";
 
@@ -27,9 +27,9 @@ function OurCourses() {
             </div>
             <div className={styles.info}>
               <p className={styles.courseDescription}>{description}</p>
-              <a href={link} className="customSeeMore">
+              {/* <a href={link} className="customSeeMore">
                 voir plus <span>{right}</span>
-              </a>
+              </a> */}
             </div>
           </li>
         ))}
@@ -46,42 +46,42 @@ const CoursesList = [
     icon: api,
     title: "Années Préparatoires Intégrées",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.Suspendisse potenti. ",
+      "L’objectif principal est de préparer en deux ans les étudiants aux études des filières du cycle ingénieur. Ainsi, cette formation va permettre aux étudiants d’acquérir de bonnes compétences en Mathématiques, Physique, Chimie, Technologie, Informatique, et Techniques d’Expression et de Communication. Sa structure est telle qu’elle leur apporte de solides bases scientifiques, techniques et méthodologiques.",
     link: "#",
   },
   {
     icon: gem,
     title: "Génie Electromécanique",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.Suspendisse potenti. ",
+      "Le Génie Industriel est la formation qui s’intéresse aux systèmes de production, d’approvisionnement et/ou de distribution de biens ou de services, à leur conception, leur mise en œuvre, leur gestion et à leur amélioration avec une vision systémique.",
     link: "#",
   },
   {
     icon: msei,
     title: "Management des Systèmes Electriques Intelligents",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.Suspendisse potenti. ",
+      "La formation d’Ingénieur en Management des Systèmes Electriques Intelligents à l’ENSAM-Casablanca s’inscrit dans le cadre d’une nouvelle vision stratégique de l’ingénierie, ses principales motivations sont la formation d’une génération d’ingénieurs en parfait accord avec les mutations technologiques dans le domaine de la commande industrielle et le contrôle digital d’une part, et la capitalisation d’un ensemble de compétences dans le domaine de l’efficacité énergétique et des systèmes de management de l’énergie. ",
     link: "#",
   },
   {
     icon: gm,
     title: "Génie Mécanique",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.Suspendisse potenti. ",
+      "L'objectif principal de la filière Génie Mécanique est de former des ingénieurs capables d'aborder tous les problèmes techniques et scientifiques liés à l'étude, au développement, au dimensionnement, à la conception, à la fabrication et à l'industrialisation d’un système mécanique. En plus de ces compétences techniques, l’ingénieur doit être un bon communicant et un bon manager afin de coordonner et de gérer des équipes.",
     link: "#",
   },
   {
     icon: gi,
     title: "Génie Industriel",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.Suspendisse potenti. ",
+      "Le Génie Industriel est la formation qui s’intéresse aux systèmes de production, d’approvisionnement et/ou de distribution de biens ou de services, à leur conception, leur mise en œuvre, leur gestion et à leur amélioration avec une vision systémique.",
     link: "#",
   },
   {
     icon: iagi,
     title: "Intelligence Artificielle et Génie Informatique",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor velit et erat viverra gravida. Proin pharetra ornare risus, ut venenatis leo ornare lobortis.Suspendisse potenti. ",
+      "La filière « Intelligence Artificielle et Génie Informatique(IAGI)» forme les développeurs spécialisés et les futurs responsables en intelligence artificielle de l’industrie et en génie Informatique. Elle atteste d’une expertise élevée en informatique et l’IA. Elle garantit une compréhension fine des défis et enjeux de l’IA. Elle offre des spécialisations, grâce aux cours avancés, dans des domaines spécifiques comme la machine learning, deep learning, cobotique, Internet des objets (IoT) ou la Réalité augmentée. Notamment, le volet pratique de la formation prouve que l’élève ingénieur possède une expérience professionnelle, et est capable de développer un projet d’entreprise en intelligence artificielle et l’Ingénierie Informatique.",
     link: "#",
   },
 ];

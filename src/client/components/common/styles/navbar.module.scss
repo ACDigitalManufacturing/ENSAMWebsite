@@ -24,6 +24,15 @@
         }
       }
     }
+
+    .navLinks {
+      a {
+        &:hover {
+          color: var(--blue-five);
+          transition: 0.2s;
+        }
+      }
+    }
   }
 
   &.showProperly {
@@ -111,7 +120,7 @@
       span {
         position: absolute;
         display: block;
-        top: 50%;
+        top: 100%;
         left: 0;
         width: 30px;
         height: 5px;
