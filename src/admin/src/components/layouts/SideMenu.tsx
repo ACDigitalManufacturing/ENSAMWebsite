@@ -18,7 +18,7 @@ function SideMenu(): JSX.Element {
   return (
     <div className={styles.sideMenuWrapper}>
       <section className={styles.logoWrapper}>
-        <img src="/images/ensam-logo.png" alt="ensam casa" />
+        <img src="/images/ensam2.png" alt="ensam casa" />
       </section>
 
       {/* <section className={styles.searchWrapper}>
@@ -62,6 +62,11 @@ const MenuLinks = [
     icon: home,
     link: localRoutes.noticeToStudents,
     text: "Avis Aux Etudiants",
+  },
+  {
+    icon: home,
+    link: localRoutes.agenda,
+    text: "Agenda",
   },
 ]
 
