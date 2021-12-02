@@ -16,8 +16,14 @@ const Dashboard = function (): JSX.Element {
     <Routes>
       {/* Routes */}
       <Route path={localRoutes.dashboard} element={<Index />} />
-      <Route path={localRoutes.officialReleases} element={<OfficialRealeses />} />
-      <Route path={localRoutes.noticeToStudents} element={<NoticeToStudents />} />
+      <Route
+        path={localRoutes.officialReleases}
+        element={<OfficialRealeses />}
+      />
+      <Route
+        path={localRoutes.noticeToStudents}
+        element={<NoticeToStudents />}
+      />
       <Route path={localRoutes.agenda} element={<Agenda />} />
 
       {/* Redirection */}
