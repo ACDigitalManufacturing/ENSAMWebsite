@@ -1,19 +1,19 @@
-import home from "assets/icons/home"
-import leave from "assets/icons/leave"
-import { useDispatch } from "react-redux"
-import { Link, useLocation } from "react-router-dom"
-import localRoutes from "routes/routes"
-import { admin_logged_out } from "store/actions"
-import styles from "./styles/sideMenu.module.scss"
+import home from "assets/icons/home";
+import leave from "assets/icons/leave";
+import { useDispatch } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
+import localRoutes from "routes/routes";
+import { admin_logged_out } from "store/actions";
+import styles from "./styles/sideMenu.module.scss";
 
 function SideMenu(): JSX.Element {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   // this location is for selecting the active link
-  const location = useLocation()
+  const location = useLocation();
 
   const handleDeconect = () => {
-    dispatch(admin_logged_out())
-  }
+    dispatch(admin_logged_out());
+  };
 
   return (
     <div className={styles.sideMenuWrapper}>
@@ -44,7 +44,7 @@ function SideMenu(): JSX.Element {
         Se Déconnecter
       </button>
     </div>
-  )
+  );
 }
 
 const MenuLinks = [
@@ -68,9 +68,9 @@ const MenuLinks = [
     link: localRoutes.agenda,
     text: "Agenda",
   },
-]
+];
 
-export default SideMenu
+export default SideMenu;
 
 // Git tutorial xD
 // git config --global user.email "you@example.com"

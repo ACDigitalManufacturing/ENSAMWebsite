@@ -1,8 +1,8 @@
-import { CustomError } from "types/api"
-import styles from "./styles/showErrors.module.scss"
+import { CustomError } from "types/api";
+import styles from "./styles/showErrors.module.scss";
 
 interface Props {
-  errors: CustomError[]
+  errors: CustomError[];
 }
 const ShowErrors = function ({ errors }: Props): JSX.Element | null {
   return errors.length ? (
@@ -11,7 +11,7 @@ const ShowErrors = function ({ errors }: Props): JSX.Element | null {
         <li key={idx}>{error.message}</li>
       ))}
     </ul>
-  ) : null
-}
+  ) : null;
+};
 
-export default ShowErrors
+export default ShowErrors;

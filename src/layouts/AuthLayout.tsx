@@ -1,8 +1,8 @@
-import jlij from "assets/icons/jlij"
-import styles from "./styles/authLayout.module.scss"
+import jlij from "assets/icons/jlij";
+import styles from "./styles/authLayout.module.scss";
 
 interface Props {
-  children: JSX.Element
+  children: JSX.Element;
 }
 
 const AuthLayout = function ({ children }: Props): JSX.Element {
@@ -19,7 +19,7 @@ const AuthLayout = function ({ children }: Props): JSX.Element {
       </div>
       <div className={styles.childrenWrapper}>{children}</div>
     </div>
-  )
-}
+  );
+};
 
-export default AuthLayout
+export default AuthLayout;

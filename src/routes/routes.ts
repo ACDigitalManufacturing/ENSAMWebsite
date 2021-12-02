@@ -15,4 +15,4 @@ export enum layoutRoutes {
   authentication = "/auth/*",
 }
 
-export default localRoutes
+export default localRoutes;

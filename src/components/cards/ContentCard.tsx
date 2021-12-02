@@ -1,5 +1,5 @@
-import styles from "./styles/contentCard.module.scss"
-import { Content } from "../../types/Content"
+import styles from "./styles/contentCard.module.scss";
+import { Content } from "../../types/Content";
 
 const ContentCard = ({
   image,
@@ -19,7 +19,7 @@ const ContentCard = ({
         <button>...</button>
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default ContentCard
+export default ContentCard;

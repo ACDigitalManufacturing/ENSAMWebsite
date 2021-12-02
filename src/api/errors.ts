@@ -1,4 +1,4 @@
-import { CustomError } from "types/api"
+import { CustomError } from "types/api";
 
 // eslint-disable-next-line
 export const errorParser = (error: any): CustomError[] => {
@@ -7,7 +7,7 @@ export const errorParser = (error: any): CustomError[] => {
       {
         message: "Error connecting to server",
       },
-    ]
+    ];
   }
-  return error.response.data.errors
-}
+  return error.response.data.errors;
+};
