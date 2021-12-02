@@ -31,11 +31,10 @@ jobs:
           cache: "npm"
           cache-dependency-path: src/admin/package-lock.json
       - run: echo this is the admin action
-      - run: cd ../admin
-      - run: npm install
-      - run: npm run build
-      - run: npm run lint-check --if-present
-      - run: npm run format-check --if-present
+      - run: cd ../admin && npm install
+      - run: cd ../admin && npm run build
+      - run: cd ../admin && npm run lint-check --if-present
+      - run: cd ../admin && npm run format-check --if-present
       - run: ls
       - run: npm install
       - run: npm run lint-check --if-present
