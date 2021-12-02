@@ -1,3 +1,4 @@
 **/node_modules
 **/.env
 src/server/manualTests/files
+src/server/dist
