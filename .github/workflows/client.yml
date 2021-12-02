@@ -5,17 +5,16 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
-    
+    branches: [master]
+
 defaults:
   run:
     working-directory: src/client
-    
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -24,14 +23,15 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        cache-dependency-path: src/client/package-lock.json
-    - run: npm install
-    - run: npm run build
-    - run: npm run lint-check --if-present
-    - run: npm run format-check --if-present
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          cache-dependency-path: src/client/package-lock.json
+      - run: npm install
+      - run: npm run build
+      - run: npm run lint-check --if-present
+      - run: npm run format-check --if-present
+      - run: git push origin `git subtree split --prefix src/client master`:heroku --force

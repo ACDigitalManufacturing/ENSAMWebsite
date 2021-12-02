@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+import path from "path";
 
 import app from "./app";
 import { connectToDatabase } from "./db";
@@ -20,6 +21,7 @@ const start = async () => {
     console.log(`SERVER UP AND LISTENING ON PORT ${port}!`);
     console.log(`server status : GET http://localhost:${port}/status`);
   });
+  console.log(path.join(__dirname, "../", "client"));
 };
 
 start();

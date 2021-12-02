@@ -12,13 +12,8 @@ export interface UnsetCoverOfPostResponse {
 }
 
 export const UnsetCoverOfPost = async (req: Request, res: Response) => {
-  const { postId } = req.body;
+  const existingPost = req.post;
 
-  // validate existence of document && post
-  const existingPost = await Post.findById(postId);
-  if (!existingPost) {
-    throw new NotFoundError("post not found");
-  }
   if (!existingPost.cover) {
     throw new BadRequestError("cover already unset");
   }
@@ -39,10 +34,3 @@ export const UnsetCoverOfPost = async (req: Request, res: Response) => {
   };
   return res.send(response);
 };
-
-export const UnsetCoverOfPostValidator = [
-  body("postId")
-    .exists()
-    .isLength({ min: 20, max: 28 })
-    .withMessage("post id required"),
-];

@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { body } from "express-validator";
+import { FlattenMaps, LeanDocument } from "mongoose";
 import { NotFoundError } from "../../errors/not-found-error";
-import { Post, Document, PostDoc } from "../../models";
+import { PostDoc, documentType } from "../../models";
 
 export interface SetCoverOfPostResponse {
   success: boolean;
-  post: PostDoc;
+  post: FlattenMaps<LeanDocument<PostDoc<documentType>>>;
 }
 
 export enum AllowedTypesForCover {
@@ -18,17 +18,10 @@ export enum AllowedTypesForCover {
 }
 
 export const SetCoverOfPost = async (req: Request, res: Response) => {
-  const { documentId, postId } = req.body;
+  const existingDocument = req.document;
+  const existingPost = req.post;
 
-  // validate existence of document && post && document format
-  const existingPost = await Post.findById(postId);
-  if (!existingPost) {
-    throw new NotFoundError("post not found");
-  }
-  const existingDocument = await Document.findById(documentId);
-  if (!existingDocument) {
-    throw new NotFoundError("document not found");
-  }
+  // validate  document format
   if (!(existingDocument.contentType in AllowedTypesForCover)) {
     throw new NotFoundError("document format is invalid for a post cover");
   }
@@ -40,18 +33,7 @@ export const SetCoverOfPost = async (req: Request, res: Response) => {
   // response
   const response: SetCoverOfPostResponse = {
     success: true,
-    post: undefined,
+    post: existingPost.toJSON(),
   };
   return res.send(response);
 };
-
-export const SetCoverOfPostValidator = [
-  body("postId")
-    .exists()
-    .isLength({ min: 20, max: 28 })
-    .withMessage("post id required"),
-  body("documentId")
-    .exists()
-    .isLength({ min: 20, max: 28 })
-    .withMessage("document id required"),
-];

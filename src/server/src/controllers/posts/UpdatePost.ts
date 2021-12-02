@@ -3,11 +3,11 @@ import { body } from "express-validator";
 import { FlattenMaps, LeanDocument } from "mongoose";
 import { BadRequestError } from "../../errors/bad-request-error";
 
-import { PostDoc, coverType, documentsType, PostStatuses } from "../../models";
+import { PostDoc, documentType, PostStatuses } from "../../models";
 
 export interface UpdatePostResponse {
   success: boolean;
-  post: FlattenMaps<LeanDocument<PostDoc<coverType, documentsType>>>;
+  post: FlattenMaps<LeanDocument<PostDoc<documentType>>>;
 }
 
 export const UpdatePost = async (req: Request, res: Response) => {

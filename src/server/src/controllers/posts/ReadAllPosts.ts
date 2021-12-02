@@ -1,16 +1,10 @@
 import { Request, Response } from "express";
 import { FlattenMaps, LeanDocument } from "mongoose";
 
-import {
-  PostDoc,
-  coverType,
-  documentsType,
-  Post,
-  PostCategories,
-} from "../../models";
+import { PostDoc, documentType, Post, PostCategories } from "../../models";
 
 export interface ReadAllPostsResponse {
-  posts: FlattenMaps<LeanDocument<PostDoc<coverType, documentsType>>>[];
+  posts: FlattenMaps<LeanDocument<PostDoc<documentType>>>[];
 }
 
 export const ReadAllPosts = async (req: Request, res: Response) => {
