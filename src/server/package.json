@@ -4,10 +4,8 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "start": "node dist/index.js",
-    "start:typescript": "ts-node src/index.ts",
+    "start": "ts-node src/index.ts",
     "pre_build": "tslint -c tslint.json -p tsconfig.json --fix",
-    "build": "tsc",
     "dev": "ts-node-dev src/index.ts"
   },
   "keywords": [],

@@ -37,9 +37,5 @@ jobs:
           npm run build
           npm run lint-check --if-present
           npm run format-check --if-present
-          cd ../server
-          npm install
-          npm install -g typescript tsc
-          tsc
           cd ../../
           git push origin `git subtree split --prefix src/server master`:admin --force
