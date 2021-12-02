@@ -30,6 +30,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           cache-dependency-path: src/client/package-lock.json
+      - run: echo this is the client action
       - run: npm install
       - run: npm run build
       - run: npm run lint-check --if-present

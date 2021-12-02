@@ -11,7 +11,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./
+    working-directory: src/server
 
 jobs:
   build:
@@ -30,17 +30,16 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           cache-dependency-path: src/admin/package-lock.json
-
+      - run: echo this is the admin action
+      - run: cd ../admin
+      - run: npm install
+      - run: npm run build
+      - run: npm run lint-check --if-present
+      - run: npm run format-check --if-present
+      - run: ls
+      - run: npm install
+      - run: npm run lint-check --if-present
+      - run: npm run format-check --if-present
       - run: |
-          cd src/admin
-          npm install
-          npm run build
-          echo build success
-          npm run lint-check --if-present
-          echo lint check success
-          npm run format-check --if-present
-          echo format check success
-          cd ../server
-          ls
           cd ../../
           git push origin `git subtree split --prefix src/server master`:admin --force
