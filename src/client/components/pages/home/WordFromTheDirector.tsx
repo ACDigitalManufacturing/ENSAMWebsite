@@ -1,4 +1,4 @@
-import right from "assets/icons/right";
+import right from "assets/icons/arrows/right";
 import styles from "./styles/wordFromTheDirector.module.scss";
 
 function WordFromTheDirector() {

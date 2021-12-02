@@ -1,6 +1,7 @@
 import styles from "./styles/hero.module.scss";
-import right from "assets/icons/right";
-import down from "assets/icons/down";
+import right from "assets/icons/arrows/right";
+import down from "assets/icons/arrows/down";
+import { scrollDown, scrollToCourses } from "utils/Scroll";
 
 // import jlij from "assets/icons/jlij";
 
@@ -26,13 +27,13 @@ function Hero() {
         <div className={styles.leftContainer}>
           <h1>Ensam Casablanca</h1>
           <p>
-            L’École nationale Supérieure des arts et métiers de Casablanca,
+            L’École Nationale Supérieure d’Arts et Métiers de Casablanca,
             affiliée à l'Université Hassan II de Casablanca.
           </p>
           <div className={styles.callToAction}>
-            <a href="/under-reconstruction">
-              <button className={styles.primary}>Nos Formation</button>
-            </a>
+            <button className={styles.primary} onClick={scrollToCourses}>
+              Nos Formation
+            </button>
             <a href="/under-reconstruction">
               <button className={styles.secondary}>
                 EENT <span>{right}</span>
@@ -42,7 +43,9 @@ function Hero() {
         </div>
 
         {/* Scroll Down arrow */}
-        <div className={styles.scrollDown}>{down}</div>
+        <div className={styles.scrollDown} onClick={scrollDown}>
+          {down}
+        </div>
       </div>
     </section>
   );

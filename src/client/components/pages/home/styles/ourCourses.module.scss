@@ -20,7 +20,7 @@
 
     li {
       width: 315px;
-
+      height: 400px;
       display: flex;
       align-items: flex-start;
       flex-direction: column;
@@ -51,9 +51,6 @@
           font-weight: 900;
           text-align: left;
           color: var(--dark);
-        }
-        p {
-          text-align: justify;
         }
       }
 
