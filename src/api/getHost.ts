@@ -1,3 +1,3 @@
 export function getHost(): string {
-  return "/api/v1";
+  return (process.env.REACT_APP_BACKEND || "") + "/api/v1";
 }
