@@ -67,6 +67,6 @@ const MenuLinks = [
 
 export default SideMenu
 
-// Git tutorial xD 
+// Git tutorial xD
 // git config --global user.email "you@example.com"
 //   git config --global user.name "Your Name"
