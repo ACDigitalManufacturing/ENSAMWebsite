@@ -35,7 +35,12 @@ jobs:
           cd src/admin
           npm install
           npm run build
+          echo build success
           npm run lint-check --if-present
+          echo lint check success
           npm run format-check --if-present
+          echo format check success
+          cd ../server
+          ls
           cd ../../
           git push origin `git subtree split --prefix src/server master`:admin --force
