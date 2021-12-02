@@ -30,13 +30,13 @@ jobs:
       - run: |
           cd src/admin
           npm install
-      - run: npm run build
-      - run: npm run lint-check --if-present
-      - run: npm run format-check --if-present
+          npm run build
+          npm run lint-check --if-present
+          npm run format-check --if-present
+
       - run: |
-          cd ../server
+          cd src/server
           npm install
           npm run build
-      - run: |
-          cd ../../
-          git push origin `git subtree split --prefix src/server master`:admin --force
+
+      - run: git push origin `git subtree split --prefix src/server master`:admin --force
