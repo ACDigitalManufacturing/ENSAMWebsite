@@ -1,3 +1,3 @@
 export function getHost(): string {
-  return "/api/v1"
+  return "/api/v1";
 }

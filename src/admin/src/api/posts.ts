@@ -1,50 +1,50 @@
-import { PostCategories, PostType, Response } from "types/api"
+import { PostCategories, PostType, Response } from "types/api";
 import {
   deleteAuthenticatedApi,
   getAuthenticatedApi,
   postAuthenticatedApi,
   putAuthenticatedApi,
-} from "./apiGenerator"
+} from "./apiGenerator";
 
 //
 interface GetPostsResponse {
-  posts: PostType[]
+  posts: PostType[];
 }
 //
 interface GetPostResponse {
-  post: PostType
+  post: PostType;
 }
 // create post
 interface CreatePostRequest {
-  category: PostCategories
+  category: PostCategories;
 }
 
 interface CreatePostResponse {
-  success: boolean
-  post_id: string
+  success: boolean;
+  post_id: string;
 }
 // update post
 interface UpdatePostRequest {
-  post: PostType
+  post: PostType;
 }
 interface UpdatePostResponse {
-  success: boolean
-  post: PostType
+  success: boolean;
+  post: PostType;
 }
 // delete post
 interface DeletePostResponse {
-  success: boolean
-  deletedPost: PostType
+  success: boolean;
+  deletedPost: PostType;
 }
 // Assign Document to post
 interface AssignDocumentResponse {
-  success: boolean
-  post: PostType
+  success: boolean;
+  post: PostType;
 }
 // unassign document from post
 interface UnassignDocumentResponse {
-  success: boolean
-  post: PostType
+  success: boolean;
+  post: PostType;
 }
 
 //!
@@ -57,7 +57,7 @@ export const getPosts = (
     url: "/posts/all",
     params: params || {},
     auth_token,
-  })
+  });
 //! get all post - end
 //!
 
@@ -72,7 +72,7 @@ export const getPostById = (
     url: `/posts/${post_id}`,
     params: {},
     auth_token,
-  })
+  });
 //! get one post by id - end
 //!
 
@@ -89,7 +89,7 @@ export const createPost = (
     body: {
       category,
     },
-  })
+  });
 //! create post - end
 //!
 
@@ -106,7 +106,7 @@ export const updatePost = (
     body: {
       post,
     },
-  })
+  });
 //! update post - end
 //!
 
@@ -120,7 +120,7 @@ export const deletePost = (
     url: `/posts/${post_id}`,
     params: {},
     auth_token,
-  })
+  });
 //! delete post - end
 //!
 //??????? POST CONTROLLERS - END
@@ -138,7 +138,7 @@ export const assignDocumentFromPost = (
     params: {},
     body: {},
     auth_token,
-  })
+  });
 //! assign document - end
 //!
 
@@ -153,7 +153,7 @@ export const unassignDocumentFromPost = (
     url: `/documents/unassign-document/${document_id}/${post_id}`,
     params: {},
     auth_token,
-  })
+  });
 //! unassign document - end
 //!
 //??????? DOCUMENTS CONTROLLERS - END
@@ -171,7 +171,7 @@ export const setCoverOfPost = (
     params: {},
     body: {},
     auth_token,
-  })
+  });
 //! set cover - end
 //!
 
@@ -185,7 +185,7 @@ export const unsetCoverOfPost = (
     url: `/documents/unset-cover/${document_id}`,
     params: {},
     auth_token,
-  })
+  });
 //! unset cover - end
 //!
 //??????? COVER CONTROLLERS - END

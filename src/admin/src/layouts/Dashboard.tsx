@@ -1,8 +1,8 @@
-import SideMenu from "components/layouts/SideMenu"
-import styles from "./styles/dashboard.module.scss"
+import SideMenu from "components/layouts/SideMenu";
+import styles from "./styles/dashboard.module.scss";
 
 interface Props {
-  children: JSX.Element
+  children: JSX.Element;
 }
 function Dashboard({ children }: Props): JSX.Element {
   return (
@@ -10,7 +10,7 @@ function Dashboard({ children }: Props): JSX.Element {
       <SideMenu />
       <section className={styles.mainSection}>{children}</section>
     </div>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;

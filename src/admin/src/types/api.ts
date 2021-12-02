@@ -1,12 +1,12 @@
 // eslint-disable-next-line
 export interface Response<TResponse = any> {
-  response?: TResponse
-  errors?: CustomError[]
+  response?: TResponse;
+  errors?: CustomError[];
 }
 
 export interface CustomError {
-  message: string
-  field?: string
+  message: string;
+  field?: string;
 }
 
 export enum PostCategories {
@@ -20,18 +20,18 @@ export enum PostStatuses {
 }
 
 export interface PostType {
-  id: string
-  title: string
-  content: string
+  id: string;
+  title: string;
+  content: string;
 
-  cover: string | null
-  documents: string[]
+  cover: string | null;
+  documents: string[];
 
-  category: PostCategories
-  status: PostStatuses
+  category: PostCategories;
+  status: PostStatuses;
 }
 export interface DocumentMeta {
-  id: string
-  filename: string
-  contentType: string
+  id: string;
+  filename: string;
+  contentType: string;
 }

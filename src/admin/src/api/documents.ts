@@ -1,17 +1,17 @@
-import { DocumentMeta, Response } from "types/api"
+import { DocumentMeta, Response } from "types/api";
 import {
   postAuthenticatedApi,
   // getAuthenticatedApi,
   //   putAuthenticatedApi,
   // deleteAuthenticatedApi,
-} from "./apiGenerator"
+} from "./apiGenerator";
 
 // Upload Document
 interface CreateDocumentResponse {
-  success: boolean
-  document: DocumentMeta
+  success: boolean;
+  document: DocumentMeta;
 }
-type CreateDocumentRequest = FormData
+type CreateDocumentRequest = FormData;
 
 //!
 //! upload document - start
@@ -24,6 +24,6 @@ export const createDocument = (
     params: {},
     auth_token,
     body: form,
-  })
+  });
 //! upload document - end
 //!

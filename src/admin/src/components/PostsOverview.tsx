@@ -1,12 +1,12 @@
-import { Content } from "types/Content"
+import { Content } from "types/Content";
 
 interface Props {
-  title: string
-  cards: Content[]
+  title: string;
+  cards: Content[];
 }
 
 const PostsOverview = ({ title, cards }: Props): JSX.Element => {
-  console.log(cards)
+  console.log(cards);
   return (
     <div>
       <h1>{title}</h1>
@@ -18,15 +18,15 @@ const PostsOverview = ({ title, cards }: Props): JSX.Element => {
       {/* pagination */}
 
       {cards.map((card) => {
-        ;<div>
+        <div>
           <div>{card.title}</div>
           <div>{card.category}</div>
           <div>{card.date}</div>
           <img alt={card.title} src={card.image} />
-        </div>
+        </div>;
       })}
     </div>
-  )
-}
+  );
+};
 
-export default PostsOverview
+export default PostsOverview;

@@ -1,13 +1,13 @@
-import { Route, Navigate, Routes } from "react-router-dom"
+import { Route, Navigate, Routes } from "react-router-dom";
 
 //! !
 //! ! pages - start
-import Index from "pages/Index"
-import localRoutes from "./routes"
+import Index from "pages/Index";
+import localRoutes from "./routes";
 
-import NoticeToStudents from "pages/NoticeToStudents"
-import Agenda from "pages/Agenda"
-import OfficialRealeses from "pages/OfficialRealeses"
+import NoticeToStudents from "pages/NoticeToStudents";
+import Agenda from "pages/Agenda";
+import OfficialRealeses from "pages/OfficialRealeses";
 //! ! pages - end
 //! !
 
@@ -29,7 +29,7 @@ const Dashboard = function (): JSX.Element {
       {/* Redirection */}
       <Route path="*" element={<Navigate to={localRoutes.dashboard} />} />
     </Routes>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
