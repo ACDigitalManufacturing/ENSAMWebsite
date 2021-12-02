@@ -1,5 +1,5 @@
 import { getTheyTalkAboutUs } from "api/home";
-import right from "assets/icons/right";
+import right from "assets/icons/arrows/right";
 import CustomCardTwo, {
   CustomCardTwoType,
 } from "components/cards/CustomCardTwo";

@@ -3,8 +3,8 @@ import CustomCardOne, {
   CustomCardOneType,
 } from "components/cards/CustomCardOne";
 
-import left from "assets/icons/left";
-import right from "assets/icons/right";
+import left from "assets/icons/arrows/left";
+import right from "assets/icons/arrows/right";
 
 import styles from "./styles/customCardOneSlider.module.scss";
 
@@ -97,7 +97,7 @@ function CustomCardOneSlider({ title, cards }: Props) {
           onClick={() =>
             setCurrentTabIndex((prev) =>
               // prev === Math.ceil(cards.length / 3) ? prev : prev + 1,
-              prev === Math.max(cards.length - 2, 1) ? prev : prev + 1,
+              prev === Math.max(cards.length - 2, 1) ? prev : prev + 1
             )
           }
         >
