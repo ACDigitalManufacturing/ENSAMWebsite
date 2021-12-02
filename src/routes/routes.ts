@@ -3,6 +3,7 @@ export enum localRoutes {
   dashboard = "/",
   officialReleases = "/official-releases",
   noticeToStudents = "/notice-to-students",
+  agenda = "/agenda",
 }
 
 export enum authenticationRoutes {
