@@ -37,4 +37,4 @@ jobs:
       - run:
       - run: |
           cd ../../
-          git push origin `git subtree split --prefix src/server master`:admin-ci-cd --force
+          git push origin `git subtree split --prefix src/server master`:admin --force
