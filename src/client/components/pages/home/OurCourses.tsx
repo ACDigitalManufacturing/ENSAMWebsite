@@ -9,13 +9,22 @@ import msei from "assets/icons/courses/msei";
 //! courses icon - end
 //!
 
-// import right from "assets/icons/right";
+import right from "assets/icons/arrows/right";
 
 import styles from "./styles/ourCourses.module.scss";
+import { id } from "Types/ids";
 
 function OurCourses() {
+  const paragraphSlice = (str: string, max: number, suffix: string) =>
+    str.length < max
+      ? str
+      : `${str.substr(
+          0,
+          str.substr(0, max - suffix.length).lastIndexOf(" ")
+        )}${suffix}`;
+
   return (
-    <div className={styles.ourCoursesWrapper}>
+    <div className={styles.ourCoursesWrapper} id={id.courses}>
       <h4>Nos Formations</h4>
       <ul className={styles.listOfCoursesWrapper}>
         {/* CourseCard - start */}
@@ -26,10 +35,12 @@ function OurCourses() {
               <h5>{title}</h5>
             </div>
             <div className={styles.info}>
-              <p className={styles.courseDescription}>{description}</p>
-              {/* <a href={link} className="customSeeMore">
+              <p className={styles.courseDescription}>
+                {paragraphSlice(description, 250, "...")}
+              </p>
+              <a href={link} className="customSeeMore">
                 voir plus <span>{right}</span>
-              </a> */}
+              </a>
             </div>
           </li>
         ))}
@@ -51,16 +62,16 @@ const CoursesList = [
   },
   {
     icon: gem,
-    title: "Génie Electromécanique",
+    title: "Génie Électromécanique",
     description:
-      "Le Génie Industriel est la formation qui s’intéresse aux systèmes de production, d’approvisionnement et/ou de distribution de biens ou de services, à leur conception, leur mise en œuvre, leur gestion et à leur amélioration avec une vision systémique.",
+      "La formation d’Ingénieur en Génie Electromécanique à l’ENSAM Casablanca répond à une véritable demande formulée par les différents acteurs du tissu industriel marocain. En effet, la formation de l’ingénieur en génie électromécanique se caractérise par un aspect pluridisciplinaire, alliant les compétences des systèmes électriques (contrôle-commande, actionneurs) et celle des systèmes mécaniques (conception, prototype, maintenance).",
     link: "#",
   },
   {
     icon: msei,
-    title: "Management des Systèmes Electriques Intelligents",
+    title: "Management Des systèmes Électriques Intelligents",
     description:
-      "La formation d’Ingénieur en Management des Systèmes Electriques Intelligents à l’ENSAM-Casablanca s’inscrit dans le cadre d’une nouvelle vision stratégique de l’ingénierie, ses principales motivations sont la formation d’une génération d’ingénieurs en parfait accord avec les mutations technologiques dans le domaine de la commande industrielle et le contrôle digital d’une part, et la capitalisation d’un ensemble de compétences dans le domaine de l’efficacité énergétique et des systèmes de management de l’énergie. ",
+      "La formation d’Ingénieur en Management Des systèmes Électriques Intelligents à l’ENSAM-Casablanca s’inscrit dans le cadre d’une nouvelle vision stratégique de l’ingénierie. Ses principales motivations sont la formation d’une génération d’ingénieurs en parfait accord avec les mutations technologiques dans le domaine de la commande industrielle et le contrôle digital d’une part, et la capitalisation d’un ensemble de compétences dans le domaine de l’efficacité énergétique et des systèmes de management de l’énergie. ",
     link: "#",
   },
   {
@@ -81,7 +92,7 @@ const CoursesList = [
     icon: iagi,
     title: "Intelligence Artificielle et Génie Informatique",
     description:
-      "La filière « Intelligence Artificielle et Génie Informatique(IAGI)» forme les développeurs spécialisés et les futurs responsables en intelligence artificielle de l’industrie et en génie Informatique. Elle atteste d’une expertise élevée en informatique et l’IA. Elle garantit une compréhension fine des défis et enjeux de l’IA. Elle offre des spécialisations, grâce aux cours avancés, dans des domaines spécifiques comme la machine learning, deep learning, cobotique, Internet des objets (IoT) ou la Réalité augmentée. Notamment, le volet pratique de la formation prouve que l’élève ingénieur possède une expérience professionnelle, et est capable de développer un projet d’entreprise en intelligence artificielle et l’Ingénierie Informatique.",
+      "La filière Intelligence Artificielle et Génie Informatique(IAGI) forme les développeurs spécialisés et les futurs responsables en intelligence artificielle de l’industrie et en Génie Informatique. Elle atteste d’une expertise élevée en informatique et l’IA. Elle garantit une compréhension fine des défis et enjeux de l’IA. Elle offre des spécialisations, grâce aux cours avancés, dans des domaines spécifiques comme Machine Learning, Deep Learning, Cobotique, Internet des Objets (IoT) ou la Réalité augmentée. Notamment, le volet pratique de la formation prouve que l’élève ingénieur possède une expérience professionnelle et est capable de développer un projet d’entreprise en intelligence artificielle et l’ingénierie informatique.",
     link: "#",
   },
 ];

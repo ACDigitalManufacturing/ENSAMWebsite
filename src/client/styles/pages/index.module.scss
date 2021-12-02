@@ -1,3 +1,22 @@
+.scrollToTop {
+  position: fixed;
+  bottom: 70px;
+  right: 70px;
+
+  svg {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    fill: var(--blue-three);
+    transition: 0.3s;
+
+    &:hover {
+      fill: var(--blue-one);
+      transition: 0.3s;
+    }
+  }
+}
+
 .landingPageWrapper {
   width: 100%;
   // max-width: 1112px;
@@ -19,6 +38,7 @@
     background-repeat: repeat;
     background-position: initial;
     background-size: contain;
+    z-index: 0;
   }
   &::before {
     background-image: url("/jlija1.png");

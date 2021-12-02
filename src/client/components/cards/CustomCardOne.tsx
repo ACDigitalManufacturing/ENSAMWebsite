@@ -1,4 +1,4 @@
-import right from "assets/icons/right";
+import right from "assets/icons/arrows/right";
 import { Tags } from "Types/Application";
 import styles from "./styles/customCardOne.module.scss";
 
