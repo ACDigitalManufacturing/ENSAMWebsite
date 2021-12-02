@@ -16,10 +16,9 @@ import TheyTalkAboutUs from "components/pages/home/TheyTalkAboutUs";
 import OurCourses from "components/pages/home/OurCourses";
 import Partners from "components/pages/home/Partners";
 import Hero from "components/pages/home/Hero";
+import ScrollToTop from "components/pages/home/ScrollToTop";
 
 import styles from "styles/pages/index.module.scss";
-import up from "assets/icons/arrows/up";
-import { scrollUp } from "utils/Scroll";
 const CustomHead = () => (
   <Head>
     <title>HOME - ENSAM CASA</title>
@@ -79,9 +78,7 @@ const Home: NextPage = () => {
   return (
     <Main>
       <>
-        <div className={styles.scrollToTop} onClick={scrollUp}>
-          {up}
-        </div>
+        <ScrollToTop />
         <CustomHead />
         <div className={styles.landingPageWrapper}>
           <Hero />

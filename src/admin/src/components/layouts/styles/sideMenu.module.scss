@@ -42,10 +42,24 @@
 
         border-radius: 5px;
         margin-bottom: 10px;
+        transition: 0.2s;
         svg {
           margin-right: 10px;
           fill: var(--default-light);
+          transition: 0.2s;
         }
+
+      }
+      &:hover{
+        a {
+        background: var(--default-light);
+        color: var(--blue-three);
+        transition: 0.2s;
+        svg {
+          fill: var(--blue-three);
+          transition: 0.2s;
+        }
+      }
       }
       &.active {
         a {
