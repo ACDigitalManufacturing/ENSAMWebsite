@@ -34,11 +34,9 @@ jobs:
       - run: npm run lint-check --if-present
       - run: npm run format-check --if-present
       - run: |
+          cd ../admin
           npm install
-          cd ../admin 
-          npm install
-          $ENV:BUILD_PATH='../server/client'
-          npm run build
+          npm run build:linux
           npm run lint-check --if-present
           npm run format-check --if-present
           cd ../server
