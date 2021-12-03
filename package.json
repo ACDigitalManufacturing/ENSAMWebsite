@@ -31,6 +31,7 @@
   "scripts": {
     "start": "set PORT=80 && react-scripts start",
     "build": "react-scripts build",
+    "build:linux" : "npm run build && mv build ../server/client",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "cd ./node_modules/.bin | eslint . --fix --ignore-path .eslintignore",
