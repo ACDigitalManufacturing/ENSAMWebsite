@@ -40,6 +40,8 @@ jobs:
           npm run build
           npm run lint-check --if-present
           npm run format-check --if-present
+          cd ../server
+          ls
           cd ../../
           git config --global user.email "karim2jihad@gmail.com"
           git config --global user.name "Karim G."
