@@ -29,7 +29,7 @@ function ourTeam() {
             <div className={styles.card}>
               <div className={styles.content}>
                 <div className={styles.imgBx}>
-                  <img src="/team/karim.JPG" alt="" />
+                  <img src="/team/karim.png" alt="" />
                 </div>
                 <div className={styles.contentBx}>
                   <h4>Karim Gehad</h4>
