@@ -4,6 +4,7 @@ export enum localRoutes {
   officialReleases = "/official-releases",
   noticeToStudents = "/notice-to-students",
   agenda = "/agenda",
+  createPost = "/create-post/:category",
 }
 
 export enum authenticationRoutes {
@@ -15,4 +16,9 @@ export enum layoutRoutes {
   authentication = "/auth/*",
 }
 
-export default localRoutes
+export enum createPost {
+  officialReleases = "/communique",
+  noticeToStudents = "/avisetudiant",
+}
+
+export default localRoutes;

@@ -1,0 +1,22 @@
+.createPostHeader {
+  height: 200px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  .createPostData {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .createPostActions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+}
