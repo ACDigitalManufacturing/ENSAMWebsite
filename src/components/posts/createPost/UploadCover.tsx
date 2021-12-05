@@ -1,13 +1,14 @@
 import { useState } from "react";
-// import axios from "axios";
-// import { toast } from "react-toastify";
-
 import { AllowedTypesForCover } from "types/api";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 // eslint-disable-next-line
 const UploadCover = ({ onSuccess }: any): JSX.Element => {
   const allowedTypesForCover = Object.values(AllowedTypesForCover).join();
 
+  const BACKEND_URI: string =
+    process.env.REACT_APP_BACKEND || "http://localhost:5000";
   const [file, setFile] = useState([]);
   console.log(file);
 
@@ -21,18 +22,25 @@ const UploadCover = ({ onSuccess }: any): JSX.Element => {
     e.preventDefault();
 
     const data = new FormData();
-
-    console.log(data);
+    axios
+      .put(`${BACKEND_URI}`, data)
+      .then((response) => {
+        toast.success("Image uploaded successfully");
+        onSuccess(response.data);
+      })
+      // eslint-disable-next-line
+      .catch((error) => {
+        toast.error("Cannot upload this file.");
+      });
   };
 
   return (
-    <form method="post" action="#" id="#" onSubmit={onSubmit}>
-      <div className="form-group files">
+    <form onSubmit={onSubmit}>
+      <div>
         <label>Upload Your File </label>
         <input
           type="file"
           onChange={onInputChange}
-          className="form-control"
           accept={allowedTypesForCover}
         />
       </div>
