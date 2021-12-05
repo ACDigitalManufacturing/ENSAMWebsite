@@ -56,6 +56,10 @@ const DetailedNav = ({ styles, isOpened, setOpened }: any): JSX.Element => {
           <div className={styles.column}>
             <Companies />
             <Laureates />
+            <h2>L'équipe du developement</h2>
+            <ul>
+              <a href="/web-masters">L'équipe du developement</a>
+            </ul>
           </div>
         </div>
       </div>
