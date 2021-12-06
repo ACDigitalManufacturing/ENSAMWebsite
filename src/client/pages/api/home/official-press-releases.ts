@@ -2,16 +2,21 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import { Tags } from "Types/Application";
 
-import { CustomCardOneType } from "components/cards/CustomCardOne";
+import { FlattenMaps, LeanDocument } from "mongoose";
+import { PostCategories, PostStatuses } from "Types/api";
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<CustomCardOneType[]>
-) {
-  res.status(200).json(dummyData);
+export interface ReadAllPostsResponse {
+  posts: any[];
 }
 
-const dummyData: CustomCardOneType[] = [
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<ReadAllPostsResponse>
+) {
+  res.status(200).json({ posts: dummyData });
+}
+
+const dummyData: any[] = [
   {
     tags: [Tags.communique],
     title:
