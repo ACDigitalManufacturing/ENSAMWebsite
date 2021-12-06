@@ -6,11 +6,13 @@ export const GetPostById = async (
   req: Request,
   _: Response,
   next: NextFunction,
-  id: string,
+  id: string
 ) => {
   try {
     const post = await Post.findById(id);
-    if (post) req.post = post;
+    if (!post) throw new NotFoundError("post not found");
+
+    req.post = post;
 
     next();
   } catch (error) {
@@ -22,11 +24,12 @@ export const GetDocumentById = async (
   req: Request,
   _: Response,
   next: NextFunction,
-  id: string,
+  id: string
 ) => {
   try {
     const document = await Document.findById(id);
-    if (document) req.document = document;
+    if (!document) throw new NotFoundError("post not found");
+    req.document = document;
 
     next();
   } catch (error) {

@@ -1,0 +1,91 @@
+.uploadDocumentWrapper {
+  font-family: Roboto;
+  width: 100%;
+
+  .header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .fileUpload {
+    background-color: var(--blue-three);
+    color: var(--default-light);
+
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    svg {
+      fill: var(--default-light);
+    }
+
+    &:hover {
+      background-color: var(--blue-one);
+    }
+  }
+
+  .uploadedDocuments {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .card {
+    width: fit-content;
+    height: 20px;
+    border: 1px solid var(--blue-one);
+    color: var(--blue-one);
+    border-radius: 5px;
+    padding: 1%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: none;
+      outline: none;
+      color: none;
+      cursor: pointer;
+      border: none;
+      svg {
+        fill: var(--blue-one);
+      }
+
+      &:hover {
+        svg {
+          fill: var(--blue-three);
+        }
+      }
+    }
+  }
+
+  .addDocument {
+    background-color: var(--blue-three) !important;
+    color: var(--default-light);
+
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--blue-one) !important;
+    }
+  }
+}

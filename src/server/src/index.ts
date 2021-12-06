@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import path from "path";
 
 import app from "./app";
+import { AllowedTypesForCover } from "./controllers/documents";
 import { connectToDatabase } from "./db";
 import { verifyEnvironmentsVariables } from "./validators/appStarter";
 
@@ -21,7 +22,6 @@ const start = async () => {
     console.log(`SERVER UP AND LISTENING ON PORT ${port}!`);
     console.log(`server status : GET http://localhost:${port}/status`);
   });
-  console.log(path.join(__dirname, "../", "client"));
 };
 
 start();

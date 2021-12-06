@@ -1,5 +1,6 @@
 import home from "assets/icons/home";
 import leave from "assets/icons/leave";
+import post from "assets/icons/post";
 import { useDispatch } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import localRoutes from "routes/routes";
@@ -52,22 +53,26 @@ const MenuLinks = [
     icon: home,
     link: localRoutes.dashboard,
     text: "Générale",
+    category: "",
   },
   {
-    icon: home,
+    icon: post,
     link: localRoutes.officialReleases,
     text: "Communiqués Officiels",
+    category: "communique",
   },
   {
-    icon: home,
+    icon: post,
     link: localRoutes.noticeToStudents,
     text: "Avis Aux Etudiants",
+    category: "",
   },
-  {
-    icon: home,
-    link: localRoutes.agenda,
-    text: "Agenda",
-  },
+  // {
+  //   icon: home,
+  //   link: localRoutes.agenda,
+  //   text: "Agenda",
+  //   category: "",
+  // },
 ];
 
 export default SideMenu;

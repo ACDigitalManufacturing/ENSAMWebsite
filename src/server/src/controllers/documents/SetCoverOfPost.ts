@@ -22,8 +22,13 @@ export const SetCoverOfPost = async (req: Request, res: Response) => {
   const existingPost = req.post;
 
   // validate  document format
-  if (!(existingDocument.contentType in AllowedTypesForCover)) {
-    throw new NotFoundError("document format is invalid for a post cover");
+  // if (!(existingDocument.contentType in AllowedTypesForCover)) {
+  if (
+    !Object.values(AllowedTypesForCover).includes(
+      existingDocument.contentType.toLocaleLowerCase() as AllowedTypesForCover
+    )
+  ) {
+    throw new NotFoundError("Document format is invalid for a post cover");
   }
 
   // assigning the document to post

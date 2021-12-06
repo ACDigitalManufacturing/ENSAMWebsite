@@ -1,13 +1,20 @@
 import { Request, Response } from "express";
 import { body } from "express-validator";
+import { FlattenMaps, LeanDocument } from "mongoose";
 
 import { BadRequestError } from "../../errors/bad-request-error";
 
-import { Post, PostCategories, PostStatuses } from "../../models";
+import {
+  documentType,
+  Post,
+  PostCategories,
+  PostDoc,
+  PostStatuses,
+} from "../../models";
 
 export interface CreatePostResponse {
   success: boolean;
-  postId: string;
+  post: FlattenMaps<LeanDocument<PostDoc<documentType>>>;
 }
 
 export const CreatePost = async (req: Request, res: Response) => {
@@ -32,7 +39,7 @@ export const CreatePost = async (req: Request, res: Response) => {
   // response
   const response: CreatePostResponse = {
     success: true,
-    postId: newPost._id.toHexString(),
+    post: newPost.toJSON(),
   };
   res.send(response);
 };

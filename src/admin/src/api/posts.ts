@@ -7,42 +7,41 @@ import {
 } from "./apiGenerator";
 
 //
-interface GetPostsResponse {
+export interface GetPostsResponse {
   posts: PostType[];
 }
 //
-interface GetPostResponse {
+export interface GetPostResponse {
   post: PostType;
 }
 // create post
-interface CreatePostRequest {
+export interface CreatePostRequest {
   category: PostCategories;
 }
 
-interface CreatePostResponse {
+export interface CreatePostResponse {
   success: boolean;
-  post_id: string;
-}
-// update post
-interface UpdatePostRequest {
   post: PostType;
 }
-interface UpdatePostResponse {
+// update post
+export type UpdatePostRequest = PostType;
+
+export interface UpdatePostResponse {
   success: boolean;
   post: PostType;
 }
 // delete post
-interface DeletePostResponse {
+export interface DeletePostResponse {
   success: boolean;
   deletedPost: PostType;
 }
 // Assign Document to post
-interface AssignDocumentResponse {
+export interface AssignDocumentResponse {
   success: boolean;
   post: PostType;
 }
 // unassign document from post
-interface UnassignDocumentResponse {
+export interface UnassignDocumentResponse {
   success: boolean;
   post: PostType;
 }
@@ -103,9 +102,7 @@ export const updatePost = (
     url: `/posts/${post.id}`,
     params: {},
     auth_token,
-    body: {
-      post,
-    },
+    body: post,
   });
 //! update post - end
 //!
@@ -133,7 +130,7 @@ export const assignDocumentFromPost = (
   post_id: string,
   auth_token: string
 ): Promise<Response<AssignDocumentResponse>> =>
-  postAuthenticatedApi<unknown, AssignDocumentResponse>({
+  putAuthenticatedApi<unknown, AssignDocumentResponse>({
     url: `/documents/assign-document/${document_id}/${post_id}`,
     params: {},
     body: {},
@@ -166,7 +163,7 @@ export const setCoverOfPost = (
   post_id: string,
   auth_token: string
 ): Promise<Response<AssignDocumentResponse>> =>
-  postAuthenticatedApi<unknown, AssignDocumentResponse>({
+  putAuthenticatedApi<unknown, AssignDocumentResponse>({
     url: `/documents/set-cover/${document_id}/${post_id}`,
     params: {},
     body: {},
