@@ -1,86 +1,72 @@
 import right from "assets/icons/arrows/right";
-import { Tags } from "Types/Application";
 import styles from "./styles/customCardOne.module.scss";
 
-export interface CustomCardOneType {
-  coverUrl: string;
-  tags: Tags[];
-  description?: string;
-  date: number;
-  title: string;
-  link: string;
-}
+import { PostCategories, PostType } from "Types/api";
 
 interface Props {
-  card: CustomCardOneType;
-  // row?: number;
-  // column?: number;
+  post: PostType;
   customClass?: string;
 }
 
-function CustomCardOne({ card, customClass }: Props): JSX.Element {
-  return (
-    <div
-      className={styles.customCardOneWrapper + " " + customClass}
-      // style={
-      //   column !== undefined
-      //     ? {
-      //         gridRow: row,
-      //         gridColumn: column,
-      //       }
-      //     : {}
-      // }
-    >
+function CustomCardOne({ post, customClass }: Props): JSX.Element {
+  return post ? (
+    <div className={styles.customCardOneWrapper + " " + customClass}>
       {/* Card Cover - START */}
       <div className={styles.coverWrapper}>
-        <img src={card.coverUrl} alt="" />
+        <img src={post.cover || ""} alt="" />
       </div>
       {/* Card Cover - END */}
 
       {/* Card Info - START */}
       <div className={styles.infoWrapper}>
         <ul className={styles.tagsWrapper}>
-          {card.tags.map((tag, idx) => (
-            <li
-              key={idx}
-              className={`${
-                tag === Tags.communique
-                  ? "communiqueTag"
-                  : tag === Tags.avisetudiant
-                  ? "avisetudiantTag"
-                  : ""
-              }`}
-            >
-              {tag}
-            </li>
-          ))}
+          <li
+            className={`${
+              post.category === PostCategories.OfficialReleases
+                ? "communiqueTag"
+                : post.category === PostCategories.NoticeToStudent
+                ? "avisetudiantTag"
+                : ""
+            }`}
+          >
+            {post.category === PostCategories.OfficialReleases
+              ? "communique"
+              : post.category === PostCategories.NoticeToStudent
+              ? "avisetudiant"
+              : ""}
+          </li>
         </ul>
         <h6>
-          {new Date(card.date).toLocaleDateString("fr-FR", {
+          {new Date(post.createdAt).toLocaleDateString("fr-FR", {
             day: "numeric",
             month: "long",
             year: "numeric",
           })}
         </h6>
         <h5>
-          {card.description && card.title.length > 30
-            ? card.title.slice(0, 30) + "..."
-            : card.title}
+          {post.title.length > 30
+            ? post.title.slice(0, 30) + "..."
+            : post.title}
         </h5>
-        {!card.description ? null : (
-          <p>
-            {card.description.length > 160
-              ? card.description.slice(0, 160) + "..."
-              : card.description}
-          </p>
-        )}
+        {post.content ? (
+          <div
+            dangerouslySetInnerHTML={{
+              __html:
+                post.content.length > 160
+                  ? post.content.slice(0, 160) + "..."
+                  : post.content,
+            }}
+          ></div>
+        ) : null}
 
-        <a href={card.link} className="customSeeMore">
+        <a href={`/posts/${post.id}`} className="customSeeMore">
           voir plus <span>{right}</span>
         </a>
       </div>
       {/* Card Info - END */}
     </div>
+  ) : (
+    <></>
   );
 }
 

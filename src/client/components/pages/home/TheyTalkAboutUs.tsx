@@ -34,9 +34,9 @@ function TheyTalkAboutUs() {
         </a>
       </header>
       <div className={styles.cardListWrapper}>
-        {cards.map((card, idx) => (
-          <CustomCardTwo key={idx} card={card} />
-        ))}
+        {cards instanceof Array
+          ? cards.map((card, idx) => <CustomCardTwo key={idx} card={card} />)
+          : null}
       </div>
     </section>
   );

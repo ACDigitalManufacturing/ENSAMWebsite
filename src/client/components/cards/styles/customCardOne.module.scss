@@ -74,7 +74,13 @@
       text-align: left;
       color: var(--dark);
     }
-    p {
+    div {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+      word-break: break-all;
+
       flex: 50;
       margin: 11px 0 0;
       font-family: Roboto;

@@ -55,3 +55,7 @@ export enum laureates {
 export enum covid {
   informationAndResources = "/under-reconstruction",
 }
+
+export enum Webmasters {
+  webmasters = "/web-masters",
+}

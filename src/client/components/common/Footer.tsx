@@ -81,6 +81,10 @@ function Footer(): JSX.Element {
               Cérémonies de remise des diplômes
             </a>
           </ul>
+          <h2>Created by</h2>
+          <ul>
+            <a href="/web-masters">Webmasters</a>
+          </ul>
         </div>
       </div>
       <p>© 2021 ENSAM - CASABLANCA. All rights reserved.</p>

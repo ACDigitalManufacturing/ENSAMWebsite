@@ -1,23 +1,19 @@
 import { getUnauthenticatedApi } from "api/apiGenerator";
-import { CustomCardOneType } from "components/cards/CustomCardOne";
 import { CustomCardTwoType } from "components/cards/CustomCardTwo";
+import { PostType } from "Types/api";
 
 export const getOfficialPressReleases = () =>
-  getUnauthenticatedApi<CustomCardOneType[]>()(
-    "api/home/official-press-releases",
-    {},
-  );
+  getUnauthenticatedApi<{
+    posts: PostType[];
+  }>("api/home/official-press-releases", {});
 
 export const getNoticeToStudents = () =>
-  getUnauthenticatedApi<CustomCardOneType[]>()(
+  getUnauthenticatedApi<{ posts: PostType[] }>(
     "api/home/notice-to-students",
-    {},
+    {}
   );
 
 export const getTheyTalkAboutUs = () =>
-  getUnauthenticatedApi<CustomCardTwoType[]>()(
-    "api/home/they-talk-about-us",
-    {},
-  );
+  getUnauthenticatedApi<CustomCardTwoType[]>("api/home/they-talk-about-us", {});
 export const getPartners = () =>
-  getUnauthenticatedApi<CustomCardTwoType[]>()("api/home/partners", {});
+  getUnauthenticatedApi<CustomCardTwoType[]>("api/home/partners", {});

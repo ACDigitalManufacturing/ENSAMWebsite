@@ -6,7 +6,7 @@ export interface PartnerType {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<PartnerType[]>,
+  res: NextApiResponse<PartnerType[]>
 ) {
   res.status(200).json(dummyData);
 }

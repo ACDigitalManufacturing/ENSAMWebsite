@@ -4,7 +4,7 @@ import { CustomCardTwoType } from "components/cards/CustomCardTwo";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<CustomCardTwoType[]>,
+  res: NextApiResponse<CustomCardTwoType[]>
 ) {
   res.status(200).json(dummyData);
 }

@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { CustomError } from "Types/api";
+import { CustomError, PostType } from "Types/api";
 import { getNoticeToStudents, getOfficialPressReleases } from "api/home";
 
 //! jsx
 import Main from "layouts/Main";
 
-import { CustomCardOneType } from "components/cards/CustomCardOne";
 import CustomCardOneSlider from "components/sliders/CustomCardOneSlider";
 import WordFromTheDirector from "components/pages/home/WordFromTheDirector";
 import SchoolPresentation from "components/pages/home/SchoolPresentation";
@@ -27,11 +26,9 @@ const CustomHead = () => (
 );
 const Home: NextPage = () => {
   const [officialPressReleases, setOfficialPressReleases] = useState<
-    CustomCardOneType[]
+    PostType[]
   >([]);
-  const [noticeToStudents, setNoticeToStudents] = useState<CustomCardOneType[]>(
-    []
-  );
+  const [noticeToStudents, setNoticeToStudents] = useState<PostType[]>([]);
   const [errors, setErrors] = useState<CustomError[]>([]);
 
   //!
@@ -47,7 +44,7 @@ const Home: NextPage = () => {
         ...prev,
         { message: "server not responding" },
       ]);
-    return setOfficialPressReleases(response);
+    return setOfficialPressReleases(response.posts || []);
   };
 
   const initializeNoticeToStudents = async () => {
@@ -61,7 +58,9 @@ const Home: NextPage = () => {
         ...prev,
         { message: "server not responding" },
       ]);
-    return setNoticeToStudents(response);
+    console.log(response.posts);
+
+    return setNoticeToStudents(response.posts || []);
   };
   //! functions - end
   //!
@@ -89,7 +88,7 @@ const Home: NextPage = () => {
             <div className={styles.sliderWrapper}>
               <CustomCardOneSlider
                 title="Communiqués Officiels"
-                cards={officialPressReleases}
+                posts={officialPressReleases}
               />
             </div>
           ) : null}
@@ -98,7 +97,7 @@ const Home: NextPage = () => {
             <div className={styles.sliderWrapper}>
               <CustomCardOneSlider
                 title="Avis Aux Etudiants"
-                cards={noticeToStudents}
+                posts={noticeToStudents}
               />
             </div>
           ) : null}
