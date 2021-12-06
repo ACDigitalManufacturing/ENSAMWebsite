@@ -1,5 +1,4 @@
 import Dashboard from "layouts/Dashboard";
-import React from "react";
 
 const Agenda = (): JSX.Element => {
   return (

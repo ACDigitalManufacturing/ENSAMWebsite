@@ -9,10 +9,24 @@ export interface CustomError {
   field?: string;
 }
 
+export enum AllowedTypesForCover {
+  png = "image/png",
+  jpg = "image/jpg",
+  gif = "image/gif",
+  jpeg = "image/jpeg",
+  svg = "image/svg+xml",
+  webp = "image/webp",
+}
+
 export enum PostCategories {
   NoticeToStudent = 0,
   OfficialReleases = 1,
 }
+export enum Categories {
+  NoticeToStudent = "avisetudiant",
+  OfficialReleases = "communique",
+}
+
 export enum PostStatuses {
   live = 0,
   draft = 1,
@@ -29,6 +43,9 @@ export interface PostType {
 
   category: PostCategories;
   status: PostStatuses;
+
+  createdAt: string;
+  updatedAt: string;
 }
 export interface DocumentMeta {
   id: string;

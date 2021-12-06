@@ -20,7 +20,7 @@ export const createDocument = (
   auth_token: string
 ): Promise<Response<CreateDocumentResponse>> =>
   postAuthenticatedApi<CreateDocumentRequest, CreateDocumentResponse>({
-    url: `/api/documents`,
+    url: `/documents`,
     params: {},
     auth_token,
     body: form,
