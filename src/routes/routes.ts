@@ -17,8 +17,8 @@ export enum layoutRoutes {
 }
 
 export enum createPost {
-  officialReleases = "/communique",
-  noticeToStudents = "/avisetudiant",
+  officialReleases = "/create-post/communique",
+  noticeToStudents = "/create-post/avisetudiant",
 }
 
 export default localRoutes;

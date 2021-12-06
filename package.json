@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@types/axios": "^0.14.0",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.37",
     "@types/react": "^17.0.35",
@@ -17,6 +18,7 @@
     "dotenv": "^10.0.0",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
+    "html-to-draftjs": "^1.5.0",
     "node-sass": "^6.0.1",
     "prettier": "^2.4.1",
     "react": "^17.0.2",
@@ -35,6 +37,7 @@
   "scripts": {
     "start": "set PORT=80 && react-scripts start",
     "build": "react-scripts build",
+    "build:linux": "npm run build && mv build ../server/client",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "cd ./node_modules/.bin | eslint . --fix --ignore-path .eslintignore",
@@ -57,6 +60,7 @@
   ],
   "devDependencies": {
     "@types/draftjs-to-html": "^0.8.1",
+    "@types/html-to-draftjs": "^1.4.0",
     "@types/react-draft-wysiwyg": "^1.13.3",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
