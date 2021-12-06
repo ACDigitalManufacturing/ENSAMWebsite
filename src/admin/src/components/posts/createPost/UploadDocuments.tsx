@@ -112,11 +112,11 @@ const UploadDocuments = ({ post, setPost }: Params): JSX.Element => {
       <div className={styles.header}>
         <h2>Documents</h2>
         <div className={styles.formGroup}>
-          <label htmlFor="fileInput" className={styles.fileUpload}>
+          <label htmlFor="fileInputFile" className={styles.fileUpload}>
             {upload} Choisir un fichier PDF
           </label>
           <input
-            id="fileInput"
+            id="fileInputFile"
             accept="application/pdf"
             type="file"
             onChange={onInputChange}
