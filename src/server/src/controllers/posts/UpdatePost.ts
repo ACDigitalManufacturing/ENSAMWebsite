@@ -38,10 +38,7 @@ export const UpdatePost = async (req: Request, res: Response) => {
 };
 
 export const UpdatePostValidator = [
-  body("title")
-    .trim()
-    .isLength({ min: 4, max: 30 })
-    .withMessage("title not valid"),
+  body("title").trim().isLength({ min: 4 }).withMessage("title not valid"),
   body("content").trim().isLength({ min: 4 }).withMessage("content not valid"),
   body("status").isNumeric().withMessage("status not valid"),
 ];
