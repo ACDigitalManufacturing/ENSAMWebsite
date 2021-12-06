@@ -1,6 +1,7 @@
 import Main from "layouts/Main";
 import styles from "styles/pages/devTeam.module.scss";
 import facebook from "assets/icons/socialMedia/facebook";
+import instagram from "assets/icons/socialMedia/instagram";
 import github from "assets/icons/socialMedia/github";
 import linkedin from "assets/icons/socialMedia/linkedin";
 
@@ -22,7 +23,7 @@ function ourTeam() {
                 </div>
                 <div className={styles.sci}>
                   <a href="https://www.linkedin.com/company/a-c-digital-manufacturing/mycompany/">{linkedin}</a>
-                  <a href="#">{facebook}</a>
+                  <a href="https://www.instagram.com/aec.digital.manufacturing/">{instagram}</a>
                 </div>
               </div>
             </div>
@@ -72,7 +73,7 @@ function ourTeam() {
                 <div className={styles.contentBx}>
                   <h4>Ayoub Taoufik</h4>
                   <h5>
-                    Frontend Dev Developer
+                    Frontend Developer
                     <br />
                     Content management
                   </h5>
@@ -108,7 +109,7 @@ function ourTeam() {
                   <img src="/team/amal.jpg" alt="" />
                 </div>
                 <div className={styles.contentBx}>
-                  <h4>Amal Es-snousi</h4>
+                  <h4>Amal Es-snoussi</h4>
                   <h5>Content team</h5>
                 </div>
                 <div className={styles.sci}>
@@ -128,7 +129,7 @@ function ourTeam() {
                 </div>
                 <div className={styles.sci}>
                   <a href="https://www.linkedin.com/in/souhail-karam-49b878214/">{linkedin}</a>
-                  <a href="#">{github}</a>
+                  <a href="https://github.com/ForeignVisitor">{github}</a>
                 </div>
               </div>
             </div>
@@ -138,7 +139,7 @@ function ourTeam() {
                   <img src="/team/chaimae.jpg" alt="" />
                 </div>
                 <div className={styles.contentBx}>
-                  <h4>Chaimae El argoubi</h4>
+                  <h4>Chaimaa Elargoubi</h4>
                   <h5>Developer</h5>
                 </div>
                 <div className={styles.sci}>
