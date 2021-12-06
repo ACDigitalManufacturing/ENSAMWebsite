@@ -13,7 +13,7 @@ function CustomCardOne({ post, customClass }: Props): JSX.Element {
     <div className={styles.customCardOneWrapper + " " + customClass}>
       {/* Card Cover - START */}
       <div className={styles.coverWrapper}>
-        <img src={`/api/document/${post.cover}`} alt="" />
+        <img src={post.cover || ""} alt="" />
       </div>
       {/* Card Cover - END */}
 

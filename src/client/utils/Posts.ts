@@ -15,7 +15,7 @@ export const postToJson = ({
     id: _id,
     title,
     content,
-    cover,
+    cover: `${process.env.BACKEND_API_URI || ""}/documents/${cover}`,
     documents,
     category,
     status,

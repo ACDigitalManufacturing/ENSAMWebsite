@@ -1,14 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { documentType, PostDoc, Post } from "models";
-import { FlattenMaps, LeanDocument } from "mongoose";
-import { PostCategories, PostStatuses, PostType } from "Types/api";
 import clientPromise from "lib/mongodb";
 import { postToJson } from "utils/Posts";
+import { PostCategories, PostStatuses, PostType } from "Types/api";
 // import connectDB from "middleware/mongodb";
 
 export interface ReadAllPostsResponse {
-  posts: FlattenMaps<LeanDocument<PostDoc<documentType>>>[];
+  posts: PostType[];
 }
 
 export default async function handler(
@@ -31,22 +29,22 @@ export default async function handler(
 
   // set options if category
   let options = {
-    // category: PostCategories.NoticeToStudent,
-    // status: PostStatuses.live,
+    category: PostCategories.NoticeToStudent,
+    status: PostStatuses.live,
   };
 
   // query
-  const posts = (await db
+  const posts = await db
     .collection("posts")
     .find(options)
     .sort([["createdAt", -1]])
     .skip(skip_as_number)
     .limit(limit_as_number)
-    .toArray()) as PostDoc[];
+    .toArray();
 
   // response
   const response: any = {
-    posts: posts.map((post) => postToJson(post)),
+    posts: posts.map((post) => postToJson(post)) as PostType[],
   };
   res.status(200).send(response);
 }
