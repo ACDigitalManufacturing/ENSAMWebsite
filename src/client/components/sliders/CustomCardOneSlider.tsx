@@ -1,63 +1,52 @@
 import { useEffect, useState } from "react";
-import CustomCardOne, {
-  CustomCardOneType,
-} from "components/cards/CustomCardOne";
+import CustomCardOne from "components/cards/CustomCardOne";
 
 import left from "assets/icons/arrows/left";
 import right from "assets/icons/arrows/right";
 
 import styles from "./styles/customCardOneSlider.module.scss";
+import { PostType } from "Types/api";
 
 interface Props {
   title: string;
-  cards: CustomCardOneType[];
+  posts: PostType[];
 }
 
-function CustomCardOneSlider({ title, cards }: Props) {
+function CustomCardOneSlider({ title, posts }: Props) {
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
 
-  useEffect(() => {
-    // console.log(currentTabIndex);
-    // cards.map((card, idx) => {
-    //   console.log(
-    //     idx < currentTabIndex
-    //       ? -1
-    //       : idx >= currentTabIndex + 3
-    //       ? 4
-    //       : (idx - currentTabIndex) % 3,
-    //   );
-    // });
-  }, [currentTabIndex]);
   return (
     <div className={styles.customCardOneSliderWrapper}>
       <h4>{title}</h4>
       <div className={styles.cardsWrapper}>
         {/* <div className={styles.cardsList}> */}
-        {cards.map((card, idx) => (
-          <div
-            key={idx}
-            className={
-              styles.customCardWrapper +
-              " " +
-              (idx < currentTabIndex
-                ? styles.left
-                : idx > currentTabIndex + 2
-                ? styles.right
-                : styles.showing)
-            }
-            style={
-              idx < currentTabIndex || idx > currentTabIndex + 2
-                ? {}
-                : {
-                    left: 1 + 33.33 * (idx - currentTabIndex) + "%",
-                  }
-            }
-          >
-            <CustomCardOne card={card} />
-          </div>
-        ))}
+        {posts.length
+          ? posts.map((post, idx) => (
+              <div
+                key={idx}
+                className={
+                  styles.customCardWrapper +
+                  " " +
+                  (idx < currentTabIndex
+                    ? styles.left
+                    : idx > currentTabIndex + 2
+                    ? styles.right
+                    : styles.showing)
+                }
+                style={
+                  idx < currentTabIndex || idx > currentTabIndex + 2
+                    ? {}
+                    : {
+                        left: 1 + 33.33 * (idx - currentTabIndex) + "%",
+                      }
+                }
+              >
+                <CustomCardOne post={post} />
+              </div>
+            ))
+          : null}
         <CustomCardOne
-          card={cards[0]}
+          post={posts[0]}
           customClass={styles.customCardPlaceholder}
         />
         {/* </div> */}
@@ -74,8 +63,7 @@ function CustomCardOneSlider({ title, cards }: Props) {
           {left}
         </div>
         <div className={styles.dots}>
-          {/* {Array(Math.ceil(cards.length / 3)) */}
-          {Array(Math.max(cards.length - 2, 1))
+          {Array(Math.max(posts.length - 2, 1))
             .fill(0)
             .map((_, idx) => (
               <div
@@ -89,15 +77,13 @@ function CustomCardOneSlider({ title, cards }: Props) {
         </div>
         <div
           className={`${styles.next} ${
-            // currentTabIndex + 1 === Math.ceil(cards.length / 3)
-            currentTabIndex + 1 === Math.max(cards.length - 2, 1)
+            currentTabIndex + 1 === Math.max(posts.length - 2, 1)
               ? styles.deactivated
               : ""
           }`}
           onClick={() =>
             setCurrentTabIndex((prev) =>
-              // prev === Math.ceil(cards.length / 3) ? prev : prev + 1,
-              prev === Math.max(cards.length - 2, 1) ? prev : prev + 1
+              prev === Math.max(posts.length - 2, 1) ? prev : prev + 1
             )
           }
         >
