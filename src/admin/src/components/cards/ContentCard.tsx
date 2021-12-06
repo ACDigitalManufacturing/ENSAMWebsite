@@ -1,17 +1,39 @@
 import styles from "./styles/contentCard.module.scss";
-import { Content } from "../../types/Content";
 import options from "assets/icons/options";
 import { useState, useRef, useEffect } from "react";
+import { Categories, PostCategories, PostStatuses } from "types/api";
+import { getHost } from "api/getHost";
+import { useSelector } from "react-redux";
+import { rootStateType } from "store/reducers";
+import { toast } from "react-toastify";
+import { deletePost, unsetCoverOfPost } from "api/posts";
+import { useNavigate } from "react-router";
+
+interface Props {
+  title: string;
+  date: string;
+  image: string | null;
+  category: PostCategories;
+  status: PostStatuses;
+  id: string;
+  onDelete: () => void;
+}
 
 const ContentCard = ({
   image,
   title,
   category,
   date,
-}: Content): JSX.Element => {
+  status,
+  id,
+  onDelete,
+}: Props): JSX.Element => {
   const [isOpen, setOpen] = useState(false);
 
   const menuRef = useRef<HTMLDivElement | null>(null);
+
+  const { auth_token } = useSelector((state: rootStateType) => state.admin);
+  const navigate = useNavigate();
 
   const handleMenu = () => {
     setOpen(!isOpen);
@@ -24,6 +46,68 @@ const ContentCard = ({
     }
   };
 
+  //! Function - START
+  const getStatus = (status: PostStatuses) => {
+    if (status == PostStatuses.live) {
+      return "Publié";
+    } else if (status == PostStatuses.draft) {
+      return "Bruillion";
+    } else if (status == PostStatuses.not_saved) {
+      return "Non enregistré";
+    }
+  };
+  //! Function - END
+
+  //! Function - START
+  const getCategory = (category: PostCategories) => {
+    if (category == 0) {
+      return Categories.NoticeToStudent;
+    } else if (category == 1) {
+      return Categories.OfficialReleases;
+    }
+  };
+  //! Function - END
+
+  //! Function - START
+  const handleDeletePost = async () => {
+    const { response: responseUnsetCover, errors: errorsUnsetCover } =
+      await unsetCoverOfPost(id, auth_token);
+    const { response, errors } = await deletePost(id, auth_token);
+
+    if (errorsUnsetCover) {
+      return errorsUnsetCover.forEach(({ message }) => {
+        toast.error(message);
+      });
+    }
+
+    if (!responseUnsetCover?.post) {
+      return toast.error("Something Wrong");
+    }
+    if (errors) {
+      return errors.forEach(({ message }) => {
+        toast.error(message);
+      });
+    }
+
+    if (!response?.deletedPost) {
+      return toast.error("Something Wrong");
+    }
+
+    toast.success("Post has been deleted successfully");
+    onDelete();
+
+    console.log(response.deletedPost);
+    console.log(responseUnsetCover.post);
+  };
+  //! Function - END
+
+  //! Function - START
+  const editPost = () => {
+    // TODO : Change the link category
+    navigate(`/create-post/${getCategory(category)}/?postId=${id}`);
+  };
+  //! Function - END
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClicks);
     return () => {
@@ -34,12 +118,13 @@ const ContentCard = ({
   return (
     <article className={styles.contentCard}>
       <div className={styles.cardData}>
-        <img src={image} alt={title} />
+        <img src={image ? `${getHost()}/documents/${image}` : ""} alt={title} />
 
         <div className={styles.cardDetails}>
-          <h3>{title}</h3>
+          <h3>{title || "Untitled"}</h3>
           <p>
-            Catégorie: <span className={styles.category}>{category}</span>
+            Catégorie:{" "}
+            <span className={styles.category}>{getCategory(category)}</span>
           </p>
           <p className={styles.date}>
             Crée le{" "}
@@ -49,6 +134,7 @@ const ContentCard = ({
               year: "numeric",
             })}
           </p>
+          <p className={styles.date}>Statut: {getStatus(status)}</p>
         </div>
       </div>
       <button className={styles.detailsButton} onClick={handleMenu}>
@@ -61,8 +147,8 @@ const ContentCard = ({
       >
         <ul>
           <li>Aperçu</li>
-          <li>Modifer</li>
-          <li>Supprimer</li>
+          <li onClick={editPost}>Modifer</li>
+          <li onClick={handleDeletePost}>Supprimer</li>
         </ul>
       </div>
     </article>

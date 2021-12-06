@@ -1,0 +1,26 @@
+.editorWrapper {
+  max-height: 70vh;
+  height: 70vh;
+  width: 100%;
+
+  border: 1px solid var(--blue-one);
+  font-family: Roboto;
+  margin-bottom: 2rem;
+
+  position: relative;
+}
+
+.editor {
+  margin-top: 0rem;
+  padding: 0rem 1.5rem;
+  max-height: 80%;
+  overflow-y: scroll;
+}
+
+.toolbar {
+  // position: absolute;
+  // z-index: 10;
+  // top: 0;
+  // left: 0;
+  // right: 20px;
+}

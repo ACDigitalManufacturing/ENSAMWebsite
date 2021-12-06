@@ -3,11 +3,11 @@ import { body } from "express-validator";
 import { FlattenMaps, LeanDocument } from "mongoose";
 import { BadRequestError } from "../../errors/bad-request-error";
 
-import { PostDoc, coverType, documentsType, PostStatuses } from "../../models";
+import { PostDoc, documentType, PostStatuses } from "../../models";
 
 export interface UpdatePostResponse {
   success: boolean;
-  post: FlattenMaps<LeanDocument<PostDoc<coverType, documentsType>>>;
+  post: FlattenMaps<LeanDocument<PostDoc<documentType>>>;
 }
 
 export const UpdatePost = async (req: Request, res: Response) => {
@@ -40,13 +40,8 @@ export const UpdatePost = async (req: Request, res: Response) => {
 export const UpdatePostValidator = [
   body("title")
     .trim()
-    .exists()
     .isLength({ min: 4, max: 30 })
     .withMessage("title not valid"),
-  body("content")
-    .trim()
-    .exists()
-    .isLength({ min: 4 })
-    .withMessage("content not valid"),
+  body("content").trim().isLength({ min: 4 }).withMessage("content not valid"),
   body("status").isNumeric().withMessage("status not valid"),
 ];

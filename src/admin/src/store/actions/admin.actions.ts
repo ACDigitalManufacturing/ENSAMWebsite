@@ -1,10 +1,10 @@
-import { adminTypes } from "store/actionsTypes"
-import { AdminState } from "store/reducers/admin.reducer"
-import { Admin } from "types/Admin"
+import { adminTypes } from "store/actionsTypes";
+import { AdminState } from "store/reducers/admin.reducer";
+import { Admin } from "types/Admin";
 
 interface AdminAction<T> {
-  type: adminTypes
-  payload: T
+  type: adminTypes;
+  payload: T;
 }
 
 export const admin_logged_in = (
@@ -17,7 +17,7 @@ export const admin_logged_in = (
     auth_token,
     admin,
   },
-})
+});
 
 export const admin_update = (
   admin: Admin,
@@ -29,7 +29,7 @@ export const admin_update = (
     auth_token,
     admin,
   },
-})
+});
 
 export const admin_logged_out = (): AdminAction<AdminState> => ({
   type: adminTypes.adminLoggedOut,
@@ -38,4 +38,4 @@ export const admin_logged_out = (): AdminAction<AdminState> => ({
     auth_token: "",
     admin: null,
   },
-})
+});

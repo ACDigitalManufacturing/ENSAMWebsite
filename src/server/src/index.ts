@@ -1,6 +1,8 @@
 import dotenv from "dotenv";
+import path from "path";
 
 import app from "./app";
+import { AllowedTypesForCover } from "./controllers/documents";
 import { connectToDatabase } from "./db";
 import { verifyEnvironmentsVariables } from "./validators/appStarter";
 

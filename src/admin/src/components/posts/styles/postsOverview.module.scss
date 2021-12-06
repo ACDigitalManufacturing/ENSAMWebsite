@@ -16,7 +16,9 @@
     justify-content: space-between;
   }
   .cardsWrapper {
+    min-height: 70vh;
     max-height: 85%;
+    height: fit-content;
     padding-right: 2rem;
     padding-bottom: 2rem;
     overflow-y: scroll;

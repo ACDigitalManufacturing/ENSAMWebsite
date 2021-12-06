@@ -1,7 +1,6 @@
 import express from "express";
 
-import { validateRequest } from "../middlewares/validate-request";
-import { GetDocumentById } from "../db/GetById";
+import { GetDocumentById, GetPostById } from "../db/GetById";
 
 import {
   CreateDocument,
@@ -10,20 +9,17 @@ import {
   ReadDocument,
   //
   AssignDocumentToPost,
-  AssignDocumentToPostValidator,
   //
   SetCoverOfPost,
-  SetCoverOfPostValidator,
   //
   UnassignDocumentFromPost,
-  UnassignDocumentFromPostValidator,
   //
   UnsetCoverOfPost,
-  UnsetCoverOfPostValidator,
 } from "../controllers/documents";
 
 const router = express.Router();
 router.param("documentId", GetDocumentById);
+router.param("postId", GetPostById);
 
 //? POST
 router.post("/", CreateDocument);
@@ -33,31 +29,14 @@ router.get("/all", ReadAllDocuments);
 router.get("/:documentId", ReadDocument);
 
 //? PUT
-router.put(
-  "/assign-document",
-  AssignDocumentToPostValidator,
-  validateRequest,
-  AssignDocumentToPost,
-);
-router.put(
-  "/set-cover",
-  SetCoverOfPostValidator,
-  validateRequest,
-  SetCoverOfPost,
-);
+router.put("/assign-document/:documentId/:postId", AssignDocumentToPost);
+router.put("/set-cover/:documentId/:postId", SetCoverOfPost);
 
 //? DELETE
 router.delete(
-  "/unassign-document",
-  UnassignDocumentFromPostValidator,
-  validateRequest,
-  UnassignDocumentFromPost,
+  "/unassign-document/:documentId/:postId",
+  UnassignDocumentFromPost
 );
+router.delete("/unset-cover/:postId", UnsetCoverOfPost);
 
-router.delete(
-  "/unset-cover",
-  UnsetCoverOfPostValidator,
-  validateRequest,
-  UnsetCoverOfPost,
-);
 export { router as documentsRouter };

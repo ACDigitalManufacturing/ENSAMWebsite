@@ -1,46 +1,46 @@
-import { useState } from "react"
+import { useState } from "react";
 
-import AuthLayout from "layouts/AuthLayout"
-import open_eye from "assets/icons/open_eye"
-import closed_eye from "assets/icons/closed_eye"
-import lock from "assets/icons/lock"
-import user from "assets/icons/user"
+import AuthLayout from "layouts/AuthLayout";
+import open_eye from "assets/icons/open_eye";
+import closed_eye from "assets/icons/closed_eye";
+import lock from "assets/icons/lock";
+import user from "assets/icons/user";
 
-import { CustomError } from "types/api"
-import { LoginAPI } from "api/home"
-import { useDispatch } from "react-redux"
-import { admin_logged_in } from "store/actions"
-import ShowErrors from "components/common/ShowErrors"
-import styles from "./styles/login.module.scss"
+import { CustomError } from "types/api";
+import { LoginAPI } from "api/home";
+import { useDispatch } from "react-redux";
+import { admin_logged_in } from "store/actions";
+import ShowErrors from "components/common/ShowErrors";
+import styles from "./styles/login.module.scss";
 
 const Login = function (): JSX.Element {
   const [state, setState] = useState({
     username: "",
     password: "",
     passwordInputType: "password",
-  })
+  });
   // eslint-disable-next-line
-  const [errors, setErrors] = useState<CustomError[]>([])
+  const [errors, setErrors] = useState<CustomError[]>([]);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const handleChange =
     (name: string) => (e: React.ChangeEvent<HTMLInputElement>) =>
-      setState({ ...state, [name]: e.target.value })
+      setState({ ...state, [name]: e.target.value });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     const { response, errors } = await LoginAPI({
       username: state.username,
       password: state.password,
-    })
+    });
     if (errors) {
-      return setErrors(errors)
+      return setErrors(errors);
     }
     if (!response) {
-      return setErrors([{ message: "server do not respond" }])
+      return setErrors([{ message: "server do not respond" }]);
     }
-    dispatch(admin_logged_in(response.admin, response.auth_token))
-  }
+    dispatch(admin_logged_in(response.admin, response.auth_token));
+  };
   return (
     <AuthLayout>
       <div className={styles.loginFormWrapper}>
@@ -96,7 +96,7 @@ const Login = function (): JSX.Element {
         </form>
       </div>
     </AuthLayout>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import { FlattenMaps, LeanDocument } from "mongoose";
 
-import { PostDoc, coverType, documentsType } from "../../models";
+import { documentType, PostDoc } from "../../models";
 
 export interface DeletePostResponse {
   success: boolean;
-  deletedPost: FlattenMaps<LeanDocument<PostDoc<coverType, documentsType>>>;
+  deletedPost: FlattenMaps<LeanDocument<PostDoc<documentType>>>;
 }
 
 export const DeletePost = async (req: Request, res: Response) => {

@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { FlattenMaps, LeanDocument } from "mongoose";
 
-import { PostDoc, coverType, documentsType } from "../../models";
+import { PostDoc, documentType } from "../../models";
 
 export interface ReadPostResponse {
-  post: FlattenMaps<LeanDocument<PostDoc<coverType, documentsType>>>;
+  post: FlattenMaps<LeanDocument<PostDoc<documentType>>>;
 }
 
 export const ReadPost = async (req: Request, res: Response) => {

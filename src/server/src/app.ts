@@ -14,8 +14,7 @@ import { NotFoundError } from "./errors/not-found-error";
 import { errorHandler } from "./middlewares/error-handler";
 
 //? Routes
-import { postsRouter } from "./routes/Posts";
-import { documentsRouter } from "./routes/Documents";
+import { mainRouter } from "./routes";
 
 //? global declaration
 declare global {
@@ -34,19 +33,20 @@ const app = express();
 app.use(
   cors({
     origin: "*",
-  }),
+  })
 );
 app.use(express.json());
 
 app.use(morgan("dev"));
 
 // public files
-app.use("/public", express.static(path.join(__dirname, "public")));
+// app.use("/public", express.static(path.join(__dirname, "public")));
 
 //!
 //! routes - start
-app.use("/posts", postsRouter);
-app.use("/documents", documentsRouter);
+app.use("/api/v1/", mainRouter);
+app.use("/", express.static(path.join(__dirname, "..", "client")));
+
 //! routes - end
 //!
 

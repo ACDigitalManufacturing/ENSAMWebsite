@@ -6,9 +6,8 @@ const App = function (): JSX.Element {
   return (
     <>
       <RootRoutes />
-      <ToastContainer />
+      <ToastContainer position="bottom-right" draggable />
     </>
   );
 };
-
 export default App;
