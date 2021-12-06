@@ -54,8 +54,8 @@ app.get("/status", async (_, res) => {
   res.send("server up and running ✔✔");
 });
 
-app.all("*", async () => {
-  throw new NotFoundError();
+app.all("*", async (_, res) => {
+  res.sendFile(path.join(__dirname, "..", "client", "index.html"));
 });
 
 app.use(errorHandler);
