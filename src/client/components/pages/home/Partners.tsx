@@ -28,14 +28,16 @@ function Partners() {
     <section className={styles.partnersSectionWrapper}>
       <h4>Partenaires</h4>
       <div className={styles.partnersListWrapper}>
-        <div className={styles.partnersMovingList}>
-          {partnersList.map(({ logoUrl }, idx) => (
-            <img src={logoUrl} alt="" key={idx} />
-          ))}
-          {partnersList.map(({ logoUrl }, idx) => (
-            <img src={logoUrl} alt="" key={idx} />
-          ))}
-        </div>
+        {partnersList instanceof Array && partnersList.length ? (
+          <div className={styles.partnersMovingList}>
+            {partnersList.map(({ logoUrl }, idx) => (
+              <img src={logoUrl} alt="" key={idx} />
+            ))}
+            {partnersList.map(({ logoUrl }, idx) => (
+              <img src={logoUrl} alt="" key={idx} />
+            ))}
+          </div>
+        ) : null}
       </div>
     </section>
   );

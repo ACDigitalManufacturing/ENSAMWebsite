@@ -56,9 +56,9 @@ const DetailedNav = ({ styles, isOpened, setOpened }: any): JSX.Element => {
           <div className={styles.column}>
             <Companies />
             <Laureates />
-            <h2>L'équipe du developement</h2>
+            <h2>Created by</h2>
             <ul>
-              <a href="/web-masters">L'équipe du developement</a>
+              <a href="/web-masters">Webmasters</a>
             </ul>
           </div>
         </div>
