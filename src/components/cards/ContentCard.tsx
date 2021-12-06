@@ -70,19 +70,37 @@ const ContentCard = ({
 
   //! Function - START
   const handleDeletePost = async () => {
-    const { response: responseUnsetCover, errors: errorsUnsetCover } =
-      await unsetCoverOfPost(id, auth_token);
+    // documents.map(async (document) => {
+    //   const { response, errors } = await unassignDocumentFromPost(
+    //     document,
+    //     id,
+    //     auth_token
+    //   );
+    //   if (errors) {
+    //     return errors.forEach(({ message }) => {
+    //       toast.error(message);
+    //     });
+    //   }
+
+    //   if (!response?.post) {
+    //     return toast.error("Something Wrong");
+    //   }
+    // });
+    if (image) {
+      const { response: responseUnsetCover, errors: errorsUnsetCover } =
+        await unsetCoverOfPost(id, auth_token);
+      if (errorsUnsetCover) {
+        return errorsUnsetCover.forEach(({ message }) => {
+          toast.error(message);
+        });
+      }
+
+      if (!responseUnsetCover?.post) {
+        return toast.error("Something Wrong");
+      }
+    }
     const { response, errors } = await deletePost(id, auth_token);
 
-    if (errorsUnsetCover) {
-      return errorsUnsetCover.forEach(({ message }) => {
-        toast.error(message);
-      });
-    }
-
-    if (!responseUnsetCover?.post) {
-      return toast.error("Something Wrong");
-    }
     if (errors) {
       return errors.forEach(({ message }) => {
         toast.error(message);
@@ -95,9 +113,6 @@ const ContentCard = ({
 
     toast.success("Post has been deleted successfully");
     onDelete();
-
-    console.log(response.deletedPost);
-    console.log(responseUnsetCover.post);
   };
   //! Function - END
 
