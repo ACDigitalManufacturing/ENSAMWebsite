@@ -133,8 +133,12 @@ const ContentCard = ({
   return (
     <article className={styles.contentCard}>
       <div className={styles.cardData}>
-        <img src={image ? `${getHost()}/documents/${image}` : ""} alt={title} />
-
+        <div className={styles.cover}>
+          <img
+            src={image ? `${getHost()}/documents/${image}` : ""}
+            alt={title}
+          />
+        </div>
         <div className={styles.cardDetails}>
           <h3>{title || "Untitled"}</h3>
           <p>
