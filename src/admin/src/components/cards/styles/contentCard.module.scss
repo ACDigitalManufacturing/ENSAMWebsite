@@ -8,9 +8,16 @@
   align-items: center;
   justify-content: space-between;
 
+  &:last-child {
+    .cardOptions {
+      right: 3.5rem !important;
+      top: -55px !important;
+    }
+  }
+
   img {
     width: 150px;
-    max-height: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 10px;
   }
@@ -23,6 +30,7 @@
 
   .cardDetails {
     display: flex;
+    margin: 0 1rem;
     flex-direction: column;
     justify-content: space-between;
     gap: 0.3rem;
@@ -46,13 +54,17 @@
     background: none;
     border: none;
     cursor: pointer;
+    outline: none;
 
     svg {
       fill: var(--blue-three);
       transition: 0.3s;
+      width: 25px;
+      height: 25px;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       svg {
         fill: var(--dark);
         transition: 0.3s;
