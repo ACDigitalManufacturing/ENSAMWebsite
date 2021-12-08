@@ -8,26 +8,14 @@ import { rootStateType } from "store/reducers";
 import { toast } from "react-toastify";
 import { deletePost, unsetCoverOfPost } from "api/posts";
 import { useNavigate } from "react-router";
+import { PostType } from "../../../../client/Types/api";
 
 interface Props {
-  title: string;
-  date: string;
-  image: string | null;
-  category: PostCategories;
-  status: PostStatuses;
-  id: string;
+  post: PostType;
   onDelete: () => void;
 }
 
-const ContentCard = ({
-  image,
-  title,
-  category,
-  date,
-  status,
-  id,
-  onDelete,
-}: Props): JSX.Element => {
+const ContentCard = ({ post, onDelete }: Props): JSX.Element => {
   const [isOpen, setOpen] = useState(false);
 
   const menuRef = useRef<HTMLDivElement | null>(null);
@@ -35,16 +23,20 @@ const ContentCard = ({
   const { auth_token } = useSelector((state: rootStateType) => state.admin);
   const navigate = useNavigate();
 
+  //! Function - START
   const handleMenu = () => {
     setOpen(!isOpen);
   };
+  //! Function - END
 
+  //! Function - START
   // eslint-disable-next-line
   const handleClicks = (e: any) => {
     if (!menuRef.current?.contains(e.target)) {
       setOpen(false);
     }
   };
+  //! Function - END
 
   //! Function - START
   const getStatus = (status: PostStatuses) => {
@@ -86,9 +78,9 @@ const ContentCard = ({
     //     return toast.error("Something Wrong");
     //   }
     // });
-    if (image) {
+    if (post.cover) {
       const { response: responseUnsetCover, errors: errorsUnsetCover } =
-        await unsetCoverOfPost(id, auth_token);
+        await unsetCoverOfPost(post.id, auth_token);
       if (errorsUnsetCover) {
         return errorsUnsetCover.forEach(({ message }) => {
           toast.error(message);
@@ -99,7 +91,7 @@ const ContentCard = ({
         return toast.error("Something Wrong");
       }
     }
-    const { response, errors } = await deletePost(id, auth_token);
+    const { response, errors } = await deletePost(post.id, auth_token);
 
     if (errors) {
       return errors.forEach(({ message }) => {
@@ -118,8 +110,7 @@ const ContentCard = ({
 
   //! Function - START
   const editPost = () => {
-    // TODO : Change the link category
-    navigate(`/create-post/${getCategory(category)}/?postId=${id}`);
+    navigate(`/create-post/${getCategory(post.category)}/?postId=${post.id}`);
   };
   //! Function - END
 
@@ -133,23 +124,30 @@ const ContentCard = ({
   return (
     <article className={styles.contentCard}>
       <div className={styles.cardData}>
-        <img src={image ? `${getHost()}/documents/${image}` : ""} alt={title} />
+        <div className={styles.cover}>
+          <img
+            src={post.cover ? `${getHost()}/documents/${post.cover}` : ""}
+            alt={post.title}
+          />
+        </div>
 
         <div className={styles.cardDetails}>
-          <h3>{title || "Untitled"}</h3>
+          <h3>{post.title || "Untitled"}</h3>
           <p>
             Catégorie:{" "}
-            <span className={styles.category}>{getCategory(category)}</span>
+            <span className={styles.category}>
+              {getCategory(post.category)}
+            </span>
           </p>
           <p className={styles.date}>
             Crée le{" "}
-            {new Date(date).toLocaleDateString("fr-FR", {
+            {new Date(post.createdAt).toLocaleDateString("fr-FR", {
               day: "numeric",
               month: "long",
               year: "numeric",
             })}
           </p>
-          <p className={styles.date}>Statut: {getStatus(status)}</p>
+          <p className={styles.date}>Statut: {getStatus(post.status)}</p>
         </div>
       </div>
       <button className={styles.detailsButton} onClick={handleMenu}>

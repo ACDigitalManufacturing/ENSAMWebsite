@@ -3,6 +3,7 @@ export enum localRoutes {
   dashboard = "/",
   officialReleases = "/official-releases",
   noticeToStudents = "/notice-to-students",
+  allPosts = "/all-posts",
   agenda = "/agenda",
   createPost = "/create-post/:category",
 }
