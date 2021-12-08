@@ -9,6 +9,7 @@ import NoticeToStudents from "pages/NoticeToStudents";
 import Agenda from "pages/Agenda";
 import OfficialReleases from "pages/OfficialReleases";
 import NewPost from "pages/NewPost";
+import AllPosts from "pages/AllPosts";
 
 //! ! pages - end
 //! !
@@ -26,6 +27,7 @@ const Dashboard = function (): JSX.Element {
         path={localRoutes.noticeToStudents}
         element={<NoticeToStudents />}
       />
+      <Route path={localRoutes.allPosts} element={<AllPosts />} />
       <Route path={localRoutes.agenda} element={<Agenda />} />
       <Route path={localRoutes.createPost} element={<NewPost />} />
 
