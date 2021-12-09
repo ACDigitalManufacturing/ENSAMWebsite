@@ -8,6 +8,8 @@ import { getHost } from "./getHost";
 // >(): GetUnauthenticatedApi<TResponse> {
 //   return
 // }
+
+const BACKEND_URI = process.env.BACKEND_API_URI;
 export const getUnauthenticatedApi = async <TResponse>(
   uri: string,
   params: Record<string, string | number>
@@ -18,6 +20,28 @@ export const getUnauthenticatedApi = async <TResponse>(
       params: params || {},
       headers: { "Content-Type": "application/json" },
     });
+
+    return { response: response.data };
+  } catch (error) {
+    return {
+      errors: errorParser(error),
+    };
+  }
+};
+
+export const getBackendUnauthenticatedApi = async <TResponse>(
+  uri: string,
+  params: Record<string, string | number>,
+  add_default_host: boolean = true
+): Promise<Response<TResponse>> => {
+  try {
+    const response = await axios.get(
+      `${add_default_host ? BACKEND_URI : ""}${uri}`,
+      {
+        params: params || {},
+        headers: { "Content-Type": "application/json" },
+      }
+    );
 
     return { response: response.data };
   } catch (error) {

@@ -59,3 +59,9 @@ export enum covid {
 export enum Webmasters {
   webmasters = "/web-masters",
 }
+
+export const postRoute = (postId: string) => `/post/${postId}`;
+export const getDocumentDownloadLink = (docId: string) =>
+  `/api/document/${docId}`;
+
+export const defaultPostHero = "/school/Restored_web_version.jpg";

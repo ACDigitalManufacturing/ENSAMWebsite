@@ -9,7 +9,7 @@ function Main({ children }: Props) {
   return (
     <div className={styles.mainLayoutWrapper}>
       <Navbar />
-      {children}
+      <div className={styles.childrenWrapper}>{children}</div>
       <Footer />
     </div>
   );

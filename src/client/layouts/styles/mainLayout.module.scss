@@ -4,4 +4,37 @@
   flex-direction: column;
 
   min-height: 100vh;
+
+  .childrenWrapper {
+    width: 100%;
+    z-index: 1;
+    // max-width: 1112px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &::after,
+    &::before {
+      z-index: -1;
+      content: "";
+      display: block;
+      position: absolute;
+      // top: 100vh;
+      top: 0;
+      bottom: 0;
+      background-repeat: repeat;
+      background-position: initial;
+      background-size: contain;
+    }
+    &::before {
+      background-image: url("/jlija1.png");
+      left: 0;
+      width: 60px;
+    }
+    &::after {
+      background-image: url("/jlija2.png");
+      right: 0;
+      width: 60px;
+    }
+  }
 }
