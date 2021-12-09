@@ -28,12 +28,13 @@ function Navbar(): JSX.Element {
     if (window.location.pathname !== "/") {
       ref.current?.classList.add(styles.showProperly);
       setLogo("/ensam-logo.png");
-    } else {
-      document.addEventListener("scroll", handleScroll);
-      return () => {
-        document.removeEventListener("scroll", handleScroll);
-      };
+      return;
     }
+
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (

@@ -6,9 +6,10 @@ import { PostCategories, PostType } from "Types/api";
 interface Props {
   post: PostType;
   customClass?: string;
+  link: string;
 }
 
-function CustomCardOne({ post, customClass }: Props): JSX.Element {
+function CustomCardOne({ post, customClass, link }: Props): JSX.Element {
   return post ? (
     <div className={styles.customCardOneWrapper + " " + customClass}>
       {/* Card Cover - START */}
@@ -59,7 +60,7 @@ function CustomCardOne({ post, customClass }: Props): JSX.Element {
           ></div>
         ) : null}
 
-        <a href={`/posts/${post.id}`} className="customSeeMore">
+        <a href={link} className="customSeeMore">
           voir plus <span>{right}</span>
         </a>
       </div>

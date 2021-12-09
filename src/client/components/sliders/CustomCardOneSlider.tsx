@@ -6,6 +6,7 @@ import right from "assets/icons/arrows/right";
 
 import styles from "./styles/customCardOneSlider.module.scss";
 import { PostType } from "Types/api";
+import { postRoute } from "routes/routes";
 
 interface Props {
   title: string;
@@ -41,12 +42,13 @@ function CustomCardOneSlider({ title, posts }: Props) {
                       }
                 }
               >
-                <CustomCardOne post={post} />
+                <CustomCardOne post={post} link={postRoute(post.id)} />
               </div>
             ))
           : null}
         <CustomCardOne
           post={posts[0]}
+          link={postRoute(posts[0].id)}
           customClass={styles.customCardPlaceholder}
         />
         {/* </div> */}
