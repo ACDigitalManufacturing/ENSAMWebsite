@@ -27,6 +27,7 @@
     height: 100vh;
     text-align: center;
   }
+
   .leftContainer {
     width: 100%;
     display: flex;
@@ -37,16 +38,12 @@
     padding-inline: 10vw;
     z-index: 12;
 
-    @media screen and (max-width: 1500px) {
-      padding-inline: 5rem;
-    }
-
     h1 {
       display: flex;
       flex-direction: column;
       text-transform: uppercase;
       font-family: Oswald;
-      font-size: max(6vw, 1rem);
+      font-size: max(7.5vw, 3rem);
       font-weight: bold;
       line-height: 1.12;
       color: var(--light);
@@ -56,32 +53,43 @@
 
       div {
         margin-top: 10px;
-        // padding: 10px 20px;
         font-size: max(4vw, 1rem);
-        // background-color: var(--light);
-        // color: var(--dark);
-        // width: fit-content;
       }
     }
+
     p {
       max-width: 600px;
       margin-block: 20px 30px;
       font-family: Roboto;
       font-weight: 300;
-      font-size: 20px;
+      font-size: max(1.7vw, 1rem);
       color: var(--light);
     }
 
+    @media (min-width: 1200px) {
+      h1 {
+        font-size: 6vw;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+
     .callToAction {
+      width: 100%;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
 
       .primary {
         font-family: Oswald;
         font-size: 23px;
         color: var(--default-light);
-        padding: 10px 2rem;
-        margin-right: 2rem;
+        padding: 11px 2rem;
+        // margin-right: 2rem;
         border-radius: 10px;
         box-shadow: 0 10px 30px 0 rgba(40, 111, 172, 0.25);
         background-color: var(--blue-three);

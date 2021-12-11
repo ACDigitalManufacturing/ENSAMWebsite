@@ -2,34 +2,31 @@
   display: grid;
   grid-template-columns: 1fr 450px;
   gap: 30px;
-  height: 300px;
+  // width: 100%;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  // flex-wrap: wrap;
   margin: 50px 0;
   max-width: 1080px;
 
   .info {
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    // max-width: 50%;
 
     h4 {
       font-family: Oswald;
       font-size: 44px;
       font-weight: 600;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
       text-align: left;
       color: var(--dark);
     }
     p {
       font-family: Roboto;
       font-size: 16px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
       text-align: left;
       color: var(--blue-one);
     }
@@ -45,6 +42,35 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .schoolImageWrapper {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px 0 rgba(2, 79, 180, 0.2);
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 }

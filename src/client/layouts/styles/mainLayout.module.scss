@@ -25,16 +25,18 @@
       background-repeat: repeat;
       background-position: initial;
       background-size: contain;
+      width: 60px;
+      @media (max-width: 900px) {
+        width: 45px;
+      }
     }
     &::before {
       background-image: url("/jlija1.png");
-      left: 0;
-      width: 60px;
+      left: -15px;
     }
     &::after {
       background-image: url("/jlija2.png");
       right: 0;
-      width: 60px;
     }
   }
 }

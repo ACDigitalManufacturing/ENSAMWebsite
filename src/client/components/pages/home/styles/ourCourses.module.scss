@@ -18,17 +18,34 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
+    @media (max-width: 1000px) {
+      height: auto;
+    }
+
     li {
       width: 315px;
       height: 400px;
       display: flex;
       align-items: flex-start;
       flex-direction: column;
+
       margin-bottom: 60px;
+      @media (max-width: 1000px) {
+        width: 100%;
+        height: fit-content;
+        gap: 2rem;
+      }
+
       .hero {
         height: 245px;
         display: flex;
         flex-direction: column;
+
+        @media (max-width: 1000px) {
+          height: fit-content;
+          gap: 2rem;
+        }
+
         .courseIcon {
           width: 91px;
           height: 91px;
@@ -59,6 +76,11 @@
         flex-direction: column;
         justify-content: space-between;
         flex: 1;
+
+        @media (max-width: 1000px) {
+          gap: 2rem;
+        }
+
         .courseDescription {
           font-family: Roboto;
           font-size: 16px;
@@ -66,6 +88,18 @@
           color: var(--dark-one);
         }
       }
+    }
+  }
+
+  @media (max-width: 1250px) {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .listOfCoursesWrapper {
+      padding-inline: 0rem;
     }
   }
 }

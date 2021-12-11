@@ -7,7 +7,7 @@ function SchoolPresentation() {
       <div className={styles.info}>
         <h4>ENSAM Casablanca</h4>
         <p>
-          ENSAM Crééedans la plus grande agglomération industrielle du Royaume
+          ENSAM Créée dans la plus grande agglomération industrielle du Royaume
           pour répondre aux besoins en ingénieurs, l’École Nationale Supérieure
           des Arts et Métiers de Casablanca relevant de l’Université Hassan II
           de Casablanca, est une école d’ingénieurs étatique qui assure une
