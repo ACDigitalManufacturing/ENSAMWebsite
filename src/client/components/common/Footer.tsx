@@ -1,3 +1,14 @@
+import {
+  companiesLinks,
+  createdByLinks,
+  formationLinks,
+  historyOfScienceLinks,
+  laureatesLinks,
+  researchLinks,
+  schoolLinks,
+  studentLifeLinks,
+} from "routes/navLinks";
+import NavbarColumn from "./Navbar/NavbarColumn";
 import styles from "./styles/footer.module.scss";
 
 function Footer(): JSX.Element {
@@ -17,9 +28,10 @@ function Footer(): JSX.Element {
             <span>Email: contact@ensam-casa.ma</span>
           </div>
           {/* Mini map */}
-          Link :
+          {/* Link : */}
           {/* https://www.google.com/maps/place/ENSAM+CASABLANCA/@33.5594072,-7.5683356,17z/data=!3m1!4b1!4m5!3m4!1s0xda6332908d1d61b:0x569d5bec37f7f81a!8m2!3d33.5594111!4d-7.5662305 */}
         </div>
+
         {/* <div className={styles.column}>
           <h2>L'ÉCOLE</h2>
           <ul>
@@ -86,6 +98,47 @@ function Footer(): JSX.Element {
             <a href="/web-masters">Webmasters</a>
           </ul> */}
         {/* </div> */}
+
+        <div className={styles.column}>
+          <NavbarColumn title={schoolLinks.title} links={schoolLinks.links} />
+        </div>
+
+        <div className={styles.column}>
+          <NavbarColumn
+            title={formationLinks.title}
+            links={formationLinks.links}
+          />
+          <NavbarColumn
+            title={studentLifeLinks.title}
+            links={studentLifeLinks.links}
+          />
+        </div>
+
+        <div className={styles.column}>
+          <NavbarColumn
+            title={researchLinks.title}
+            links={researchLinks.links}
+          />
+          <NavbarColumn
+            title={historyOfScienceLinks.title}
+            links={historyOfScienceLinks.links}
+          />
+        </div>
+
+        <div className={styles.column}>
+          <NavbarColumn
+            title={companiesLinks.title}
+            links={companiesLinks.links}
+          />
+          <NavbarColumn
+            title={laureatesLinks.title}
+            links={laureatesLinks.links}
+          />
+          <NavbarColumn
+            title={createdByLinks.title}
+            links={createdByLinks.links}
+          />
+        </div>
       </div>
       <p>© 2021 ENSAM - CASABLANCA. All rights reserved.</p>
     </div>

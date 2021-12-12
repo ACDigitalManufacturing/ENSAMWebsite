@@ -4,15 +4,13 @@
   padding: 0 100px;
   background-color: var(--blue-three);
   z-index: 2;
+  text-align: center;
 
   .footerInfo {
-    width: 300px;
+    width: 250px;
+    padding-bottom: 1rem;
     img {
       height: 150px;
-    }
-
-    p {
-      text-align: left;
     }
 
     div {
@@ -23,12 +21,17 @@
     }
   }
 
+  .column {
+    width: 250px;
+  }
+
   .footerLinks {
     width: 100%;
     padding: 50px 0;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap;
     color: var(--default-light);
 
     h2 {
