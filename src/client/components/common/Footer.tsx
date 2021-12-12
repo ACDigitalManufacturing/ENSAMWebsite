@@ -20,7 +20,7 @@ function Footer(): JSX.Element {
           Link :
           {/* https://www.google.com/maps/place/ENSAM+CASABLANCA/@33.5594072,-7.5683356,17z/data=!3m1!4b1!4m5!3m4!1s0xda6332908d1d61b:0x569d5bec37f7f81a!8m2!3d33.5594111!4d-7.5662305 */}
         </div>
-        <div className={styles.column}>
+        {/* <div className={styles.column}>
           <h2>L'ÉCOLE</h2>
           <ul>
             <a href="/under-reconstruction">Presentation</a>
@@ -84,8 +84,8 @@ function Footer(): JSX.Element {
           <h2>Created by</h2>
           <ul>
             <a href="/web-masters">Webmasters</a>
-          </ul>
-        </div>
+          </ul> */}
+        {/* </div> */}
       </div>
       <p>© 2021 ENSAM - CASABLANCA. All rights reserved.</p>
     </div>

@@ -1,5 +1,6 @@
 .navbarWrapper {
   height: 70px;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -14,6 +15,10 @@
   justify-content: space-between;
 
   padding: 0 100px;
+
+  @media (max-width: 850px) {
+    padding: 0 50px;
+  }
 
   &:not(.showProperly) {
     color: var(--default-light) !important;
@@ -47,6 +52,9 @@
 
     .logo img {
       height: 40px;
+      @media (max-width: 1100px) {
+        display: none;
+      }
     }
 
     .hamburger {
@@ -88,13 +96,68 @@
         margin-right: 4rem;
       }
     }
+
+    @media (max-width: 750px) {
+      display: none;
+    }
   }
 
   .menuContainer {
     height: 75vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
+
+    .menuLinks {
+      width: 100%;
+      max-height: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      color: var(--default-light);
+
+      h2 {
+        text-transform: uppercase;
+      }
+
+      ul {
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        color: var(--blue-seven);
+        font-family: Roboto;
+        margin: 0.5rem 0;
+
+        &:hover {
+          color: var(--default-light);
+        }
+      }
+    }
+  }
+
+  .column {
+    width: 250px;
+  }
+
+  .mobileNav {
+    display: none;
+    @media (max-width: 750px) {
+      width: 100%;
+      display: block;
+      div {
+        width: 100%;
+        ul {
+          font-size: 1rem;
+        }
+      }
+    }
   }
 
   .menu {
@@ -104,8 +167,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 0 100px;
     z-index: 1001;
+    width: 100%;
+    padding: 0 8vw;
 
     .header {
       width: 100%;
@@ -150,7 +214,7 @@
 
     .bottom {
       width: 100%;
-      height: 70px;
+      height: 100px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -202,34 +266,6 @@
           width: 35px;
           height: 35px;
           transition: 0.3s;
-        }
-      }
-    }
-
-    .menuLinks {
-      width: 100%;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      color: var(--default-light);
-
-      h2 {
-        text-transform: uppercase;
-      }
-
-      ul {
-        margin: 1rem 0;
-        display: flex;
-        flex-direction: column;
-      }
-
-      a {
-        color: var(--blue-seven);
-        font-family: Roboto;
-        margin: 0.5rem 0;
-
-        &:hover {
-          color: var(--default-light);
         }
       }
     }
