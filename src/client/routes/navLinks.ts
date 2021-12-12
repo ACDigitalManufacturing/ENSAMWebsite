@@ -10,8 +10,9 @@ import {
   Webmasters,
 } from "routes/routes";
 import { LinkStatus } from "Types/Application";
+import { navLinks } from "Types/navLinks";
 
-export const schoolLinks = {
+export const schoolLinks: navLinks = {
   title: "L'ÉCOLE",
   links: [
     {
@@ -57,7 +58,7 @@ export const schoolLinks = {
   ],
 };
 
-export const formationLinks = {
+export const formationLinks: navLinks = {
   title: "FORMATION",
   links: [
     {
@@ -83,7 +84,7 @@ export const formationLinks = {
   ],
 };
 
-export const studentLifeLinks = {
+export const studentLifeLinks: navLinks = {
   title: "VIE DE L'ÉTUDIANT",
   links: [
     {
@@ -99,7 +100,7 @@ export const studentLifeLinks = {
   ],
 };
 
-export const researchLinks = {
+export const researchLinks: navLinks = {
   title: "RECHERCHE",
   links: [
     {
@@ -135,7 +136,7 @@ export const researchLinks = {
   ],
 };
 
-export const historyOfScienceLinks = {
+export const historyOfScienceLinks: navLinks = {
   title: "Histoire de la science",
   links: [
     {
@@ -146,7 +147,7 @@ export const historyOfScienceLinks = {
   ],
 };
 
-export const companiesLinks = {
+export const companiesLinks: navLinks = {
   title: "ENTREPRISES",
   links: [
     {
@@ -162,7 +163,7 @@ export const companiesLinks = {
   ],
 };
 
-export const laureatesLinks = {
+export const laureatesLinks: navLinks = {
   title: "LAURÉATS",
   links: [
     {
@@ -178,7 +179,7 @@ export const laureatesLinks = {
   ],
 };
 
-export const createdByLinks = {
+export const createdByLinks: navLinks = {
   title: "Created by",
   links: [
     {
@@ -189,7 +190,7 @@ export const createdByLinks = {
   ],
 };
 
-export const mainLinks = {
+export const mainLinks: navLinks = {
   title: "",
   links: [
     {

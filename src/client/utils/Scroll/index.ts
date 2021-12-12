@@ -1,4 +1,4 @@
-import { id } from "Types/ids";
+import { id } from "Types/Application";
 
 export const scrollUp = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });

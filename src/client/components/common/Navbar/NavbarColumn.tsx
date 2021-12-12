@@ -1,14 +1,9 @@
+import { Link } from "Types/navLinks";
 import styles from "./styles/navbarColumn.module.scss";
-
-interface Links {
-  title: string;
-  link: string;
-  status: number;
-}
 
 interface Props {
   title: string;
-  links: Links[];
+  links: Link[];
 }
 
 const NavbarColumn = ({ title, links }: Props): JSX.Element => {

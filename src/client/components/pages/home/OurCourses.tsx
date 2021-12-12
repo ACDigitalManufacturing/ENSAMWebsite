@@ -12,7 +12,7 @@ import msei from "assets/icons/courses/msei";
 import right from "assets/icons/arrows/right";
 
 import styles from "./styles/ourCourses.module.scss";
-import { id } from "Types/ids";
+import { id } from "Types/Application";
 
 function OurCourses() {
   const paragraphSlice = (str: string, max: number, suffix: string) =>
