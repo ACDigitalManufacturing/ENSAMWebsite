@@ -5,19 +5,15 @@ import CreatePostHeader from "./createPost/CreatePostHeader";
 import UploadDocuments from "./createPost/UploadDocuments";
 import { useEffect, useState } from "react";
 import { rootStateType } from "store/reducers";
-import {
-  createPost,
-  deletePost,
-  getPostById,
-  unsetCoverOfPost,
-  updatePost,
-} from "api/posts";
+
+import { createPost, deletePost, getPostById, updatePost } from "api/posts";
 import { useSelector } from "react-redux";
-import { toast } from "react-toastify";
 import { getQueryParams } from "utils/urlParser";
 import { Categories, PostCategories, PostStatuses, PostType } from "types/api";
 import { emptyPost } from "utils/posts";
 import localRoutes from "routes/routes";
+
+import { getApiResponse, unassignCover } from "utils/apiConnection";
 
 const CreatePost = (): JSX.Element => {
   const { category } = useParams();
@@ -38,20 +34,28 @@ const CreatePost = (): JSX.Element => {
   const [post, setPost] = useState<PostType>(emptyPost(postCategory));
 
   //! Function - START
+  const navigateToOverview = () => {
+    navigate(
+      category == Categories.OfficialReleases
+        ? localRoutes.officialReleases
+        : localRoutes.noticeToStudents
+    );
+  };
+  //! Function - END
+
+  //! Function - START
   const handleCreatePost = async () => {
     const { response, errors } = await createPost(postCategory, auth_token);
-    if (errors) {
-      return errors.forEach(({ message }) => {
-        toast.error(message);
-      });
-    }
 
-    if (!response?.post) {
-      return toast.error("Something went wrong");
-    }
+    getApiResponse(
+      { response, errors },
+      { responseMessage: "", noResponseMessage: "Something went wrong" }
+    );
 
-    navigate(`${pathname}?postId=${response.post.id}`);
-    setPost({ ...post, id: response.post.id });
+    if (response?.post) {
+      navigate(`${pathname}?postId=${response.post.id}`);
+      setPost({ ...post, id: response.post.id });
+    }
   };
   //! Function - END
 
@@ -59,111 +63,79 @@ const CreatePost = (): JSX.Element => {
   const intializePost = async () => {
     const { response, errors } = await getPostById(postId, auth_token);
 
-    if (errors) {
-      return errors.forEach(({ message }) => {
-        toast.error(message);
-      });
-    }
+    getApiResponse(
+      { response, errors },
+      { responseMessage: "", noResponseMessage: "Something went wrong" }
+    );
 
-    if (!response?.post) {
-      return toast.error("Something went wrong");
+    if (response?.post) {
+      setPost(response.post);
     }
-
-    setPost(response.post);
   };
   //! Function - END
 
-  // posts controllers
+  //? posts controllers
+  //! Function - START
 
   const onPublish = async () => {
     // save post as live
-
     const { response, errors } = await updatePost(
       { ...post, status: PostStatuses.live },
       auth_token
     );
-
-    if (errors) {
-      return errors.forEach(({ message }) => {
-        toast.error(message);
-      });
-    }
-
-    if (!response?.post) {
-      return toast.error("Something Went Wrong");
-    }
-
-    console.log(response.post);
-    toast.success("Post has been published successfully");
-
-    navigate(
-      category == Categories.OfficialReleases
-        ? localRoutes.officialReleases
-        : localRoutes.noticeToStudents
+    getApiResponse(
+      { response, errors },
+      {
+        responseMessage: "Post has been published successfully",
+        noResponseMessage: "Something went wrong",
+      }
     );
+
+    if (response?.post) {
+      navigateToOverview();
+    }
   };
 
+  //! Function - END
+
+  //! Function - START
   const onDraft = async () => {
     const { response, errors } = await updatePost(
       { ...post, status: PostStatuses.draft },
       auth_token
     );
 
-    if (errors) {
-      return errors.forEach(({ message }) => {
-        toast.error(message);
-      });
-    }
-
-    if (!response?.post) {
-      return toast.error("Something Went Wrong");
-    }
-
-    console.log(response.post);
-    toast.success("Post saved as a draft");
-
-    navigate(
-      category == Categories.OfficialReleases
-        ? localRoutes.officialReleases
-        : localRoutes.noticeToStudents
+    getApiResponse(
+      { response, errors },
+      {
+        responseMessage: "Post saved as a draft",
+        noResponseMessage: "Something went wrong",
+      }
     );
+
+    if (response?.post) {
+      navigateToOverview();
+    }
   };
 
   //! Function - START
   const onCancel = async () => {
     if (post.status === PostStatuses.not_saved) {
       if (post.cover) {
-        const { response: responseUnsetCover, errors: errorsUnsetCover } =
-          await unsetCoverOfPost(post.id, auth_token);
-        if (errorsUnsetCover) {
-          return errorsUnsetCover.forEach(({ message }) => {
-            toast.error(message);
-          });
-        }
-
-        if (!responseUnsetCover?.post) {
-          return toast.error("Something Wrong");
-        }
+        unassignCover(post.id, auth_token);
       }
       const { response, errors } = await deletePost(post.id, auth_token);
 
-      if (errors) {
-        return errors.forEach(({ message }) => {
-          toast.error(message);
-        });
-      }
-
-      if (!response?.deletedPost) {
-        return toast.error("Something Wrong");
-      }
+      getApiResponse(
+        { response, errors },
+        {
+          responseMessage: "Post has been deleted Successfully",
+          noResponseMessage: "Something went wrong",
+        }
+      );
     }
-    navigate(
-      category == Categories.OfficialReleases
-        ? localRoutes.officialReleases
-        : localRoutes.noticeToStudents
-    );
+    navigateToOverview();
   };
-
   //! Function - END
 
   useEffect(() => {
