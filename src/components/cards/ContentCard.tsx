@@ -163,7 +163,7 @@ const ContentCard = ({ post, onDelete }: Props): JSX.Element => {
         ref={menuRef}
       >
         <ul>
-          {!post.status ? (
+          {post.status === PostStatuses.live ? (
             <li>
               <a href={`https://ensam-casa.herokuapp.com/post/${post.id}`}>
                 Aperçu
