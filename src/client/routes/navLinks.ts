@@ -193,7 +193,7 @@ export const mainLinks = {
   title: "",
   links: [
     {
-      title: "Acceuil",
+      title: "Accueil",
       link: localRoutes.home,
       status: LinkStatus.active,
     },

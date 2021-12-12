@@ -97,10 +97,14 @@ const DetailedNav = ({ styles, isOpened, setOpened }: any): JSX.Element => {
       {/* BOTTOM MENU */}
       <div className={styles.bottom}>
         <div className={styles.socialLinks}>
-          <a href="">{linkedin}</a>
-          <a href="">{facebook}</a>
-          <a href="">{twitter}</a>
-          <a href="">{youtube}</a>
+          <a href="https://www.linkedin.com/mwlite/school/ensam-casablanca">
+            {linkedin}
+          </a>
+          <a href="https://m.facebook.com/ENSAM.univ/">{facebook}</a>
+          <a href="https://mobile.twitter.com/ensamcasa2019">{twitter}</a>
+          <a href="https://m.youtube.com/channel/UCeQB_nDJYbY6T5n7SsxkdAw">
+            {youtube}
+          </a>
         </div>
         <a className={styles.covid}>{covid} Covid 19</a>
       </div>
