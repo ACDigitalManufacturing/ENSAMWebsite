@@ -6,13 +6,14 @@ import styles from "./styles/postsOverview.module.scss";
 interface Props {
   title: string;
   category: string;
-  cards: PostType[];
+
+  posts: PostType[];
   onDelete: () => void;
 }
 
 const PostsOverview = ({
   title,
-  cards,
+  posts,
   category,
   onDelete,
 }: Props): JSX.Element => {
@@ -20,7 +21,7 @@ const PostsOverview = ({
     <div className={styles.postsOverviewWrapper}>
       <h1>{title}</h1>
       <div className={styles.header}>
-        <div className={styles.total}>Total: {cards.length}</div>
+        <div className={styles.total}>Total: {posts.length}</div>
         <Link to={category} className={styles.createNew}>
           {" "}
           <div>+</div>
@@ -33,17 +34,8 @@ const PostsOverview = ({
       {/* pagination */}
 
       <div className={styles.cardsWrapper}>
-        {cards.map((card, idx) => (
-          <ContentCard
-            key={idx}
-            title={card.title}
-            category={card.category}
-            date={card.createdAt}
-            image={card.cover}
-            status={card.status}
-            id={card.id}
-            onDelete={onDelete}
-          />
+        {posts.map((post, idx) => (
+          <ContentCard key={idx} {...{ post, onDelete }} />
         ))}
       </div>
     </div>
