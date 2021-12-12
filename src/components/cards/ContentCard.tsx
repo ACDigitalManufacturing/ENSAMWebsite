@@ -163,7 +163,13 @@ const ContentCard = ({ post, onDelete }: Props): JSX.Element => {
         ref={menuRef}
       >
         <ul>
-          <li>Aperçu</li>
+          {!post.status ? (
+            <li>
+              <a href={`https://ensam-casa.herokuapp.com/post/${post.id}`}>
+                Aperçu
+              </a>
+            </li>
+          ) : null}
           <li onClick={editPost}>Modifer</li>
           <li onClick={handleDeletePost}>Supprimer</li>
         </ul>
