@@ -1,6 +1,8 @@
 import home from "assets/icons/home";
 import leave from "assets/icons/leave";
+import navArrowLeft from "assets/icons/navArrowLeft";
 import post from "assets/icons/post";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import localRoutes from "routes/routes";
@@ -12,12 +14,23 @@ function SideMenu(): JSX.Element {
   // this location is for selecting the active link
   const location = useLocation();
 
-  const handleDeconect = () => {
+  const [isOpened, setOpened] = useState(false);
+
+  const handleDisconnect = () => {
     dispatch(admin_logged_out());
   };
 
   return (
-    <div className={styles.sideMenuWrapper}>
+    <div
+      className={`${styles.sideMenuWrapper} ${!isOpened ? styles.closed : ""}`}
+    >
+      <div
+        className={styles.navArrow}
+        style={isOpened ? { rotate: "180deg" } : { rotate: "0deg" }}
+        onClick={() => setOpened(!isOpened)}
+      >
+        {navArrowLeft}
+      </div>
       <section className={styles.logoWrapper}>
         <img src="/images/ensam2.png" alt="ensam casa" />
       </section>
@@ -34,15 +47,16 @@ function SideMenu(): JSX.Element {
             className={link == location.pathname ? styles.active : ""}
           >
             <Link to={link}>
-              <span>{icon}</span> {text}
+              {icon}
+              <span>{text}</span>
             </Link>
           </li>
         ))}
       </ul>
 
-      <button className={styles.decoButton} onClick={handleDeconect}>
-        <span>{leave}</span>
-        Se Déconnecter
+      <button className={styles.decoButton} onClick={handleDisconnect}>
+        {leave}
+        <span>Se Déconnecter</span>
       </button>
     </div>
   );

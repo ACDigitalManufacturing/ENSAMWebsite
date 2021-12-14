@@ -130,7 +130,11 @@ const ContentCard = ({ post, onDelete }: Props): JSX.Element => {
       <div className={styles.cardData}>
         <div className={styles.cover}>
           <img
-            src={post.cover ? `${getHost()}/documents/${post.cover}` : ""}
+            src={
+              post.cover
+                ? `${getHost()}/documents/${post.cover}`
+                : "/images/No_Image-Availabe.jpg"
+            }
             alt={post.title}
           />
         </div>
