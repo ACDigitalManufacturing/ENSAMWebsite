@@ -1,27 +1,47 @@
+echo "############################"
+echo "#                          #"
+echo "# update nginx config file #"
+echo "#                          #"
+echo "############################"
+sh ./script.sh
+
+
 cd ../
-echo "# nginx configuration start"
-./script.sh
-echo "# nginx configuration done"
 
-echo "# installing pm2"
+echo "#############################"
+echo "#                           #"
+echo "# install pm2@last globally #"
+echo "#                           #"
+echo "#############################"
 sudo npm install pm2@latest -g
-echo "# finish installation of pm2"
-echo "# clear all pm2 servers already runing"
+
+echo "#############################"
+echo "#                           #"
+echo "#    clear pm2 processes    #"
+echo "#                           #"
+echo "#############################"
 sudo pm2 stop all
+sudo pm2 delete all
 
 echo "############################"
 echo "#                          #"
-echo "# install and start server #"
+echo "#  run npm install server  #"
 echo "#                          #"
 echo "############################"
-
 cd ./server
 sudo npm install -f
+
+
+echo "############################"
+echo "#                          #"
+echo "#     pm2 start server     #"
+echo "#                          #"
+echo "############################"
 sudo pm2 start
 
 echo "############################"
 echo "#                          #"
-echo "# install and start client #"
+echo "#  run npm install client  #"
 echo "#                          #"
 echo "############################"
 
@@ -29,8 +49,14 @@ cd ../client
 sudo npm install -f
 echo "############################"
 echo "#                          #"
-echo "#      Bulding Client      #"
+echo "#      bulding Client      #"
 echo "#                          #"
 echo "############################"
 sudo npm run build
+
+echo "############################"
+echo "#                          #"
+echo "#     pm2 start client     #"
+echo "#                          #"
+echo "############################"
 sudo pm2 start
