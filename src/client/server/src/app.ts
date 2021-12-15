@@ -38,12 +38,12 @@ app.use(morgan("dev"));
 
 //!
 //! routes - start
-app.use("/api/", mainRouter);
+app.use("/api/v1", mainRouter);
 
 //! routes - end
 //!
 
-app.get("/api/status", async (_, res) => {
+app.get("/api/v1/status", async (_, res) => {
   res.send("server up and running ✔✔");
 });
 

@@ -1,5 +1,7 @@
 export const getDocumentURI = (documentId: string) => {
-  return `${process.env.NEXT_PUBLIC_BACKEND_API_URI}/documents/${documentId}`;
+  return `${
+    process.env.NEXT_PUBLIC_BACKEND_API_URI || "/api/v1"
+  }/documents/${documentId}`;
 };
 
 // export const documentToJson = ({

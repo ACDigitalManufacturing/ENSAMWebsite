@@ -7,7 +7,7 @@ echo "# installing pm2"
 sudo npm install pm2@latest -g
 echo "# finish installation of pm2"
 echo "# clear all pm2 servers already runing"
-pm2 delete all
+sudo pm2 stop all
 
 echo "############################"
 echo "#                          #"
@@ -16,8 +16,8 @@ echo "#                          #"
 echo "############################"
 
 cd ./server
-npm install -f
-pm2 start npm --name "server" --interpreter bash -- start
+sudo npm install -f
+sudo pm2 start
 
 echo "############################"
 echo "#                          #"
@@ -26,6 +26,11 @@ echo "#                          #"
 echo "############################"
 
 cd ../client
-npm install -f
-npm run build
-pm2 start npm --name "client" --interpreter bash -- start
+sudo npm install -f
+echo "############################"
+echo "#                          #"
+echo "#      Bulding Client      #"
+echo "#                          #"
+echo "############################"
+sudo npm run build
+sudo pm2 start

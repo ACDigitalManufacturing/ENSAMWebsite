@@ -18,7 +18,7 @@ const start = async () => {
   const port = PORT || 5000;
   app.listen(port, () => {
     console.log(`SERVER UP AND LISTENING ON PORT ${port}!`);
-    console.log(`server status : GET http://localhost:${port}/api/status`);
+    console.log(`server status : GET http://localhost:${port}/api/v1/status`);
   });
 };
 
