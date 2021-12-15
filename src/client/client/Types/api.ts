@@ -40,7 +40,6 @@ export interface PostType {
 export interface DocumentMeta {
   id: string;
   filename: string;
-  link: string;
   contentType: string;
   createdAt: string;
   updatedAt: string;

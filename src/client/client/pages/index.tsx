@@ -18,6 +18,7 @@ import Hero from "components/pages/home/Hero";
 import ScrollToTop from "components/pages/home/ScrollToTop";
 
 import styles from "styles/pages/index.module.scss";
+import { getDocumentURI } from "utils/Documents";
 const CustomHead = () => (
   <Head>
     <title>HOME - ENSAM CASA</title>
@@ -74,7 +75,12 @@ const Home: NextPage = () => {
         ...prev,
         { message: "server not responding" },
       ]);
-    return setOfficialPressReleases(response.posts || []);
+    return setOfficialPressReleases(
+      response.posts.map((post) => ({
+        ...post,
+        cover: getDocumentURI(post.cover || "undefined"),
+      })) || []
+    );
   };
 
   const initializeNoticeToStudents = async () => {
@@ -88,9 +94,12 @@ const Home: NextPage = () => {
         ...prev,
         { message: "server not responding" },
       ]);
-    console.log(response.posts);
-
-    return setNoticeToStudents(response.posts || []);
+    return setNoticeToStudents(
+      response.posts.map((post) => ({
+        ...post,
+        cover: getDocumentURI(post.cover || "undefined"),
+      })) || []
+    );
   };
   //! functions - end
   //!

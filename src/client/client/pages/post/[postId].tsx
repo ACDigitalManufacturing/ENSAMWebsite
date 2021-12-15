@@ -4,18 +4,18 @@ import Main from "layouts/Main";
 
 import { DocumentMeta, PostType } from "Types/api";
 
-import { getPostByIdFromBackend } from "api/onServer/posts";
+import { getPostById } from "api/posts";
 
 import left from "assets/icons/arrows/left";
 import document_icon from "assets/icons/document";
 
 import styles from "styles/pages/post/singlePost.module.scss";
-import { postToJson } from "utils/Posts";
 import { defaultPostHero } from "routes/routes";
 import { useEffect, useState } from "react";
-import { getDocumentMeta } from "api/onServer/documents";
+import { getDocumentMeta } from "api/documents";
 import calendar from "assets/icons/calendar";
 import Head from "next/head";
+import { getDocumentURI } from "utils/Documents";
 
 interface Props {
   post: PostType;
@@ -24,6 +24,7 @@ interface Props {
 const SinglePost: NextPage<any> = ({ post }: Props) => {
   const [documents, setDocuments] = useState<DocumentMeta[]>([]);
   const router = useRouter();
+  console.log(post);
 
   const fetchDocumentsMeta = async () => {
     const newDocuments = [];
@@ -97,7 +98,12 @@ const SinglePost: NextPage<any> = ({ post }: Props) => {
                 })}
               </h4>
               <div className={styles.imageWrapper}>
-                <img src={post.cover || defaultPostHero} alt="hero image" />
+                <img
+                  src={
+                    post.cover ? getDocumentURI(post.cover) : defaultPostHero
+                  }
+                  alt="hero image"
+                />
               </div>
             </div>
 
@@ -105,7 +111,7 @@ const SinglePost: NextPage<any> = ({ post }: Props) => {
 
             <div className={styles.filesWrapper}>
               {documents.map((document, key) => (
-                <a key={key} href={document.link} download={true}>
+                <a key={key} href={getDocumentURI(document.id)} download={true}>
                   <span className={styles.iconWrapper}>{document_icon}</span>
                   <span className={styles.filenameWrapper}>
                     <span className={styles.pdfIcon}>PDF</span>
@@ -133,15 +139,15 @@ SinglePost.getInitialProps = async ({ query, res }) => {
         : Router.replace("/");
     }
 
-    const { response, errors } = await getPostByIdFromBackend(postId);
+    const { response, errors } = await getPostById(postId);
 
-    if (errors || !response || !response.post) {
+    if (errors || !response) {
       return res
         ? res.writeHead(307, { Location: "/" }).end()
         : Router.replace("/");
     }
 
-    return { post: postToJson(response.post) };
+    return { post: response.post };
   } catch (error) {
     return res
       ? res.writeHead(307, { Location: "/" }).end()

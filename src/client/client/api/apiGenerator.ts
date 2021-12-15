@@ -9,14 +9,15 @@ import { getHost } from "./getHost";
 //   return
 // }
 
-const BACKEND_URI = process.env.BACKEND_API_URI;
+const BACKEND_URI = process.env.NEXT_PUBLIC_BACKEND_API_URI || "/api";
+
 export const getUnauthenticatedApi = async <TResponse>(
   uri: string,
   params: Record<string, string | number>
 ): Promise<Response<TResponse>> => {
   try {
     const host = getHost();
-    const response = await axios.get(`${host}/${uri}`, {
+    const response = await axios.get(`${host}/api/${uri}`, {
       params: params || {},
       headers: { "Content-Type": "application/json" },
     });

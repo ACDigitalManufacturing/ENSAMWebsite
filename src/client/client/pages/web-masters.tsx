@@ -22,8 +22,12 @@ function ourTeam() {
                   <h5>Le club encadrant ...</h5>
                 </div>
                 <div className={styles.sci}>
-                  <a href="https://www.linkedin.com/company/a-c-digital-manufacturing/mycompany/">{linkedin}</a>
-                  <a href="https://www.instagram.com/aec.digital.manufacturing/">{instagram}</a>
+                  <a href="https://www.linkedin.com/company/a-c-digital-manufacturing/mycompany/">
+                    {linkedin}
+                  </a>
+                  <a href="https://www.instagram.com/aec.digital.manufacturing/">
+                    {instagram}
+                  </a>
                 </div>
               </div>
             </div>
@@ -41,7 +45,9 @@ function ourTeam() {
                   </h5>
                 </div>
                 <div className={styles.sci}>
-                  <a href="https://www.linkedin.com/in/karim-gehad/">{linkedin}</a>
+                  <a href="https://www.linkedin.com/in/karim-gehad/">
+                    {linkedin}
+                  </a>
                   <a href="https://github.com/karimGeh">{github}</a>
                 </div>
               </div>
@@ -60,7 +66,9 @@ function ourTeam() {
                   </h5>
                 </div>
                 <div className={styles.sci}>
-                  <a href="https://www.linkedin.com/in/aala-eddine-bousskoul-1187b4225/">{linkedin}</a>
+                  <a href="https://www.linkedin.com/in/aala-eddine-bousskoul-1187b4225/">
+                    {linkedin}
+                  </a>
                   <a href="https://github.com/aalaebl">{github}</a>
                 </div>
               </div>
@@ -79,7 +87,9 @@ function ourTeam() {
                   </h5>
                 </div>
                 <div className={styles.sci}>
-                  <a href="https://www.linkedin.com/in/taoufik-ayoub/">{linkedin}</a>
+                  <a href="https://www.linkedin.com/in/taoufik-ayoub/">
+                    {linkedin}
+                  </a>
                   <a href="https://github.com/BitsWarrior">{github}</a>
                 </div>
               </div>
@@ -98,7 +108,9 @@ function ourTeam() {
                   </h5>
                 </div>
                 <div className={styles.sci}>
-                  <a href="https://www.linkedin.com/in/hind-lakhal-2171461b0/">{linkedin}</a>
+                  <a href="https://www.linkedin.com/in/hind-lakhal-2171461b0/">
+                    {linkedin}
+                  </a>
                   <a href="https://github.com/HIND-Lak">{github}</a>
                 </div>
               </div>
@@ -113,12 +125,14 @@ function ourTeam() {
                   <h5>Content team</h5>
                 </div>
                 <div className={styles.sci}>
-                  <a href="https://www.linkedin.com/in/amal-es-snoussi-7702751bb/">{linkedin}</a>
+                  <a href="https://www.linkedin.com/in/amal-es-snoussi-7702751bb/">
+                    {linkedin}
+                  </a>
                   <a href="#">{github}</a>
                 </div>
               </div>
             </div>
-            <div className={styles.card}>
+            {/* <div className={styles.card}>
               <div className={styles.content}>
                 <div className={styles.imgBx}>
                   <img src="/team/souhail.jpg" alt="" />
@@ -147,7 +161,7 @@ function ourTeam() {
                   <a href="https://github.com/ChaimaaElargoubi">{github}</a>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </>

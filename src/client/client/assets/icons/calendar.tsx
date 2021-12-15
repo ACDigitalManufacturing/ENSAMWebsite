@@ -70,8 +70,8 @@ export default (
       strokeLinejoin="round"
     />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M16.2383 3.5792H7.77096C4.83427 3.5792 3 5.21513 3 8.22222V17.2719C3 20.3262 4.83427 22 7.77096 22H16.229C19.175 22 21 20.3546 21 17.3475V8.22222C21.0092 5.21513 19.1842 3.5792 16.2383 3.5792Z"
       stroke="black"
       strokeWidth="1.5"

@@ -10,7 +10,6 @@ export default function handler(
 ) {
   res.status(200).json(dummyData);
 }
-new Date().getTime();
 const dummyData = [
   {
     logoUrl: "/partners/Amazon.png",
