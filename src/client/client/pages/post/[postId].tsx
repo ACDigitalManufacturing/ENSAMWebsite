@@ -55,7 +55,11 @@ const SinglePost: NextPage<any> = ({ post }: Props) => {
         <meta property="og:description" content={post.title} />
         <meta
           property="og:image"
-          content={post.cover || "https://ensam-casa.herokuapp.com/logo.jpg"}
+          content={
+            post.cover
+              ? getDocumentURI(post.cover)
+              : "https://ensam-casa.herokuapp.com/logo.jpg"
+          }
         />
         <meta
           property="og:url"
@@ -68,7 +72,11 @@ const SinglePost: NextPage<any> = ({ post }: Props) => {
         <meta name="twitter:description" content={post.title} />
         <meta
           name="twitter:image"
-          content={post.cover || "https://ensam-casa.herokuapp.com/logo.jpg"}
+          content={
+            post.cover
+              ? getDocumentURI(post.cover)
+              : "https://ensam-casa.herokuapp.com/logo.jpg"
+          }
         />
         <meta
           name="twitter:card"
