@@ -1,11 +1,10 @@
 import { getPartners } from "api/home";
-import { PartnerType } from "pages/api/home/partners";
 import { useEffect, useState } from "react";
 import { CustomError } from "Types/api";
 
 import styles from "./styles/partners.module.scss";
 function Partners() {
-  const [partnersList, setPartnersList] = useState<PartnerType[]>([]);
+  const [partnersList, setPartnersList] = useState<any[]>([]);
   const [errors, setErrors] = useState<CustomError[]>([]);
 
   const initializePartners = async () => {
