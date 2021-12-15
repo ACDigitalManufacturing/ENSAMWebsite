@@ -45,4 +45,4 @@ jobs:
           git config --global user.name "Karim G."
           git add .
           git commit --allow-empty -m "github actions"
-          git push --set-upstream origin `git subtree split --prefix src/admin/server master`:admin --force
+          git push origin `git subtree split --prefix src/admin/server master`:admin --force

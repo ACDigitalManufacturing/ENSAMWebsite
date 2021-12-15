@@ -1,15 +1,13 @@
 import styles from "./styles/contentCard.module.scss";
 import options from "assets/icons/options";
 import { useState, useRef, useEffect } from "react";
-import { Categories, PostCategories, PostStatuses } from "types/api";
+import { Categories, PostCategories, PostStatuses, PostType } from "types/api";
 import { getHost } from "api/getHost";
 import { useSelector } from "react-redux";
 import { rootStateType } from "store/reducers";
 import { toast } from "react-toastify";
 import { deletePost, unsetCoverOfPost } from "api/posts";
 import { useNavigate } from "react-router";
-
-import { PostType } from "../../../../client/Types/api";
 
 interface Props {
   post: PostType;

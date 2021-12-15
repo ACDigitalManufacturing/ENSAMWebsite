@@ -1,7 +1,6 @@
-import { PostType } from "./../../../client/Types/api";
 import { getPosts, unsetCoverOfPost } from "./../api/posts";
-import { Response } from "../../../client/Types/api";
 import { toast } from "react-toastify";
+import { PostType, Response } from "types/api";
 
 interface ErrorMessage {
   responseMessage: string;
