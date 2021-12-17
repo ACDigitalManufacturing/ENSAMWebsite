@@ -4,6 +4,7 @@
   background: var(--blue-three);
   transition: width 0.2s ease-out;
   position: relative;
+  user-select: none;
 
   padding-inline: 15px;
 
@@ -27,7 +28,7 @@
   .navArrow {
     position: absolute;
     top: 20px;
-    right: 10px;
+    left: 25px;
     width: 30px;
     height: 30px;
 
