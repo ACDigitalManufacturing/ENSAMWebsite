@@ -11,7 +11,7 @@ on:
 
 defaults:
   run:
-    working-directory: src/server
+    working-directory: src/admin/server
 
 jobs:
   build:
@@ -29,21 +29,20 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-          cache-dependency-path: src/admin/package-lock.json
+          cache-dependency-path: src/admin/client/package-lock.json
       - run: npm install
       - run: npm run lint-check --if-present
       - run: npm run format-check --if-present
       - run: |
-          cd ../admin
+          cd ../client
           npm install
           npm run build:linux
           npm run lint-check --if-present
           npm run format-check --if-present
           cd ../server
-          ls
-          cd ../../
+          cd ../../../
           git config --global user.email "karim2jihad@gmail.com"
           git config --global user.name "Karim G."
           git add .
           git commit --allow-empty -m "github actions"
-          git push origin `git subtree split --prefix src/server master`:admin --force
+          git push origin `git subtree split --prefix src/admin/server master`:admin --force

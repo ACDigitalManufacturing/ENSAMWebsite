@@ -1,0 +1,36 @@
+name: CLIENT FRONTEND CI
+
+on:
+  push:
+    branches: [master]
+  # pull_request:
+  #   branches: [master]
+
+defaults:
+  run:
+    working-directory: src/client/client
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          cache-dependency-path: src/client/client/package-lock.json
+      - run: npm install
+      - run: npm run build
+      - run: npm run lint-check --if-present
+      - run: npm run format-check --if-present
+      - run: |
+          cd ../../../
+          git push origin `git subtree split --prefix src/client/client master`:client --force
