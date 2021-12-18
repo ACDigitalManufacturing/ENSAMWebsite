@@ -26,7 +26,11 @@ function SideMenu(): JSX.Element {
     >
       <div
         className={styles.navArrow}
-        style={isOpened ? { rotate: "180deg" } : { rotate: "0deg" }}
+        style={
+          isOpened
+            ? { transform: "rotate(180deg)" }
+            : { transform: "rotate(0deg)" }
+        }
         onClick={() => setOpened(!isOpened)}
       >
         {navArrowLeft}
