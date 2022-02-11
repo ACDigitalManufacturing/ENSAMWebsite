@@ -17,6 +17,13 @@ sudo npm install pm2@latest -g
 
 echo "#############################"
 echo "#                           #"
+echo "# install ts-node globally  #"
+echo "#                           #"
+echo "#############################"
+sudo npm install ts-node -g
+
+echo "#############################"
+echo "#                           #"
 echo "#    clear pm2 processes    #"
 echo "#                           #"
 echo "#############################"
@@ -28,7 +35,7 @@ echo "#                          #"
 echo "#  run npm install server  #"
 echo "#                          #"
 echo "############################"
-cd ./server
+cd ../server
 sudo npm install -f
 
 
