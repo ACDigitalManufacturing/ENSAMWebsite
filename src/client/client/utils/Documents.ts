@@ -1,7 +1,8 @@
+import { getHost } from "api/getHost";
+
 export const getDocumentURI = (documentId: string) => {
-  return `${
-    process.env.NEXT_PUBLIC_BACKEND_API_URI || "/api/v1"
-  }/documents/${documentId}`;
+  const host = getHost();
+  return `${host}/documents/${documentId}`;
 };
 
 // export const documentToJson = ({

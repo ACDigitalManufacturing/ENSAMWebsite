@@ -9,7 +9,7 @@ import { getHost } from "./getHost";
 //   return
 // }
 
-const BACKEND_URI = process.env.NEXT_PUBLIC_BACKEND_API_URI || "/api";
+const BACKEND_URI = process.env.NEXT_PUBLIC_BACKEND_API_URI || "/api/v1";
 
 export const getUnauthenticatedApi = async <TResponse>(
   uri: string,
@@ -17,7 +17,7 @@ export const getUnauthenticatedApi = async <TResponse>(
 ): Promise<Response<TResponse>> => {
   try {
     const host = getHost();
-    const response = await axios.get(`${host}/api/${uri}`, {
+    const response = await axios.get(`${host}${uri}`, {
       params: params || {},
       headers: { "Content-Type": "application/json" },
     });
@@ -36,8 +36,10 @@ export const getBackendUnauthenticatedApi = async <TResponse>(
   add_default_host: boolean = true
 ): Promise<Response<TResponse>> => {
   try {
+    const host = getHost();
     const response = await axios.get(
-      `${add_default_host ? BACKEND_URI : ""}${uri}`,
+      // const host = getHost();
+      `${host}${uri}`,
       {
         params: params || {},
         headers: { "Content-Type": "application/json" },

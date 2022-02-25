@@ -1,3 +1,3 @@
 export function getHost() {
-  return "";
+  return "http://localhost:5000/api/v1";
 }
