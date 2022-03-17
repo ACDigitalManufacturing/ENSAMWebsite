@@ -1,3 +1,3 @@
 export function getHost() {
-  return "http://localhost:5000/api/v1";
+  return (process.env.NEXT_PUBLIC_BACKEND_API_URI || "/api/v1");
 }
