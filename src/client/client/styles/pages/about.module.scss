@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+.navPadding {
+  height: 80px;
+  width: 100%;
+}
+.aboutPageWrapper {
+  min-height: 100vh;
+  max-width: 1080px;
+  padding-inline: 1rem;
+  padding-block: 85px;
+  .header {
+    h2 {
+      font-family: Oswald;
+      font-size: 70px;
+      font-weight: 600;
+      text-align: center;
+      color: var(--blue);
+    }
+    p {
+      font-family: Roboto;
+      font-size: 16px;
+      text-align: center;
+      color: var(--dark);
+    }
+  }
+  .presentation {
+    .imageWrapper {
+      width: 1080px;
+      height: 300px;
+      margin-block: 30px;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px 0 rgba(22, 121, 206, 0.15);
+      }
+    }
+  }
+  p {
+    margin-top: 12px;
+    font-family: Roboto;
+    font-size: 17px;
+    text-align: left;
+    color: var(--dark-one);
+  }
+  h3 {
+    margin-top: 36px;
+    font-family: Oswald;
+    font-size: 44px;
+    font-weight: 600;
+    color: var(--dark);
+  }
+  li {
+    margin-left: 50px;
+    font-family: Roboto;
+    font-size: 17px;
+    text-align: left;
+    color: var(--dark-one);
+  }
+  ol {
+    margin-top: 26px;
+    list-style: none;
+    counter-reset: counter;
+  }
+  ol li {
+    counter-increment: counter;
+  }
+  ol li::before {
+    content: counter(counter) ". ";
+    color: var(--blue);
+    font-weight: bold;
+  }
+  ul {
+    list-style: none;
+    text-align: center;
+    padding-left: 0;
+    list-style-position: inside;
+  }
+
+  ul li::before {
+    content: "\2022";
+    color: var(--blue);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    font-size: 2em;
+  }
+
+  h4 {
+    margin-top: 24px;
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--blue);
+  }
+}
