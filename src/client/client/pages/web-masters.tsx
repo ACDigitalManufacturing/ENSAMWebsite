@@ -12,7 +12,7 @@ function ourTeam() {
         <div className={styles.devSectionWrapper}>
           <h1>Developement team</h1>
           <div className={styles.container}>
-            <div className={styles.card}>
+            {/* <div className={styles.card}>
               <div className={styles.content}>
                 <div className={styles.imgBx}>
                   <img src="/team/club.jpg" alt="" />
@@ -30,7 +30,7 @@ function ourTeam() {
                   </a>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className={styles.card}>
               <div className={styles.content}>
                 <div className={styles.imgBx}>
@@ -76,15 +76,11 @@ function ourTeam() {
             <div className={styles.card}>
               <div className={styles.content}>
                 <div className={styles.imgBx}>
-                  <img src="/team/ayoub.jpg" alt="" />
+                  <img src="/team/azziz.jfif" alt="" />
                 </div>
                 <div className={styles.contentBx}>
-                  <h4>Ayoub Taoufik</h4>
-                  <h5>
-                    Frontend Developer
-                    <br />
-                    Content management
-                  </h5>
+                  <h4>Abdelaziz Facoiti</h4>
+                  <h5>Dev Ops Engineer</h5>
                 </div>
                 <div className={styles.sci}>
                   <a href="https://www.linkedin.com/in/taoufik-ayoub/">
@@ -94,7 +90,7 @@ function ourTeam() {
                 </div>
               </div>
             </div>
-            <div className={styles.card}>
+            {/* <div className={styles.card}>
               <div className={styles.content}>
                 <div className={styles.imgBx}>
                   <img src="/team/hind.jpg" alt="" />
@@ -131,7 +127,7 @@ function ourTeam() {
                   <a href="#">{github}</a>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* <div className={styles.card}>
               <div className={styles.content}>
                 <div className={styles.imgBx}>

@@ -2,7 +2,9 @@
   margin-top: 120px;
   padding-inline: 2rem;
   width: 100%;
-  max-width: calc(1300px - 2rem);
+  max-width: 1200px;
+  width:80vw;
+  min-height: 100vh;
 
   h1 {
     font-family: Oswald;
@@ -18,7 +20,6 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    min-height: 100vh;
     width: 100%;
     background: var(--default-light);
     .card {
