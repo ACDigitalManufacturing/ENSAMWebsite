@@ -7,7 +7,7 @@ export enum localRoutes {
 export enum mainNavLinks {}
 
 export enum school {
-  presentation = "/under-reconstruction",
+  presentation = "/presentation",
   directorWord = "/under-reconstruction",
   officialPressReleases = "/under-reconstruction",
   professionalBody = "/under-reconstruction",
@@ -18,6 +18,7 @@ export enum school {
 }
 
 export enum formation {
+  index = "/under-reconstruction",
   preparatoryYears = "/under-reconstruction",
   engineeringCycle = "/under-reconstruction",
   universityLicense = "/under-reconstruction",

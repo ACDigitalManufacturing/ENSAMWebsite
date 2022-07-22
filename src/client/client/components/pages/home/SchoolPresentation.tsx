@@ -1,4 +1,5 @@
 import right from "assets/icons/arrows/right";
+import { school } from "routes/routes";
 import styles from "./styles/schoolPresentation.module.scss";
 
 function SchoolPresentation() {
@@ -15,7 +16,7 @@ function SchoolPresentation() {
           dotés d’un esprit entrepreneurial, opérant dans différents secteurs
           industriels privés et publics à l’échelle nationale et international.
         </p>
-        <a href="/under-reconstruction" className="customSeeMore outlined">
+        <a href={school.presentation} className="customSeeMore outlined">
           voir plus <span>{right}</span>
         </a>
       </div>

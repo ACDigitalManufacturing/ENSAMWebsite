@@ -18,7 +18,7 @@ export const schoolLinks: navLinks = {
     {
       title: "Présentation",
       link: school.presentation,
-      status: LinkStatus.inactive,
+      status: LinkStatus.active,
     },
     {
       title: "Mot du Directeur",
