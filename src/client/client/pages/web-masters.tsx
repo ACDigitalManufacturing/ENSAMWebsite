@@ -4,11 +4,50 @@ import facebook from "assets/icons/socialMedia/facebook";
 import instagram from "assets/icons/socialMedia/instagram";
 import github from "assets/icons/socialMedia/github";
 import linkedin from "assets/icons/socialMedia/linkedin";
+import Head from "next/head";
 
-function ourTeam() {
+const CustomHead = () => (
+  <Head>
+    <title>Developement team - ENSAM CASA</title>
+    {/* facebook - start */}
+    <meta property="og:title" content="Developement team - Ensam Casablanca" />
+    <meta property="og:site_name" content="Ensam Casablanca official website" />
+    <meta
+      property="og:description"
+      content="Developement team du site web de L’École Nationale Supérieure d’Arts et Métiers de Casablanca,
+      affiliée à l'Université Hassan II de Casablanca."
+    />
+    <meta
+      property="og:image"
+      content="https://ensam-casa.herokuapp.com/logo.jpg"
+    />
+    <meta property="og:url" content="https://ensam-casa.herokuapp.com/" />
+    {/* facebook - start */}
+
+    {/* twitter - start */}
+    <meta name="twitter:title" content="Ensam casa" />
+    <meta
+      name="twitter:description"
+      content="L’École Nationale Supérieure d’Arts et Métiers de Casablanca,
+      affiliée à l'Université Hassan II de Casablanca."
+    />
+    <meta
+      name="twitter:image"
+      content="https://ensam-casa.herokuapp.com/logo.jpg"
+    />
+    <meta name="twitter:card" content="https://ensam-casa.herokuapp.com/" />
+    <meta name="twitter:image:alt" content="Ensam Casa logo" />
+    {/* twitter - end */}
+
+    <meta property="og:type" content="website" />
+  </Head>
+);
+
+function OurTeam() {
   return (
     <Main>
       <>
+        <CustomHead />
         <div className={styles.devSectionWrapper}>
           <h1>Developement team</h1>
           <div className={styles.container}>
@@ -165,4 +204,4 @@ function ourTeam() {
   );
 }
 
-export default ourTeam;
+export default OurTeam;
