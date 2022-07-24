@@ -1,0 +1,39 @@
+# get all posts
+GET http://localhost:5000/posts/all HTTP/1.1
+content-type: application/json
+
+###
+
+# get post by id
+GET http://localhost:5000/posts/61a3fadbc192689c57f4a974 HTTP/1.1
+content-type: application/json
+
+####
+
+# create post
+POST http://localhost:5000/posts/ HTTP/1.1
+content-type: application/json
+
+# categories : "../src/models/Post.ts"
+{
+  "category":0 
+}
+
+###
+
+# update post by id
+PUT http://localhost:5000/posts/61a3fadbc192689c57f4a974 HTTP/1.1
+content-type: application/json
+
+{
+  "status": 2,
+  "title":"this is a test post",
+  "content":"<p>this is the content of this post <br> for your info :<strong> this is a test post</strong></p>"
+}
+
+####
+
+# delete post by id
+DELETE http://localhost:5000/posts/61a3fadbc192689c57f4a974 HTTP/1.1
+content-type: application/json
+
