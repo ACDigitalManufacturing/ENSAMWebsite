@@ -1,0 +1,27 @@
+.scrollToTop {
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  display: none;
+  z-index: 10;
+
+  svg {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    fill: var(--blue-three);
+    transition: 0.3s;
+
+    &:hover {
+      fill: var(--blue-one);
+      transition: 0.3s;
+    }
+  }
+
+  @media (max-width: 900px) {
+    right: 1vw;
+  }
+}
+.display {
+  display: block !important;
+}
