@@ -1,6 +1,6 @@
 export enum localRoutes {
   home = "/",
-  formation = "nos-formations",
+  formation = "/nos-formations",
   underRecontruction = "/under-reconstruction",
   error404 = "/404",
 }
@@ -19,11 +19,11 @@ export enum school {
 }
 
 export enum formation {
-  index = "nos-formations",
-  preparatoryYears = "/under-reconstruction",
-  engineeringCycle = "/under-reconstruction",
-  universityLicense = "/under-reconstruction",
-  universityMaster = "/under-reconstruction",
+  index = "/nos-formations",
+  preparatoryYears = "/nos-formations#preparatory-years",
+  engineeringCycle = "/nos-formations#engineering-cycle",
+  universityLicense = "/nos-formations#university-license",
+  universityMaster = "/nos-formations#university-master",
 }
 
 export enum studentLife {

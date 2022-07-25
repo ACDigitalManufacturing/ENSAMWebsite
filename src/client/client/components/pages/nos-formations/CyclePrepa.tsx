@@ -2,7 +2,13 @@ import api from "assets/icons/courses/api";
 import FormationList from "./FormationList";
 
 export const CyclePrepa = () => {
-  return <FormationList formations={formations} title="Cycle Préparatoire" />;
+  return (
+    <FormationList
+      formations={formations}
+      title="Cycle Préparatoire"
+      id="preparatory-years"
+    />
+  );
 };
 
 const formations = [

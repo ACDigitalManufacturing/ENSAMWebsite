@@ -1,7 +1,13 @@
 import FormationList from "./FormationList";
 
 export const MasterDUniversite = () => {
-  return <FormationList formations={formations} title="Master d'Université" />;
+  return (
+    <FormationList
+      formations={formations}
+      title="Master d'Université"
+      id="university-master"
+    />
+  );
 };
 
 const formations = [

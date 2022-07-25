@@ -64,22 +64,22 @@ export const formationLinks: navLinks = {
     {
       title: "Années Préparatoires",
       link: formation.preparatoryYears,
-      status: LinkStatus.inactive,
+      status: LinkStatus.active,
     },
     {
       title: "Cycle d'Ingénieur",
       link: formation.engineeringCycle,
-      status: LinkStatus.inactive,
+      status: LinkStatus.active,
     },
     {
       title: "Licence d'Université",
       link: formation.universityLicense,
-      status: LinkStatus.inactive,
+      status: LinkStatus.active,
     },
     {
       title: "Master d'Université",
       link: formation.universityMaster,
-      status: LinkStatus.inactive,
+      status: LinkStatus.active,
     },
   ],
 };

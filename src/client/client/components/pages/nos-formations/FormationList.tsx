@@ -10,12 +10,13 @@ interface Formation {
 }
 interface Props {
   title?: string;
+  id?: string;
   formations: Formation[];
 }
 
-const FormationList = ({ formations, title }: Props) => {
+const FormationList = ({ formations, title, id }: Props) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id={id || ""}>
       {title ? <h4 className={styles.title}>{title}</h4> : null}
       <ul className={styles.listOfCoursesWrapper}>
         {/* CourseCard - start */}

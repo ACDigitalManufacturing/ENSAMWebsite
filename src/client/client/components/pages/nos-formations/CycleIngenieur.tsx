@@ -7,7 +7,13 @@ import msei from "assets/icons/courses/msei";
 import FormationList from "./FormationList";
 
 export const CycleIngenieur = () => {
-  return <FormationList formations={formations} title="Cycle Ingénieur" />;
+  return (
+    <FormationList
+      formations={formations}
+      title="Cycle Ingénieur"
+      id="engineering-cycle"
+    />
+  );
 };
 
 const formations = [
