@@ -1,0 +1,113 @@
+.wordFromTheDirectorWrapper {
+  width: 100%;
+  max-width: 1080px;
+  margin-bottom: 30px;
+
+  @media (max-width: 1200px) {
+    width: 80%;
+  }
+  h4 {
+    margin-bottom: 50px;
+    margin-bottom: 50px;
+    font-family: Oswald;
+    font-size: 44px;
+    font-weight: 600;
+    color: var(--dark);
+  }
+  .directorCardWrapper {
+    position: relative;
+    --imageSize: 270px;
+    width: 100%;
+    // height: 340px;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px 0 rgba(2, 79, 180, 0.2);
+    background-color: var(--light);
+
+    // display: grid;
+    // grid-template-columns: var(--imageSize) 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 2rem;
+
+    .directorImageWrapper {
+      // flex: 1;
+      width: var(--imageSize);
+      height: var(--imageSize);
+      border-radius: 20px;
+      overflow: hidden;
+
+      @media (max-width: 1200px) {
+        width: 100%;
+        max-width: 450px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .infoWrapper {
+      width: 100%;
+      max-width: 600px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+
+      .titles {
+        h5 {
+          font-family: Roboto;
+          font-size: 22px;
+          font-weight: bold;
+          color: var(--blue);
+        }
+        h6 {
+          font-family: Roboto;
+          font-size: 18px;
+          font-weight: 500;
+          color: var(--blue-one);
+        }
+      }
+
+      p {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        font-family: Roboto;
+        font-size: 16px;
+        text-align: left;
+        color: var(--dark-one);
+      }
+    }
+
+    .quoteIcon {
+      // border: 2px solid red;
+      position: absolute;
+      top: -80%;
+
+      right: 30px;
+      height: 100%;
+      transform: translateY(130px) scaleY(-1);
+
+      font-family: Oswald;
+      font-size: 267px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 0.06;
+      letter-spacing: normal;
+      text-align: left;
+      color: #e3edff;
+
+      @media (max-width: 1200px) {
+        display: none;
+      }
+    }
+  }
+}

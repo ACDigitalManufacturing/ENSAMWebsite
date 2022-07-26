@@ -1,0 +1,97 @@
+.devSectionWrapper {
+  margin-top: 120px;
+  padding-inline: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  width:80vw;
+  min-height: 100vh;
+
+  h1 {
+    font-family: Oswald;
+    font-size: 44px;
+    font-weight: 600;
+    color: var(--dark);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background: var(--default-light);
+    .card {
+      width: 330px;
+      height: 440px;
+      padding: 60px 30px;
+      margin: 20px;
+      background: var(--default-light);
+      box-shadow: 0 10px 20px 5px rgba(22, 121, 206, 0.18);
+      border-radius: 20px;
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .imgBx {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          position: relative;
+          margin-bottom: 20px;
+          overflow: hidden;
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .contentBx {
+          h4 {
+            color: var(--blue);
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+          }
+          h5 {
+            color: var(--blue-one);
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+          }
+        }
+        .sci {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.3rem;
+
+          a {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--blue-one);
+            font-size: 30px;
+            margin: 10px;
+            transition: color 0.4s;
+            svg {
+              fill: var(--blue-one);
+              width: 30px;
+              height: 30px;
+            }
+            &:hover {
+              svg {
+                fill: var(--blue-three);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

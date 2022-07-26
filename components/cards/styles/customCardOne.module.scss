@@ -1,0 +1,97 @@
+.customCardOneWrapper {
+  flex-shrink: 0;
+  width: 328px;
+  height: 471px;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  background: white;
+  box-shadow: 0 10px 30px 0 rgba(2, 79, 180, 0.2);
+  transition: all 500ms ease-in-out;
+
+  .coverWrapper {
+    width: 100%;
+    height: 220px;
+    min-height: 220px;
+    max-height: 220px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .infoWrapper {
+    width: 100%;
+    height: 100%;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    .tagsWrapper {
+      li {
+        width: min-content;
+        border-radius: 20px;
+        padding: 4px 11px;
+        font-family: Roboto;
+        font-size: 10px;
+
+        text-transform: uppercase;
+        color: var(--default-light);
+
+        &:first-of-type:not(:last-of-type) {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    h6 {
+      margin-block: 10px 14px;
+      width: 100%;
+      font-family: Roboto;
+      font-size: 12px;
+      text-align: left;
+      color: var(--blue-one);
+      white-space: nowrap;
+      font-weight: normal;
+    }
+    h5 {
+      flex: 1;
+      font-family: Roboto;
+      font-size: 17px;
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--dark);
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+      word-break: break-all;
+
+      flex: 50;
+      margin: 11px 0 0;
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--dark-one);
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.customCardTwoWrapper {
+  width: 310px;
+  // height: min-content;
+  min-height: 385px;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px 0 rgba(22, 121, 206, 0.15);
+  background-color: var(--blue-three);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .date {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--blue-five);
+  }
+  h5 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--default-light);
+    border-bottom: 1px solid var(--blue-five);
+  }
+  .logoWrapper {
+    height: 50px;
+    margin-block: 24px 5px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  h6 {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--blue-five);
+  }
+}

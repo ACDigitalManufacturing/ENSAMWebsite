@@ -1,0 +1,40 @@
+.theyTalkAboutUsWrapper {
+  width: 100%;
+  max-width: 1080px;
+  margin-block: 30px;
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h4 {
+      font-family: Oswald;
+      font-size: 44px;
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #11182e;
+    }
+    a {
+      font-size: 20px;
+      span {
+        height: 20px;
+        width: 20px;
+        svg {
+          height: 22px;
+          width: 22px;
+        }
+      }
+    }
+  }
+
+  .cardListWrapper {
+    margin-block: 50px;
+    padding-inline: 1rem;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+}

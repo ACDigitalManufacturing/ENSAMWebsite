@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+:root {
+  --tag-orange: #ff8b4e;
+  --tag-blue: #279bff;
+
+  --light: white;
+  --default-light: #fffefe;
+  --default-light-transparent: #{rgba($color: #fffefe, $alpha: 0.2)};
+
+  --blue: #286fac;
+  --blue-one: #8ca1bc;
+  --blue-two: #d2eaff;
+  --blue-three: #286fac;
+  --blue-four: #c3ccd8;
+  --blue-five: #a2cceb;
+  --blue-six: #d5e7ff;
+  --blue-seven: #99beee;
+
+  --dark: #11182e;
+  --dark-one: #707e8f;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  // height: 100vh;
+  // overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  width: 100vw;
+  background-color: var(--default-light);
+  min-height: 100vh;
+  font-family: Oswald, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.communiqueTag {
+  background: var(--tag-orange);
+}
+.avisetudiantTag {
+  background: var(--tag-blue);
+}
+
+.customSeeMore {
+  max-width: min-content;
+  white-space: nowrap;
+
+  display: flex;
+  align-items: center;
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--blue);
+  transition: 0.3s;
+  padding-bottom: 5px;
+
+  &:hover {
+    color: var(--dark);
+    span {
+      border-color: var(--dark);
+
+      svg {
+        fill: var(--dark);
+      }
+    }
+  }
+
+  &.outlined {
+    padding: 9px 18px;
+    border-radius: 7px;
+    border: solid 2px var(--blue);
+
+    &:hover {
+      background: var(--blue);
+      color: var(--default-light);
+      transition: 0.3s;
+
+      span {
+        border-color: var(--default-light);
+        transition: 0.3s;
+
+        svg {
+          fill: var(--default-light);
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+
+  span {
+    --iconSize: 16px;
+    position: relative;
+    width: var(--iconSize);
+    height: var(--iconSize);
+    margin-left: 8.2px;
+
+    border: solid 2px var(--blue);
+    border-radius: 5.5px;
+    transition: 0.3s;
+
+    svg {
+      width: var(--iconSize);
+      height: var(--iconSize);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      fill: var(--blue);
+      transition: 0.3s;
+    }
+  }
+}
+
+// .cls-1 {
+//   fill: none;
+//   stroke: #fff;
+//   stroke-miterlimit: 10;
+//   stroke-width: 10px;
+// }

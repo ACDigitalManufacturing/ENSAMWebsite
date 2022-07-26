@@ -1,0 +1,70 @@
+.container{
+  max-width: 1080px;
+  width: 80vw;
+  margin-top: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .schoolName{
+    padding-block: 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1{
+      // margin: 0 0 0 16px;
+      min-height: 114px;
+      margin-bottom: 7px;
+      font-family: Oswald;
+      font-size: 77px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 1.12;
+      text-align: center;
+      color: #286fac;
+    }
+    h5{
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #11182e;
+    }
+  }
+  .schoolImage{
+    padding-bottom: 25px;
+    width: 100%;
+
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px 0 rgba(22, 121, 206, 0.15);
+    }
+  }
+
+  .schoolDescription{
+    
+    margin-block: 25px;
+    p{
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: justify;
+      color: #707e8f;
+    }
+  }
+}
