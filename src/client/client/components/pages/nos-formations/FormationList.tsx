@@ -32,7 +32,7 @@ const FormationList = ({ formations, title, id }: Props) => {
                 {paragraphSlice(description, 250, "...")}
               </p>
               {link ? (
-                <a href={link} className="customSeeMore">
+                <a href={link} target="_blank" className="customSeeMore">
                   voir plus <span>{right}</span>
                 </a>
               ) : null}

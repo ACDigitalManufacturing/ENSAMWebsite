@@ -131,7 +131,6 @@ const Home: NextPage = () => {
               />
             </div>
           ) : null}
-          <OurCourses />
           {noticeToStudents.length ? (
             <div className={styles.sliderWrapper}>
               <CustomCardOneSlider
@@ -140,6 +139,7 @@ const Home: NextPage = () => {
               />
             </div>
           ) : null}
+          <OurCourses />
           <WordFromTheDirector />
         </div>
       </>
