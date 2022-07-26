@@ -5,7 +5,7 @@ export const MasterDUniversite = () => {
   return (
     <FormationList
       formations={formations}
-      title="Master d'Université"
+      title="Masters spécialisés d'Université"
       id="university-master"
     />
   );
@@ -20,25 +20,25 @@ const formations = [
     link: "/files/formations/master/management_industriel.pdf",
   },
   {
-    title: "Systemes d'information et de decision",
+    title: "Systèmes d'information et de décision",
     description: `La formation de master spécialisé d’université en systèmes d’information et de décision de l’ENSAM de Casablanca
     vise à former des professionnels des systèmes d'information possédant une double ...`,
     link: "/files/formations/master/systemes_information_et_de_decision.pdf",
   },
   {
-    title: "Systeme intelligents et genie electrique",
+    title: "Systèmes intelligents et génie électrique",
     description: `Cette formation permet aux étudiants d’acquérir des connaissances, des aptitudes et des compétences en systèmes embarqués.
     Elle vise à enrichir les compétences de ces cadres pour pouvoir se familiariser avec ...`,
     link: "/files/formations/master/systeme_intelligents_et_genie_electrique.pdf",
   },
   {
-    title: "Controle industriel & management de l'energie",
+    title: "Contrôle industriel et management de l'énergie",
     description: `Cette formation a pour objectif de former des cadres techniques, capables de concevoir et de piloter des systèmes intelligents de
     contrôle-commande industrielle et de gestion de l’énergie. Le cursus de ce...`,
     link: "/files/formations/master/controle_ndustriel_management_de_energie.pdf",
   },
   {
-    title: "Genie civil et construction durable",
+    title: "Génie civil et construction durable",
     description: `A la fin de la formation, le cadre supérieur en génie civil doit être capable de :
     - Réaliser les calculs d’ouvrages divers de génie civil en Béton, en charpente métallique & mixte
     - Réaliser les travaux des laboratoires de génie civil ainsi les calculs de VRD
